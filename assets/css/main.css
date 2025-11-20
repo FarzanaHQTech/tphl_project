@@ -16103,3 +16103,36 @@ strong ~ p {
   background-color: var(--clr-alert-dark) !important;
 }
 /*# sourceMappingURL=../maps/main.css.map */
+
+
+
+/* permission css */
+
+
+    .perm-table thead th {
+        background: linear-gradient(to right, #4fbcff, #4ce3c9);
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 14px;
+    }
+
+    .perm-module {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .perm-checkbox label {
+        border: 1px solid #d1d1d1;
+        padding: 4px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .perm-checkbox input {
+        transform: scale(1.1);
+    }

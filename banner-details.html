@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Warning</title>
+    <title>Blog Details</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-style-mode" content="1">
@@ -69,31 +69,361 @@
             <div class="main-sidebar" id="sidebar-scroll">
                 <nav class="main-menu-container nav nav-pills flex-column sub-open">
                     <div class="sidebar-left" id="sidebar-left"></div>
-                    <ul class="main-menu">
+                       <ul class="main-menu">
                         <li class="sidebar__menu-category"><span class="category-name">Main</span></li>
+                        <li class="slide ">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="icon-house"></i></div>
+                                <span class="sidebar__menu-label">Home</span>
+                            </a>
+
+                        </li>
+
+                        <li class="slide">
+                            <a href="product-request.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
+                                <span class="sidebar__menu-label">Product-Request</span>
+                            </a>
+                        </li>
+
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-house"></i></div>
-                                <span class="sidebar__menu-label">Dashboards</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-user"></i></div>
+                                <span class="sidebar__menu-label">User</span>
                             </a>
                             <ul class="sidebar-menu child1">
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="index.html">HRM Dashboard</a>
+                                    <a class="sidebar__menu-item" href="add-user.html">Add User</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="employee-dashboard.html">Employee Dashboard</a>
+                                    <a class="sidebar__menu-item" href="user-lists.html">User List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                <span class="sidebar__menu-label">Customer</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="add-customer.html">Add Customer</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="crm-dashboard.html">CRM Analytics</a>
+                                    <a class="sidebar__menu-item" href="customers.html">Customer List</a>
                                 </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide">
+                            <a href="permission.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
+                                <span class="sidebar__menu-label">Permissions</span>
+                            </a>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-building"></i></div>
+                                <span class="sidebar__menu-label">Vendor</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="add-vendor.html">Add Vendor</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Vendor List</a>
+                                </li>
+
                             </ul>
                         </li>
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-hrm"></i></div>
-                                <span class="sidebar__menu-label">HRM</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-flag"></i></div>
+                                <span class="sidebar__menu-label">Banner</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="add-banner.html">Add Banner</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="banners.html">Banner List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
+                                <span class="sidebar__menu-label">Brand</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Brand Logo</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Brand List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-newspaper"></i></div>
+                                <span class="sidebar__menu-label">FAQ </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Faq </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="faq.html">Faq List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-regular fa-pen-to-square"></i></div>
+                                <span class="sidebar__menu-label">Blog </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Blog </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Blog List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <span class="sidebar__menu-label">Location </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Location </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Location List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                                <span class="sidebar__menu-label">Requisition </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Requisition </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Requisition List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-weight-scale"></i></div>
+                                <span class="sidebar__menu-label">Unit</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Unit </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Unit List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide">
+                            <a href="leads.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                <span class="sidebar__menu-label">Leads</span>
+                            </a>
+                        </li>
+                       
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-box"></i></div>
+                                <span class="sidebar__menu-label">Product</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Product</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Product List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <span class="sidebar__menu-label">Purchase</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Purchase</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Purchase List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-camera"></i></div>
+                                <span class="sidebar__menu-label">Camera</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Camera</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Camera List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-diagram-project"></i></div>
+                                <span class="sidebar__menu-label">Project</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Project
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Project List </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-star"></i></div>
+                                <span class="sidebar__menu-label">Popular Project</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Popular
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Popular List </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                                <span class="sidebar__menu-label">Order</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Order
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Order List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-regular fa-star-half-stroke"></i></div>
+                                <span class="sidebar__menu-label">Review</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Review
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Review List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-regular fa-bell"></i></div>
+                                <span class="sidebar__menu-label">Notification</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Notification
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Notification List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-money-bill"></i></div>
+                                <span class="sidebar__menu-label">Payment</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Payment
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Payment List</a>
+                                </li>
+ 
+
+                            </ul>
+                        </li>
+
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-users-gear"></i></div>
+                                <span class="sidebar__menu-label">HR</span>
                             </a>
                             <ul class="sidebar-menu child1">
                                 <li class="slide">
@@ -109,10 +439,12 @@
                                     <a class="sidebar__menu-item" href="attendance.html">Admin Attendance</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="employee-attendance.html">Employee Attendance</a>
+                                    <a class="sidebar__menu-item" href="employee-attendance.html">Employee
+                                        Attendance</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="biometric-attendance.html">Biometric Attendance</a>
+                                    <a class="sidebar__menu-item" href="biometric-attendance.html">Biometric
+                                        Attendance</a>
                                 </li>
                                 <li class="slide">
                                     <a class="sidebar__menu-item" href="office-loan.html">Office Loan</a>
@@ -120,9 +452,7 @@
                                 <li class="slide">
                                     <a class="sidebar__menu-item" href="personal-loan.html">Personal Loan</a>
                                 </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="leaves-employee.html">Employee leaves</a>
-                                </li>
+                            
                                 <li class="slide">
                                     <a class="sidebar__menu-item" href="leaves.html">Admin leaves</a>
                                 </li>
@@ -143,469 +473,57 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-crm"></i></div>
-                                <span class="sidebar__menu-label">CRM</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="leads.html">Leads</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="deals.html">Deals</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="crm-setup.html">CRM Setup</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-grid-2"></i></div>
-                                <span class="sidebar__menu-label">Apps</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="app-chat.html">Chat</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="email-inbox.html">Email Inbox</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="email-read.html">Email Read</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="email-compose.html">Email Compose</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="contacts.html">Contacts</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="calendar.html">Calendar</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-wallet"></i></div>
-                                <span class="sidebar__menu-label">Payroll</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="payroll.html">Pay List</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="payroll-payslip.html">Payslip</a></li>
-                            </ul>
-                        </li>
+
+
                         <li class="slide">
-                            <a href="expense.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-announcement"></i></div>
-                                <span class="sidebar__menu-label">Expense</span>
+                            <a href="eaves-employee.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                <span class="sidebar__menu-label">Employee leaves</span>
                             </a>
                         </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-wallet"></i></div>
-                                <span class="sidebar__menu-label">Company</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="companies.html">Company List</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="company-details.html">Company Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-wallet"></i></div>
-                                <span class="sidebar__menu-label">Clients</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="clients.html">Clients</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="client-details.html">Client Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-projects"></i></div>
-                                <span class="sidebar__menu-label">Projects</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Projects</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="project-details.html">Projects Details</a>
-                                </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Projects Create</a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <li class="slide">
-                            <a href="activities.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-regular fa-chart-network"></i></div>
-                                <span class="sidebar__menu-label">Activities</span>
+                            <a href="eaves-employee.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                <span class="sidebar__menu-label">Inventories</span>
                             </a>
                         </li>
-                        <li class="slide">
-                            <a href="training.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class=" icon-training"></i></div>
-                                <span class="sidebar__menu-label">Training</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="resignation.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-resignation"></i></div>
-                                <span class="sidebar__menu-label">Resignation</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="promotion.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-promotion"></i></div>
-                                <span class="sidebar__menu-label">Promotion</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="award.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-trophy"></i></div>
-                                <span class="sidebar__menu-label">Award</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="meeting.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-meeting"></i></div>
-                                <span class="sidebar__menu-label">Meeting</span>
-                            </a>
-                        </li>
-                        <li class="slide has-sub">
+
+                          <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-tickets1"></i></div>
-                                <span class="sidebar__menu-label">Tickets</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-gavel"></i></div>
+                                <span class="sidebar__menu-label">Auction</span>
                             </a>
                             <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="tickets.html">Tickets List</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="tickets-reply.html">Tickets Reply</a></li>
+                               
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Auction List</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="slide">
-                            <a href="transfer.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-regular fa-right-left"></i></div>
-                                <span class="sidebar__menu-label">Transfer</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="termination.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-termination"></i></div>
-                                <span class="sidebar__menu-label">Termination</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="document.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-document"></i></div>
-                                <span class="sidebar__menu-label">Document</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="announcement.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-announcement"></i></div>
-                                <span class="sidebar__menu-label">Announcement</span>
-                            </a>
-                        </li>
-                        <li class="slide has-sub">
+
+                            <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-light fa-book-blank"></i></div>
-                                <span class="sidebar__menu-label">Invoice</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                <span class="sidebar__menu-label">Account</span>
                             </a>
                             <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-add.html">Invoice Create</a>
+                               
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Account List</a>
                                 </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-preview.html">Invoice
-                                        Preview</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-edit.html">Invoice Edit</a>
+                               
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Journal List</a>
                                 </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-list.html">Invoice List</a>
+                               
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Ledger List</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">Pages</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-key"></i></div>
-                                <span class="sidebar__menu-label">Authentication</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Sign In
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signin-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signin-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Sign Up
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signup-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signup-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Reset Password
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="reset-password-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="reset-password-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Forgot Password
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="forgot-password-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="forgot-password-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="coming-soon.html">Coming Soon</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="maintenance.html">Under Maintenance</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="offline.html">Offline</a>
+                               
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Additional Salary</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-triangle-exclamation"></i></div>
-                                <span class="sidebar__menu-label">Error</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="404-error-page.html">404 Page</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="404-error-page-2.html">404 Page 2</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="500-error-page.html">500 Page</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-clone"></i></div>
-                                <span class="sidebar__menu-label">Pages</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1 pages-ul">
-                                <li class="slide">
-                                    <a href="search.html" class="sidebar__menu-item">Search</a>
-                                </li>
-                                <li class="slide">
-                                    <a href="faq.html" class="sidebar__menu-item">Faq</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="terms-conditions.html">Terms and Conditions</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="privacy-policy.html">Privacy and Policy</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="blank-page.html">Blank Page</a>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Blog
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a href="blog.html" class="sidebar__menu-item">Blog</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a href="blog-details.html" class="sidebar__menu-item">Blog Details</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a href="blog-create.html" class="sidebar__menu-item">Create Blog</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">General</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-notebook"></i></div>
-                                <span class="sidebar__menu-label">Forms</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="form-style.html">Form Style</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="form-basic-input.html">Form Basic
-                                        Input</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-input-groups.html">Forms Input
-                                        Groups</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-editors.html">Form Editors</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-tags-selects.html">Tags Selects</a>
-                                </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-select2.html">Select2</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-custom-options.html">Custom
-                                        Option</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-date-and-time-pickr.html">Date &
-                                        Time Picker</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-layouts.html">Forms Layouts</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-wizard.html">Forms Wizard</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-clone"></i></div>
-                                <span class="sidebar__menu-label">Base Ui</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="alert.html">Alert</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="badge.html">Badge</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="buttons.html">Buttons</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="breadcrumb.html">Breadcrumb</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="template-color.html">Template Color</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="avatars.html">Avatars</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="progress-bar.html">Progress Bar</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="modal.html">Modal</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="popover.html">Popover</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="toasts.html">Toasts</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="accordions.html">Accordions</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="navs-tabs.html">Navs Tabs</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="dropdown.html">Dropdown</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="tooltip.html">Tooltip</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="video.html">Video</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-feather"></i></div>
-                                <span class="sidebar__menu-label">Advanced UI</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="custom-toaster.html">Custom Toaster</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="rating.html">Rating</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="dropzone.html">Dropzone</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="swiper.html">Swiper</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="ribbons.html">Ribbons</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="pagination.html">Pagination</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="steps.html">Steps</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="range-slider.html">Range Slider</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="team.html">Team</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="timeline.html">Timeline</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="grid.html">Grid</a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">Icons</span></li>
-                        <li class="slide">
-                            <a href="element-icon.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-icons"></i></div>
-                                <span class="sidebar__menu-label">Icomoon</span>
-                            </a>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">Tables & Charts</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-regular fa-pause"></i></div>
-                                <span class="sidebar__menu-label">Tables</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="tables-basic.html">Table Basic</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="tables-database.html">Table Database</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-apexcharts"></i></div>
-                                <span class="sidebar__menu-label">Charts</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Apex Charts
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-line.html">line
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-area.html">Area
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-column.html">Column
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-bar.html">Bar
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-mixed.html">Mixed
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-range.html">Range
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-timeline.html">Timeline Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-funnel.html">Funnel
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-candlestick.html">Candlestick Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-box-whisker.html">Box
-                                                & Whisker Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-pie.html">Pie
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-radial-bar.html">Radial Bar Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-radar.html">Radar
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-polar-area.html">Polar
-                                                Area Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-treemap.html">Tree Map
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-heatmap.html">Heatmap
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-bubble.html">Bubble
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-scatter.html">Scatter
-                                                Charts</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">MultiLevel</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-solid fa-arrow-turn-down"></i></div>
-                                <span class="sidebar__menu-label">MultiLevel Menu</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Level-1.0</a>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Level-2.0
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a href="javascript:void(0);" class="sidebar__menu-item">Level-2.1</a>
-                                        </li>
-                                        <li class="slide has-sub">
-                                            <a href="javascript:void(0);" class="sidebar__menu-item">Level-2.2
-                                                <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                            <ul class="sidebar-menu child3">
-                                                <li class="slide">
-                                                    <a href="javascript:void(0);" class="sidebar__menu-item">Level-3.0</a>
-                                                </li>
-                                                <li class="slide">
-                                                    <a href="leaves-employee.html" class="sidebar__menu-item">Level-3.0</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                     <div class="sidebar-right" id="sidebar-right"></div>
                 </nav>
@@ -1121,360 +1039,454 @@
                         <nav>
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Warning</li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
                             </ol>
                         </nav>
-                        <div class="breadcrumb__btn">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewWarning">Add Warning</button>
-                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xxl-12">
+                    <div class="col-xxl-8 col-xl-8 col-sm-12">
                         <div class="card__wrapper">
-                            <div class="table__wrapper table-responsive">
-                                <table class="table mb-20" id="dataTableDefualt">
-                                    <thead>
-                                        <tr class="table__title">
-                                            <th>Employee</th>
-                                            <th>Subject</th>
-                                            <th>Warning Date</th>
-                                            <th>Description</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar.png" alt="img">
-                                                    <span>John Doe</span></a>
-                                            </td>
-                                            <td>Late Arrival</td>
-                                            <td>Jan 15, 2024</td>
-                                            <td>Repeated late arrival without prior notice.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                            <div class="post-details-wrapper">
+                                <div class="post-details-content">
+                                    <div class="post-details-top-content mb-30">
+                                        <h3 class="post-details-title mb-15">Revolutionizing HRM and CRM: Strategies
+                                            That Shape Success.</h3>
+                                        <div class="post-details-meta">
+                                            <ul>
+                                                <li><a href="javascript:"><img src="assets/images/avatar/avatar.png" alt="author"><span>By</span> Ellena M.Rice</a></li>
+                                                <li><a href="javascript:"><i class="icon-calendar-check"></i> Jul 11,
+                                                        2024</a></li>
+                                                <li><a href="javascript:"><i class="icon-comment"></i> 02 Comments</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="post-details-thumb mb-30">
+                                        <a href="javascript:"><img src="assets/images/blog/blog-image.png" alt="image"></a>
+                                    </div>
+                                    <p class="mb-15">Effective Human Resource Management (HRM) and Customer Relationship
+                                        Management (CRM) are pivotal in driving organizational success. Our strategies
+                                        focus on optimizing employee performance and enhancing customer satisfaction. By
+                                        leveraging advanced analytics and personalized approaches, we ensure that both
+                                        your workforce and customer base are engaged and valued. Our team is committed
+                                        to providing the best practices in HRM and CRM to help your business thrive in a
+                                        competitive market.</p>
+                                    <p class="mb-20">In today's dynamic business environment, having a robust HRM system
+                                        in place is crucial. It not only manages employee data but also fosters a
+                                        culture of continuous improvement and engagement. Similarly, a well-implemented
+                                        CRM system helps in understanding customer needs and building long-lasting
+                                        relationships. These systems work hand-in-hand to create a cohesive strategy
+                                        that aligns with your business goals.</p>
+                                    <div class="post-details-blockquote mb-30">
+                                        <blockquote>
+                                            <h4 class="blockquote-title">The purpose of effective HRM and CRM systems is
+                                                to foster and encourage strong workforce and customer relationships.
+                                            </h4>
+                                            <p class="d-flex justify-content-end"><span>John Doe, HR & CRM Expert</span>
+                                            </p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="post-details-list-wrap">
+                                        <h4 class="mb-10">HRM and CRM Strategies</h4>
+                                        <p class="mb-20">Implementing successful HRM and CRM strategies involves a deep
+                                            understanding of both employee and customer dynamics. Our approach includes
+                                            detailed analysis and tailored solutions that address specific needs. We
+                                            provide training, support, and tools necessary to manage and nurture these
+                                            relationships effectively.</p>
+                                        <div class="post-details-list mb-20">
+                                            <ul>
+                                                <li>
+                                                    <span class="list-icon">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </span>
+                                                    Expertise in Workforce Management
+                                                </li>
+                                                <li>
+                                                    <span class="list-icon">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </span>
+                                                    Excellence in Customer Relations
+                                                </li>
+                                                <li>
+                                                    <span class="list-icon">
+                                                        <i class="fa-solid fa-check"></i>
+                                                    </span>
+                                                    Innovative CRM Solutions
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p>We are a team of dedicated HRM and CRM professionals, united by our
+                                            commitment to excellence in managing and nurturing both employees and
+                                            customers. With years of collective experience across diverse industries, we
+                                            provide top-notch solutions for effective workforce and customer
+                                            relationship management. Our goal is to empower your business with the tools
+                                            and strategies needed to succeed in an ever-evolving market.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__wrapper">
+                            <div class="post-comment-wrapper">
+                                <div class="post-comment">
+                                    <div class="media">
+                                        <div class="thumbnail">
+                                            <a href="#">
+                                                <img src="assets/images/avatar/avatar1.png" alt="Author Images">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="author-info">
+                                                <h5 class="title">
+                                                    <a href="#">
+                                                        Madison Turner
+                                                    </a>
+                                                </h5>
+                                                <ul class="bd-meta">
+                                                    <li class="has-separator">On: <span>Jul 11, 2024</span></li>
+                                                    <li>
+                                                        <div class="rating">
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="content">
+                                                <p class="description">Implementing effective HRM strategies has
+                                                    significantly improved our employee engagement and productivity. The
+                                                    use of CRM tools has also enhanced our customer interactions,
+                                                    leading to higher satisfaction and retention rates. The integration
+                                                    of these systems has streamlined our operations and provided
+                                                    valuable insights into both employee and customer needs.</p>
+                                            </div>
+                                            <div class="d-flex reply-button">
+                                                <a href="#"><i class="fa-sharp fa-regular fa-thumbs-up"></i>
+                                                    <span>Helpful</span></a>
+                                                <a href="#"><i class="fa-sharp fa-regular fa-flag-swallowtail"></i>
+                                                    <span>Favorite</span></a>
+                                                <a href="#"><i class="fa-sharp fa-regular fa-reply"></i>
+                                                    <span>Reply</span></a>
+                                            </div>
+                                            <div class="reply-comment post-comment">
+                                                <div class="media">
+                                                    <div class="thumbnail">
+                                                        <a href="#">
+                                                            <img src="assets/images/avatar/avatar.png" alt="Author Images">
+                                                        </a>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="author-info">
+                                                            <h5 class="title">
+                                                                <a href="#">Ellena M.Rice</a>
+                                                            </h5>
+                                                            <ul class="bd-meta">
+                                                                <li class="has-separator">On: <span>Jul 11, 2024</span>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="rating">
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="content">
+                                                            <p class="description">I completely agree, Madison. The use
+                                                                of HRM and CRM systems has been transformative for our
+                                                                organization as well. The ability to track employee
+                                                                performance and customer feedback in real-time has
+                                                                provided us with the data needed to make informed
+                                                                decisions and improve our processes continuously.</p>
+                                                        </div>
+                                                        <div class="d-flex reply-button">
+                                                            <a href="#"><i class="fa-sharp fa-regular fa-thumbs-up"></i>
+                                                                <span>Helpful</span></a>
+                                                            <a href="#"><i
+                                                                    class="fa-sharp fa-regular fa-flag-swallowtail"></i>
+                                                                <span>Favorite</span></a>
+                                                            <a href="#"><i class="fa-sharp fa-regular fa-reply"></i>
+                                                                <span>Reply</span></a>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar1.png" alt="img">
-                                                    <span>Jane Smith</span></a>
-                                            </td>
-                                            <td>Missed Deadline</td>
-                                            <td>Feb 10, 2024</td>
-                                            <td>Failure to submit project report on time.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-comment">
+                                    <div class="media">
+                                        <div class="thumbnail">
+                                            <a href="#">
+                                                <img src="assets/images/avatar/avatar3.png" alt="Author Images">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="author-info">
+                                                <h5 class="title">
+                                                    <a href="#">
+                                                        Mason Rodriguez
+                                                    </a>
+                                                </h5>
+                                                <ul class="bd-meta">
+                                                    <li class="has-separator">On: <span>Jul 11, 2024</span></li>
+                                                    <li>
+                                                        <div class="rating">
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="content">
+                                                <p class="description">The integration of CRM systems has revolutionized
+                                                    our approach to customer service. We can now anticipate customer
+                                                    needs and tailor our services to meet those needs proactively. This
+                                                    has led to an increase in customer loyalty and positive feedback.
+                                                    Additionally, our HRM system has helped in efficiently managing our
+                                                    growing workforce and enhancing their overall satisfaction.</p>
+                                            </div>
+                                            <div class="d-flex reply-button">
+                                                <a href="#"><i class="fa-sharp fa-regular fa-thumbs-up"></i>
+                                                    <span>Helpful</span></a>
+                                                <a href="#"><i class="fa-sharp fa-regular fa-flag-swallowtail"></i>
+                                                    <span>Favorite</span></a>
+                                                <a href="#"><i class="fa-sharp fa-regular fa-reply"></i>
+                                                    <span>Reply</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-comment">
+                                    <div class="media">
+                                        <div class="thumbnail">
+                                            <a href="#">
+                                                <img src="assets/images/avatar/avatar2.png" alt="Author Images">
+                                            </a>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="author-info">
+                                                <h5 class="title">
+                                                    <a href="#">Ethan Mitchell</a>
+                                                </h5>
+                                                <ul class="bd-meta">
+                                                    <li class="has-separator">On: <span>Jul 11, 2024</span></li>
+                                                    <li>
+                                                        <div class="rating">
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                            <a href="#"><i class="fa fa-star"></i></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="content">
+                                                <p class="description">Our recent shift to a comprehensive HRM system
+                                                    has streamlined our processes significantly. Employee onboarding,
+                                                    performance tracking, and development programs are now more
+                                                    efficient and effective. The CRM system complements this by
+                                                    providing deeper insights into customer behavior, allowing us to
+                                                    offer more personalized experiences. Both systems have been crucial
+                                                    in driving our organizational growth.</p>
+                                            </div>
+                                            <div class="d-flex reply-button">
+                                                <a href="#"><i class="fa-sharp fa-regular fa-thumbs-up"></i>
+                                                    <span>Helpful</span></a>
+                                                <a href="#"><i class="fa-sharp fa-regular fa-flag-swallowtail"></i>
+                                                    <span>Favorite</span></a>
+                                                <a href="#"><i class="fa-sharp fa-regular fa-reply"></i>
+                                                    <span>Reply</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__wrapper">
+                            <div class="post-comment-form">
+                                <div class="post-comments-title">
+                                    <h4 class="mb-15">Leave a Comment</h4>
+                                    <span class="d-block mb-25">Your email address will not be published. Required
+                                        fields are marked *</span>
+                                </div>
+                                <form>
+                                    <div class="row gy-20">
+                                        <div class="col-xl-6">
+                                            <div class="from__input-box">
+                                                <div class="form__input-title">
+                                                    <label for="name">Full Name<span>*</span></label>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar2.png" alt="img">
-                                                    <span>Robert Johnson</span></a>
-                                            </td>
-                                            <td>Insubordination</td>
-                                            <td>Mar 05, 2024</td>
-                                            <td>Refusal to follow management instructions.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                                <div class="form__input">
+                                                    <input class="form-control" name="name" id="name" type="text" placeholder="">
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar3.png" alt="img">
-                                                    <span>Emily Davis</span></a>
-                                            </td>
-                                            <td>Poor Performance</td>
-                                            <td>Apr 12, 2024</td>
-                                            <td>Consistently failing to meet performance targets.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="from__input-box">
+                                                <div class="form__input-title">
+                                                    <label for="email">Email<span>*</span></label>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar4.png" alt="img">
-                                                    <span>Michael Brown</span></a>
-                                            </td>
-                                            <td>Absenteeism</td>
-                                            <td>May 03, 2024</td>
-                                            <td>Excessive unexcused absences from work.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                                <div class="form__input">
+                                                    <input class="form-control" name="name" id="email" type="text" placeholder="">
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar5.png" alt="img">
-                                                    <span>Johnson Wilson</span></a>
-                                            </td>
-                                            <td>Policy Violation</td>
-                                            <td>Jun 18, 2024</td>
-                                            <td>Breach of company policy on data protection.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="from__input-box">
+                                                <div class="form__input-title">
+                                                    <label>Your Message<span>*</span></label>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar6.png" alt="img">
-                                                    <span>David Martinez</span></a>
-                                            </td>
-                                            <td>Misconduct</td>
-                                            <td>Jul 25, 2024</td>
-                                            <td>Inappropriate behavior in the workplace.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                                <div class="form__input">
+                                                    <textarea class="form-control" name="name" placeholder="Type Comment here"></textarea>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar7.png" alt="img">
-                                                    <span>Lisa Anderson</span></a>
-                                            </td>
-                                            <td>Failure to Follow Procedures</td>
-                                            <td>Aug 14, 2024</td>
-                                            <td>Not adhering to safety procedures.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-12">
+                                            <div class="submit-btn">
+                                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-5">
+                        <div class="position-sticky">
+                            <div class="card__wrapper">
+                                <aside class="sidebar-wrapper">
+                                    <div class="sidebar-widget-wrapper mb-30">
+                                        <div class="sidebar-widget widget">
+                                            <h4 class="sidebar-widget-title mb-25">Recent Post</h4>
+                                            <div class="sidebar-widget-post">
+                                                <div class="recent-post">
+                                                    <div class="recent-post-thumb mr-10">
+                                                        <a href="blog-details.html">
+                                                            <img src="assets/images/blog/blog-image-1.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="recent-post-content">
+                                                        <div class="recent-post-author">
+                                                            <span class="d-inline-block mb-5"><a href="#">Ellena
+                                                                    M.Rice</a></span>
+                                                        </div>
+                                                        <h6 class="recent-post-title">
+                                                            <a href="blog-details.html">HRM Strategies for Enhancing
+                                                                Employee Engagement</a>
+                                                        </h6>
+                                                        <span class="recent-post-date">
+                                                            <a href="blog-details.html"><span><i
+                                                                        class="icon-calendar-check"></i></span> Jul 11,
+                                                        2024</a>
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar8.png" alt="img">
-                                                    <span>James Lee</span></a>
-                                            </td>
-                                            <td>Unprofessional Conduct</td>
-                                            <td>Sep 10, 2024</td>
-                                            <td>Displaying unprofessional behavior in meetings.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                                <div class="recent-post">
+                                                    <div class="recent-post-thumb mr-10">
+                                                        <a href="blog-details.html">
+                                                            <img src="assets/images/blog/blog-image-2.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="recent-post-content">
+                                                        <span class="d-inline-block mb-5"><a href="#">Ellena
+                                                                M.Rice</a></span>
+                                                        <h6 class="recent-post-title">
+                                                            <a href="blog-details.html">CRM Tools to Improve Customer
+                                                                Satisfaction</a>
+                                                        </h6>
+                                                        <span class="recent-post-date">
+                                                            <a href="blog-details.html"><span><i
+                                                                        class="icon-calendar-check"></i></span> Jul 11,
+                                                        2024</a>
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar9.png" alt="img">
-                                                    <span>Johnson Perez</span></a>
-                                            </td>
-                                            <td>Harassment Complaint</td>
-                                            <td>Oct 22, 2024</td>
-                                            <td>Accused of harassing a colleague.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
+                                                <div class="recent-post">
+                                                    <div class="recent-post-thumb mr-10">
+                                                        <a href="blog-details.html">
+                                                            <img src="assets/images/blog/blog-image-3.png" alt="image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="recent-post-content">
+                                                        <span class="d-inline-block mb-5"><a href="#">Ellena
+                                                                M.Rice</a></span>
+                                                        <h6 class="recent-post-title">
+                                                            <a href="blog-details.html">Integrating HRM and CRM for
+                                                                Business
+                                                                Success</a>
+                                                        </h6>
+                                                        <span class="recent-post-date">
+                                                            <a href="blog-details.html"><span><i
+                                                                        class="icon-calendar-check"></i></span> Jul 11,
+                                                        2024</a>
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar10.png" alt="img">
-                                                    <span>Daniel King</span></a>
-                                            </td>
-                                            <td>Conflict of Interest</td>
-                                            <td>Nov 05, 2024</td>
-                                            <td>Undisclosed personal business conflicting with company interests.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar11.png" alt="img">
-                                                    <span>Barbara Hill</span></a>
-                                            </td>
-                                            <td>Insubordination</td>
-                                            <td>Dec 12, 2024</td>
-                                            <td>Refusal to perform assigned tasks.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar12.png" alt="img">
-                                                    <span>Kevin Scott</span></a>
-                                            </td>
-                                            <td>Poor Attendance</td>
-                                            <td>Jan 05, 2024</td>
-                                            <td>Consistent tardiness and early departures.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar13.png" alt="img">
-                                                    <span>Laura Hernandez</span></a>
-                                            </td>
-                                            <td>Unethical Behavior</td>
-                                            <td>Feb 20, 2024</td>
-                                            <td>Engaging in unethical sales practices.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar14.png" alt="img">
-                                                    <span>Brian Lopez</span></a>
-                                            </td>
-                                            <td>Misuse of Company Resources</td>
-                                            <td>Mar 28, 2024</td>
-                                            <td>Using company assets for personal gain.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar15.png" alt="img">
-                                                    <span>Linda Thompson</span></a>
-                                            </td>
-                                            <td>Disruptive Behavior</td>
-                                            <td>Apr 10, 2024</td>
-                                            <td>Causing disturbances during work hours.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="employee-profile.html" class="flex-center">
-                                                    <img class="img-36 border-circle" src="assets/images/avatar/avatar16.png" alt="img">
-                                                    <span>Mark Harris</span></a>
-                                            </td>
-                                            <td>Data Breach</td>
-                                            <td>May 17, 2024</td>
-                                            <td>Unauthorized access to confidential data.</td>
-                                            <td>
-                                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#warningEdit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </button>
-                                                    <button class="removeBtn table__icon delete">
-                                                        <i class="fa-regular fa-trash"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="sidebar-widget-divider"></div>
+                                        <div class="sidebar-widget widget_categories">
+                                            <h4 class="sidebar-widget-title mb-25">Categories</h4>
+                                            <ul>
+                                                <li><a href="blog-details.html">HRM</a></li>
+                                                <li><a href="blog-details.html">CRM</a></li>
+                                                <li><a href="blog-details.html">Employee Engagement</a></li>
+                                                <li><a href="blog-details.html">Customer Satisfaction</a></li>
+                                                <li><a href="blog-details.html">Business Strategy</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="sidebar-widget-divider"></div>
+                                        <div class="sidebar-widget widget_tag_cloud">
+                                            <h4 class="sidebar-widget-title mb-25">Tags</h4>
+                                            <div class="tagcloud">
+                                                <a href="blog-details.html">HRM</a>
+                                                <a href="blog-details.html">CRM</a>
+                                                <a href="blog-details.html">Employee</a>
+                                                <a href="blog-details.html">Customer</a>
+                                                <a href="blog-details.html">Strategy</a>
+                                                <a href="blog-details.html">Business</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sidebar-widget-banner p-relative">
+                                        <div class="sidebar-widget-thumb p-relative">
+                                            <img src="assets/images/blog/sidebar-img.png" alt="img">
+                                        </div>
+                                        <div class="sidebar-widget-content">
+                                            <p>Free Consultation</p>
+                                            <h5 class="mb-20"><a href="tel:+0290848020">02 (908) 480-20</a></h5>
+                                            <div class="sidebar-btn">
+                                                <a class="btn btn-secondary" href="contact.html">Contact Us</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- App side area end -->
+
+            <!-- Back to top start -->
+            <div class="progress-wrap">
+                <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                </svg>
+            </div>
+            <!-- Back to top end -->
 
             <!-- footer area start -->
             <footer class="footer">
@@ -1491,188 +1503,6 @@
         </div>
     </div>
     <!-- Dashboard area end -->
-
-    <!-- add new warning modal start -->
-    <div id="addNewWarning" class="modal custom-modal fade" role="dialog">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add New Warning</h5>
-                    <button type="button" class="bd-btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                        class="fa-solid fa-xmark-large"></i></button>
-                </div>
-                <div class="modal-body">
-                    <form action="#">
-                        <div class="card__wrapper">
-                            <div class="row gy-20">
-                                <div class="col-md-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label for="employeeName">Employee Name <span>*</span></label>
-                                        </div>
-                                        <div class="from__input-box">
-                                            <select id="employeeName" class="multiple-img">
-                                                <option data-image="assets/images/avatar/avatar15.png">Emily Davis
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar5.png">Ethan Mitchell
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar9.png">Jane Smith
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar.png">Michael Johnson
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar1.png">Robert Wilson
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar7.png">Mazharul Islam
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar2.png">Aiden Carter
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar3.png">Sophia Miller
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar4.png">Isabella Wright
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar5.png">Harper Martinez
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar6.png">Abigail Reed
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar8.png">Benjamin Hayes
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label for="subject">Subject <span>*</span></label>
-                                        </div>
-                                        <div class="form__input">
-                                            <input class="form-control" name="subject" id="subject" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label for="startingDate">Warning Date <span>*</span></label>
-                                        </div>
-                                        <div class="form__input">
-                                            <input class="form-control" id="startingDate" type="text" placeholder="" readonly="readonly">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label>Description <span>*</span></label>
-                                        </div>
-                                        <div class="form__input">
-                                            <textarea class="form-control" name="description"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="submit__btn d-flex align-items-center justify-content-end gap-10">
-                            <button class="btn btn-danger">Cancel</button>
-                            <button class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- add new warning modal end -->
-
-    <!-- warning edit modal start -->
-    <div id="warningEdit" class="modal custom-modal fade" role="dialog">
-        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Warning</h5>
-                    <button type="button" class="bd-btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                        class="fa-solid fa-xmark-large"></i></button>
-                </div>
-                <div class="modal-body">
-                    <form action="#">
-                        <div class="card__wrapper">
-                            <div class="row gy-20">
-                                <div class="col-md-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label for="employeeName2">Employee Name <span>*</span></label>
-                                        </div>
-                                        <div class="from__input-box">
-                                            <select id="employeeName2" class="multiple-img">
-                                                <option data-image="assets/images/avatar/avatar11.png" selected>Barbara
-                                                    Hill</option>
-                                                <option data-image="assets/images/avatar/avatar5.png">Ethan Mitchell
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar9.png">Jane Smith
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar.png">Michael Johnson
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar1.png">Robert Wilson
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar7.png">Mazharul Islam
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar2.png">Aiden Carter
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar3.png">Sophia Miller
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar4.png">Isabella Wright
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar5.png">Harper Martinez
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar6.png">Abigail Reed
-                                                </option>
-                                                <option data-image="assets/images/avatar/avatar8.png">Benjamin Hayes
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label for="subject2">Subject <span>*</span></label>
-                                        </div>
-                                        <div class="form__input">
-                                            <input class="form-control" name="subject2" id="subject2" type="text" value="Insubordination">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label for="startingDate2">Warning Date <span>*</span></label>
-                                        </div>
-                                        <div class="form__input">
-                                            <input class="form-control" id="startingDate2" type="text" value="Dec 12, 2024" readonly="readonly">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="from__input-box">
-                                        <div class="form__input-title">
-                                            <label>Description <span>*</span></label>
-                                        </div>
-                                        <div class="form__input">
-                                            <textarea class="form-control" name="description2">Refusal to perform assigned tasks.</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="submit__btn d-flex align-items-center justify-content-end gap-10">
-                            <button class="btn btn-danger">Cancel</button>
-                            <button class="btn btn-primary">Update</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- warning edit modal end -->
 
     <!-- Back to top start -->
     <div class="progress-wrap">

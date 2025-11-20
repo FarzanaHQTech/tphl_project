@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Radar</title>
+    <title>Customer Profile</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-style-mode" content="1">
@@ -41,7 +41,6 @@
 </head>
 
 <body class="body-area">
-
     <!-- Preloader start -->
     <div class="preloader" id="preloader">
         <div class="loading">
@@ -67,33 +66,365 @@
                 </a>
             </div>
             <div class="main-sidebar" id="sidebar-scroll">
-                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+               <nav class="main-menu-container nav nav-pills flex-column sub-open">
                     <div class="sidebar-left" id="sidebar-left"></div>
                     <ul class="main-menu">
                         <li class="sidebar__menu-category"><span class="category-name">Main</span></li>
+                        <li class="slide ">
+                            <a href="index.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="icon-house"></i></div>
+                                <span class="sidebar__menu-label">Home</span>
+                            </a>
+
+                        </li>
+
+                        <li class="slide">
+                            <a href="product-request.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
+                                <span class="sidebar__menu-label">Product-Request</span>
+                            </a>
+                        </li>
+
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-house"></i></div>
-                                <span class="sidebar__menu-label">Dashboards</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-user"></i></div>
+                                <span class="sidebar__menu-label">User</span>
                             </a>
                             <ul class="sidebar-menu child1">
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="index.html">HRM Dashboard</a>
+                                    <a class="sidebar__menu-item" href="add-user.html">Add User</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="employee-dashboard.html">Employee Dashboard</a>
+                                    <a class="sidebar__menu-item" href="user-lists.html">User List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                <span class="sidebar__menu-label">Customer</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="add-customer.html">Add Customer</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="crm-dashboard.html">CRM Analytics</a>
+                                    <a class="sidebar__menu-item" href="customers.html">Customer List</a>
                                 </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide">
+                            <a href="permission.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
+                                <span class="sidebar__menu-label">Permissions</span>
+                            </a>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-building"></i></div>
+                                <span class="sidebar__menu-label">Vendor</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="add-vendor.html">Add Vendor</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Vendor List</a>
+                                </li>
+
                             </ul>
                         </li>
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-hrm"></i></div>
-                                <span class="sidebar__menu-label">HRM</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-flag"></i></div>
+                                <span class="sidebar__menu-label">Banner</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="add-banner.html">Add Banner</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="banners.html">Banner List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
+                                <span class="sidebar__menu-label">Brand</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Brand Logo</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Brand List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-newspaper"></i></div>
+                                <span class="sidebar__menu-label">FAQ </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Faq </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="faq.html">Faq List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-regular fa-pen-to-square"></i></div>
+                                <span class="sidebar__menu-label">Blog </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Blog </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Blog List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <span class="sidebar__menu-label">Location </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Location </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Location List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                                <span class="sidebar__menu-label">Requisition </span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Requisition </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Requisition List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-weight-scale"></i></div>
+                                <span class="sidebar__menu-label">Unit</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Unit </a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Unit List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide">
+                            <a href="leads.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                <span class="sidebar__menu-label">Leads</span>
+                            </a>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-box"></i></div>
+                                <span class="sidebar__menu-label">Product</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Product</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Product List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <span class="sidebar__menu-label">Purchase</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Purchase</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Purchase List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-camera"></i></div>
+                                <span class="sidebar__menu-label">Camera</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee.html">Add Camera</a>
+                                </li>
+                                <li class="slide">
+                                    <a class="sidebar__menu-item" href="employee-profile.html">Camera List</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-diagram-project"></i></div>
+                                <span class="sidebar__menu-label">Project</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Project
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Project List </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-star"></i></div>
+                                <span class="sidebar__menu-label">Popular Project</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Popular
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Popular List </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                                <span class="sidebar__menu-label">Order</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Order
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Order List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-regular fa-star-half-stroke"></i></div>
+                                <span class="sidebar__menu-label">Review</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Review
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Review List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-regular fa-bell"></i></div>
+                                <span class="sidebar__menu-label">Notification</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add
+                                        Notification
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Notification
+                                        List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-money-bill"></i></div>
+                                <span class="sidebar__menu-label">Payment</span>
+                            </a>
+                            <ul class="sidebar-menu child1">
+                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Payment
+                                    </a>
+                                </li>
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Payment List</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="sidebar__menu-item">
+                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                <div class="side-menu__icon"><i class="fa-solid fa-users-gear"></i></div>
+                                <span class="sidebar__menu-label">HR</span>
                             </a>
                             <ul class="sidebar-menu child1">
                                 <li class="slide">
@@ -109,10 +440,12 @@
                                     <a class="sidebar__menu-item" href="attendance.html">Admin Attendance</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="employee-attendance.html">Employee Attendance</a>
+                                    <a class="sidebar__menu-item" href="employee-attendance.html">Employee
+                                        Attendance</a>
                                 </li>
                                 <li class="slide">
-                                    <a class="sidebar__menu-item" href="biometric-attendance.html">Biometric Attendance</a>
+                                    <a class="sidebar__menu-item" href="biometric-attendance.html">Biometric
+                                        Attendance</a>
                                 </li>
                                 <li class="slide">
                                     <a class="sidebar__menu-item" href="office-loan.html">Office Loan</a>
@@ -120,9 +453,7 @@
                                 <li class="slide">
                                     <a class="sidebar__menu-item" href="personal-loan.html">Personal Loan</a>
                                 </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="leaves-employee.html">Employee leaves</a>
-                                </li>
+
                                 <li class="slide">
                                     <a class="sidebar__menu-item" href="leaves.html">Admin leaves</a>
                                 </li>
@@ -143,469 +474,57 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-crm"></i></div>
-                                <span class="sidebar__menu-label">CRM</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="leads.html">Leads</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="deals.html">Deals</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="crm-setup.html">CRM Setup</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-grid-2"></i></div>
-                                <span class="sidebar__menu-label">Apps</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="app-chat.html">Chat</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="email-inbox.html">Email Inbox</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="email-read.html">Email Read</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="email-compose.html">Email Compose</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="contacts.html">Contacts</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="calendar.html">Calendar</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-wallet"></i></div>
-                                <span class="sidebar__menu-label">Payroll</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="payroll.html">Pay List</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="payroll-payslip.html">Payslip</a></li>
-                            </ul>
-                        </li>
+
+
                         <li class="slide">
-                            <a href="expense.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-announcement"></i></div>
-                                <span class="sidebar__menu-label">Expense</span>
+                            <a href="eaves-employee.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                <span class="sidebar__menu-label">Employee leaves</span>
                             </a>
                         </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-wallet"></i></div>
-                                <span class="sidebar__menu-label">Company</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="companies.html">Company List</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="company-details.html">Company Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-wallet"></i></div>
-                                <span class="sidebar__menu-label">Clients</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="clients.html">Clients</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="client-details.html">Client Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-projects"></i></div>
-                                <span class="sidebar__menu-label">Projects</span>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Projects</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="project-details.html">Projects Details</a>
-                                </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Projects Create</a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <li class="slide">
-                            <a href="activities.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-regular fa-chart-network"></i></div>
-                                <span class="sidebar__menu-label">Activities</span>
+                            <a href="eaves-employee.html" class="sidebar__menu-item">
+                                <div class="side-menu__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                <span class="sidebar__menu-label">Inventories</span>
                             </a>
                         </li>
-                        <li class="slide">
-                            <a href="training.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class=" icon-training"></i></div>
-                                <span class="sidebar__menu-label">Training</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="resignation.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-resignation"></i></div>
-                                <span class="sidebar__menu-label">Resignation</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="promotion.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-promotion"></i></div>
-                                <span class="sidebar__menu-label">Promotion</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="award.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-trophy"></i></div>
-                                <span class="sidebar__menu-label">Award</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="meeting.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-meeting"></i></div>
-                                <span class="sidebar__menu-label">Meeting</span>
-                            </a>
-                        </li>
+
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="icon-tickets1"></i></div>
-                                <span class="sidebar__menu-label">Tickets</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-gavel"></i></div>
+                                <span class="sidebar__menu-label">Auction</span>
                             </a>
                             <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="tickets.html">Tickets List</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="tickets-reply.html">Tickets Reply</a></li>
+
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Auction List</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="slide">
-                            <a href="transfer.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-regular fa-right-left"></i></div>
-                                <span class="sidebar__menu-label">Transfer</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="termination.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-termination"></i></div>
-                                <span class="sidebar__menu-label">Termination</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="document.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-document"></i></div>
-                                <span class="sidebar__menu-label">Document</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="announcement.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-announcement"></i></div>
-                                <span class="sidebar__menu-label">Announcement</span>
-                            </a>
-                        </li>
+
                         <li class="slide has-sub">
                             <a href="javascript:void(0);" class="sidebar__menu-item">
                                 <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                                <div class="side-menu__icon"><i class="fa-light fa-book-blank"></i></div>
-                                <span class="sidebar__menu-label">Invoice</span>
+                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                <span class="sidebar__menu-label">Account</span>
                             </a>
                             <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-add.html">Invoice Create</a>
+
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Account List</a>
                                 </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-preview.html">Invoice
-                                        Preview</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-edit.html">Invoice Edit</a>
+
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Journal List</a>
                                 </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="app-invoice-list.html">Invoice List</a>
+
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Ledger List</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">Pages</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-key"></i></div>
-                                <span class="sidebar__menu-label">Authentication</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Sign In
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signin-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signin-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Sign Up
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signup-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="signup-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Reset Password
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="reset-password-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="reset-password-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Forgot Password
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="forgot-password-basic.html">Basic</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a class="sidebar__menu-item" href="forgot-password-cover.html">Cover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="coming-soon.html">Coming Soon</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="maintenance.html">Under Maintenance</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="offline.html">Offline</a>
+
+                                <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Additional Salary</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-light fa-triangle-exclamation"></i></div>
-                                <span class="sidebar__menu-label">Error</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="404-error-page.html">404 Page</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="404-error-page-2.html">404 Page 2</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="500-error-page.html">500 Page</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-clone"></i></div>
-                                <span class="sidebar__menu-label">Pages</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1 pages-ul">
-                                <li class="slide">
-                                    <a href="search.html" class="sidebar__menu-item">Search</a>
-                                </li>
-                                <li class="slide">
-                                    <a href="faq.html" class="sidebar__menu-item">Faq</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="terms-conditions.html">Terms and Conditions</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="privacy-policy.html">Privacy and Policy</a>
-                                </li>
-                                <li class="slide">
-                                    <a class="sidebar__menu-item" href="blank-page.html">Blank Page</a>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Blog
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a href="blog.html" class="sidebar__menu-item">Blog</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a href="blog-details.html" class="sidebar__menu-item">Blog Details</a>
-                                        </li>
-                                        <li class="slide">
-                                            <a href="blog-create.html" class="sidebar__menu-item">Create Blog</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">General</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-notebook"></i></div>
-                                <span class="sidebar__menu-label">Forms</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="form-style.html">Form Style</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="form-basic-input.html">Form Basic
-                                        Input</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-input-groups.html">Forms Input
-                                        Groups</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-editors.html">Form Editors</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-tags-selects.html">Tags Selects</a>
-                                </li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-select2.html">Select2</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-custom-options.html">Custom
-                                        Option</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-date-and-time-pickr.html">Date &
-                                        Time Picker</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-layouts.html">Forms Layouts</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="forms-wizard.html">Forms Wizard</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-clone"></i></div>
-                                <span class="sidebar__menu-label">Base Ui</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="alert.html">Alert</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="badge.html">Badge</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="buttons.html">Buttons</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="breadcrumb.html">Breadcrumb</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="template-color.html">Template Color</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="avatars.html">Avatars</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="progress-bar.html">Progress Bar</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="modal.html">Modal</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="popover.html">Popover</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="toasts.html">Toasts</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="accordions.html">Accordions</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="navs-tabs.html">Navs Tabs</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="dropdown.html">Dropdown</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="tooltip.html">Tooltip</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="video.html">Video</a></li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-light fa-feather"></i></div>
-                                <span class="sidebar__menu-label">Advanced UI</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="custom-toaster.html">Custom Toaster</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="rating.html">Rating</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="dropzone.html">Dropzone</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="swiper.html">Swiper</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="ribbons.html">Ribbons</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="pagination.html">Pagination</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="steps.html">Steps</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="range-slider.html">Range Slider</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="team.html">Team</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="timeline.html">Timeline</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="grid.html">Grid</a></li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">Icons</span></li>
-                        <li class="slide">
-                            <a href="element-icon.html" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-icons"></i></div>
-                                <span class="sidebar__menu-label">Icomoon</span>
-                            </a>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">Tables & Charts</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-regular fa-pause"></i></div>
-                                <span class="sidebar__menu-label">Tables</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide"><a class="sidebar__menu-item" href="tables-basic.html">Table Basic</a></li>
-                                <li class="slide"><a class="sidebar__menu-item" href="tables-database.html">Table Database</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="icon-apexcharts"></i></div>
-                                <span class="sidebar__menu-label">Charts</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Apex Charts
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-line.html">line
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-area.html">Area
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-column.html">Column
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-bar.html">Bar
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-mixed.html">Mixed
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-range.html">Range
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-timeline.html">Timeline Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-funnel.html">Funnel
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-candlestick.html">Candlestick Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-box-whisker.html">Box
-                                                & Whisker Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-pie.html">Pie
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-radial-bar.html">Radial Bar Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-radar.html">Radar
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-polar-area.html">Polar
-                                                Area Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-treemap.html">Tree Map
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-heatmap.html">Heatmap
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-bubble.html">Bubble
-                                                Charts</a></li>
-                                        <li class="slide"><a class="sidebar__menu-item" href="apex-charts-scatter.html">Scatter
-                                                Charts</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar__menu-category"><span class="category-name">MultiLevel</span></li>
-                        <li class="slide has-sub">
-                            <a href="javascript:void(0);" class="sidebar__menu-item">
-                                <div class="side-menu__icon"><i class="fa-sharp fa-solid fa-arrow-turn-down"></i></div>
-                                <span class="sidebar__menu-label">MultiLevel Menu</span>
-                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                            </a>
-                            <ul class="sidebar-menu child1">
-                                <li class="slide">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Level-1.0</a>
-                                </li>
-                                <li class="slide has-sub">
-                                    <a href="javascript:void(0);" class="sidebar__menu-item">Level-2.0
-                                        <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                    <ul class="sidebar-menu child2">
-                                        <li class="slide">
-                                            <a href="javascript:void(0);" class="sidebar__menu-item">Level-2.1</a>
-                                        </li>
-                                        <li class="slide has-sub">
-                                            <a href="javascript:void(0);" class="sidebar__menu-item">Level-2.2
-                                                <i class="fa-regular fa-angle-down side-menu__angle"></i></a>
-                                            <ul class="sidebar-menu child3">
-                                                <li class="slide">
-                                                    <a href="javascript:void(0);" class="sidebar__menu-item">Level-3.0</a>
-                                                </li>
-                                                <li class="slide">
-                                                    <a href="leaves-employee.html" class="sidebar__menu-item">Level-3.0</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+
                     </ul>
                     <div class="sidebar-right" id="sidebar-right"></div>
                 </nav>
@@ -1121,97 +1040,182 @@
                         <nav>
                             <ol class="breadcrumb mb-0">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Radar</li>
+                                <li class="breadcrumb-item active" aria-current="page">Customers Profile</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xxl-12">
-                        <div class="card__wrapper style_two">
-                            <div class="card__title-wrap d-flex align-items-center justify-content-between mb-25">
-                                <h5 class="card__heading-title">Radar Charts</h5>
+                        <div class="row">
+                            <div class="col-xxl-3">
+                                <div class="card__wrapper">
+                                    <div class="from__input-box">
+                                        <div class="form__input">
+                                            <input type="text" class="form-control" id="customerName" placeholder="Customer Name">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xxl-4 col-xl-12 col-lg-12">
-                                    <div class="card-bg card-border mb-20">
-                                        <div class="card__wrapper style_two">
-                                            <div class="card__title-wrap d-flex align-items-center justify-content-between">
-                                                <h5 class="card__heading-title">Basic</h5>
-                                                <div class="card__dropdown">
-                                                    <div class="dropdown">
-                                                        <button>
-                                                            <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                        </button>
-                                                        <div class="dropdown-list">
-                                                            <a class="dropdown__item" href="javascript:void(0)">Action</a>
-                                                            <a class="dropdown__item" href="javascript:void(0)">More Action</a>
-                                                            <a class="dropdown__item" href="javascript:void(0)">Another Action</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card__content">
-                                                <div class="card__line-chart">
-                                                    <div id="radarCharts"></div>
-                                                </div>
-                                            </div>
+                            <div class="col-xxl-3">
+                                <div class="card__wrapper">
+                                    <div class="from__input-box">
+                                        <div class="form__input">
+                                            <input type="text" class="form-control" id="customerCompanyName" placeholder="Company Name">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-xl-12 col-lg-12">
-                                    <div class="card-bg card-border mb-20">
-                                        <div class="card__wrapper style_two">
-                                            <div class="card__title-wrap d-flex align-items-center justify-content-between">
-                                                <h5 class="card__heading-title">Multiple Series</h5>
-                                                <div class="card__dropdown">
-                                                    <div class="dropdown">
-                                                        <button>
-                                                            <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                        </button>
-                                                        <div class="dropdown-list">
-                                                            <a class="dropdown__item" href="javascript:void(0)">Action</a>
-                                                            <a class="dropdown__item" href="javascript:void(0)">More Action</a>
-                                                            <a class="dropdown__item" href="javascript:void(0)">Another Action</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card__content">
-                                                <div class="card__line-chart">
-                                                    <div id="radarCharts2"></div>
-                                                </div>
-                                            </div>
+                            </div>
+                            <div class="col-xxl-3">
+                                <div class="card__wrapper">
+                                    <div class="from__input-box">
+                                        <div class="form__input">
+                                            <input type="text" class="form-control" id="customerId" placeholder="Customer ID">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xxl-4 col-xl-12 col-lg-12">
-                                    <div class="card-bg card-border mb-20">
-                                        <div class="card__wrapper style_two">
-                                            <div class="card__title-wrap d-flex align-items-center justify-content-between">
-                                                <h5 class="card__heading-title">Polygon-fill</h5>
-                                                <div class="card__dropdown">
-                                                    <div class="dropdown">
-                                                        <button>
-                                                            <i class="fa-regular fa-ellipsis-vertical"></i>
-                                                        </button>
-                                                        <div class="dropdown-list">
-                                                            <a class="dropdown__item" href="javascript:void(0)">Action</a>
-                                                            <a class="dropdown__item" href="javascript:void(0)">More Action</a>
-                                                            <a class="dropdown__item" href="javascript:void(0)">Another Action</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                            </div>
+                            <div class="col-xxl-3">
+                                <div class="card__wrapper">
+                                    <div class="d-flex align-items-center justify-content-between gap-15">
+                                        <button class="btn btn-secondary w-100">Search</button>
+                                        <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addNewCustomer">Add Customers</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-12">
+                        <div class="row">
+                         
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                                <div class="card__wrapper">
+                                    <div class="client__wrapper text-center">
+                                        <div class="client__thumb mb-15">
+                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar13.png" alt="image"></a>
+                                        </div>
+                                        <div class="client__content">
+                                            <div class="client__meta">
+                                                <h4 class="mb-8"><a href="customer-details.html">Sarah Martinez</a></h4>
+                                                <span>DataMinds Tech</span>
+                                                <p>Software Developer</p>
                                             </div>
-                                            <div class="card__content">
-                                                <div class="card__line-chart">
-                                                    <div id="radarCharts3"></div>
+                                            <div class="common-social mb-20">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                                <a href="#"><i class="fa-thin fa-globe"></i></a>
+                                            </div>
+                                            <div class="client__btn">
+                                                <div class="d-flex align-items-center justify-content-center gap-15">
+                                                    <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
+                                                    <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editClient">Edit</button>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                                <div class="card__wrapper">
+                                    <div class="client__wrapper text-center">
+                                        <div class="client__thumb mb-15">
+                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar15.png" alt="image"></a>
+                                        </div>
+                                        <div class="client__content">
+                                            <div class="client__meta">
+                                                <h4 class="mb-8"><a href="customer-details.html">Amanda Taylor</a></h4>
+                                                <span>CyberTech Solutions</span>
+                                                <p>Technical Lead</p>
+                                            </div>
+                                            <div class="common-social mb-20">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                                <a href="#"><i class="fa-thin fa-globe"></i></a>
+                                            </div>
+                                            <div class="client__btn">
+                                                <div class="d-flex align-items-center justify-content-center gap-15">
+                                                    <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
+                                                    <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editClient">Edit</button>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                                <div class="card__wrapper">
+                                    <div class="client__wrapper text-center">
+                                        <div class="client__thumb mb-15">
+                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar.png" alt="image"></a>
+                                        </div>
+                                        <div class="client__content">
+                                            <div class="client__meta">
+                                                <h4 class="mb-8"><a href="customer-details.html">Christopher Wilson</a>
+                                                </h4>
+                                                <span>AgileTech Solutions</span>
+                                                <p>Chief Architect</p>
+                                            </div>
+                                            <div class="common-social mb-20">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                                <a href="#"><i class="fa-thin fa-globe"></i></a>
+                                            </div>
+                                            <div class="client__btn">
+                                                <div class="d-flex align-items-center justify-content-center gap-15">
+                                                    <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
+                                                    <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editClient">Edit</button>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                                <div class="card__wrapper">
+                                    <div class="client__wrapper text-center">
+                                        <div class="client__thumb mb-15">
+                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar12.png" alt="image"></a>
+                                        </div>
+                                        <div class="client__content">
+                                            <div class="client__meta">
+                                                <h4 class="mb-8"><a href="customer-details.html">Matthew Clark</a></h4>
+                                                <span>InnoTech Solutions</span>
+                                                <p>Chief Digital Officer</p>
+                                            </div>
+                                            <div class="common-social mb-20">
+                                                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                                <a href="#"><i class="fa-thin fa-globe"></i></a>
+                                            </div>
+                                            <div class="client__btn">
+                                                <div class="d-flex align-items-center justify-content-center gap-15">
+                                                    <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
+                                                    <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editClient">Edit</button>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-20 justify-content-center">
+                    <div class="col-xl-2">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary">Load More</button>
                         </div>
                     </div>
                 </div>
@@ -1234,6 +1238,196 @@
         </div>
     </div>
     <!-- Dashboard area end -->
+
+    <!-- add new client profile modal -->
+    <div class="modal fade" id="addNewCustomer" tabindex="-1" aria-labelledby="addNewCustomerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addNewCustomerLabel">Add New Customer</h5>
+                    <button type="button" class="bd-btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa-solid fa-xmark-large"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="card__wrapper mb-20">
+                            <div class="row g-20 gy-20 align-items-center justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="firstname">First Name <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="firstname" id="firstname" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="lastname">Last Name</label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="lastname" id="lastname" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="contactNumber">Contact Number <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="contactNumber" id="contactNumber" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="email">Email <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="email" id="email" type="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="userName">User Name <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="userName" id="userName" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="clientId2">Client ID <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="clientId2" id="clientId2" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="address">Address <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <textarea class="form-control" name="address" id="address"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submit__btn text-center">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add new client profile modal -->
+
+    <!-- edit client profile modal -->
+    <div class="modal fade" id="editClient" tabindex="-1" aria-labelledby="editClientLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editClientLabel">Add New Client</h5>
+                    <button type="button" class="bd-btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa-solid fa-xmark-large"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="card__wrapper mb-20">
+                            <div class="row g-20 gy-20 align-items-center justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="firstName2">First Name <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="firstName2" id="firstName2" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="lastName2">Last Name</label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="lastName2" id="lastName2" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="contactNumber2">Contact Number <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="contactNumber2" id="contactNumber2" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="email2">Email <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="email2" id="email2" type="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="userName2">User Name <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="userName2" id="userName2" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="clientId3">Client ID <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <input class="form-control" name="clientId3" id="clientId3" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <div class="from__input-box">
+                                        <div class="form__input-title">
+                                            <label for="address2">Address <span>*</span></label>
+                                        </div>
+                                        <div class="form__input">
+                                            <textarea class="form-control" name="address2" id="address2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submit__btn text-center">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- edit client profile modal -->
 
     <!-- Back to top start -->
     <div class="progress-wrap">
