@@ -1,8 +1,8 @@
 <?php
-    $page_title = "Edit Requisition ";
-    $page = 'Edit Requisition ';
-    $show_breadcrumb = true;
-    $content='
+$page_title = "Edit Requisition ";
+$page = 'Edit Requisition ';
+$show_breadcrumb = true;
+$content = '
       <form action="#">
                     <div class="row">
                         <div class="col-xxl-12">
@@ -69,41 +69,46 @@
                         </div>
                        
                     </div>
-<div class="card__wrapper">
-    <h3>Items</h3>
+                <div class="card__wrapper">
+                    <h3>Items</h3>
 
-    <div class="item-row">
-        <div class="form-group">
-            <label>Unit</label>
-            <select>
-                <option>Select Unit</option>
-            </select>
-        </div>
+                    <div class="row d-flex ">
 
-        <div class="form-group">
-            <label>Description</label>
-            <input type="text" />
-        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Unit</label>
+                            <select class="form-select">
+                                <option>Select Unit</option>
+                            </select>
+                        </div>
 
-        <div class="form-group small">
-            <label>Quantity</label>
-            <input type="number" value="0" />
-        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Description</label>
+                            <input type="text" class="form-control" />
+                        </div>
 
-        <div class="form-group small">
-            <label>Unit Price</label>
-            <input type="number" value="0" step="0.01" />
-        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Quantity</label>
+                            <input type="number" class="form-control" value="0" />
+                        </div>
 
-        <button class="btn remove" disabled>Remove</button>
-    </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Unit Price</label>
+                            <input type="number" class="form-control" value="0" step="0.01" />
+                        </div>
 
-    <button class="btn add">Add Item</button>
-</div>
+                        <div class="col-md-2 align-items-center mt-1">
+                            <label class="form-label"></label>
+                            <button class="btn btn-danger w-100">Remove</button>
+                        </div>
 
- <div class="submit__btn text-center mb-20">
-        <button class="btn btn-primary">Add Requisition</button>
-</div>
+                    </div>
+
+                    <button class="btn btn-primary mt-3 add">Add Item</button>
+                </div>
+
+                <div class="submit__btn text-center mb-20">
+                        <button class="btn btn-primary">Add Requisition</button>
+                </div>
 
 
 
@@ -113,4 +118,5 @@
 ';
 include "../layouts/master.php";
 ?>
+
 

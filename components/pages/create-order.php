@@ -1,6 +1,6 @@
 <?php
-$page_title = "Create Purchase ";
-$page = 'Add Purchase ';
+$page_title = "Create Order ";
+$page = 'Add Order';
 $show_breadcrumb = true;
 $content = '
 
@@ -12,6 +12,24 @@ $content = '
                 <div class="col-xl-12">
                     <div class="card__wrapper">
                         <div class="row gy-20">
+
+                        <div class="col-lg-6">
+                                <div class="from__input-box">
+                                    <div class="form__input-title">
+                                        <label for="user">User <span>*</span></label>
+                                    </div>
+                                    <div class="form__input">
+                                        <select class="form-control" name="role" id="role">
+                                            <option value="user1">User-1</option>
+                                            <option value="user2">User-2</option>
+                                            <option value="user3">user-3</option>
+                                            <option value="user4">user-4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>    
+
+
                             <div class="col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
@@ -27,36 +45,18 @@ $content = '
                                     </div>
                                 </div>
                             </div>
-
-
+                            
                             <div class="col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
-                                        <label for="vendor">Vendor <span>*</span></label>
+                                        <label for="product">product <span>*</span></label>
                                     </div>
                                     <div class="form__input">
                                         <select class="form-control" name="role" id="role">
-                                            <option value="vendor1">vendor-1</option>
-                                            <option value="vendor2">vendor-2</option>
-                                            <option value="vendor3">vendor-3</option>
-                                            <option value="vendor4">vendor-4</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-6">
-                                <div class="from__input-box">
-                                    <div class="form__input-title">
-                                        <label for="requisition">Requisition <span>*</span></label>
-                                    </div>
-                                    <div class="form__input">
-                                        <select class="form-control" name="role" id="role">
-                                            <option value="requisition1">requisition-1</option>
-                                            <option value="requisition2">requisition-2</option>
-                                            <option value="requisition3">requisition-3</option>
-                                            <option value="requisition4">requisition-4</option>
+                                            <option value="product1">product-1</option>
+                                            <option value="product2">product-2</option>
+                                            <option value="product3">product-3</option>
+                                            <option value="product4">product-4</option>
                                         </select>
                                     </div>
                                 </div>
@@ -65,15 +65,14 @@ $content = '
                              <div class="col-6 col-xl-6 col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
-                                        <label for="contact">Contact <span>*</span></label>
+                                        <label for="amount">Amount <span>*</span></label>
                                     </div>
                                     <div class="form__input">
-                                        <input class="form-control" name="contact" id="contact" type="text">
+                                        <input  class="form-control" name="amount" id="amount" type="number">
                                     </div>
                                 </div>
                             </div>
 
-                            
                             <div class="col-lg-12">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
@@ -90,27 +89,33 @@ $content = '
                             <div class="col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
-                                        <label>Required Date <span>*</span></label>
+                                        <label>Payment Date <span>*</span></label>
                                     </div>
                                     <div class="form__input">
                                         <input class="form-control" id="requiredDate" type="text" placeholder="Required Date">
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="col-lg-6">
+
+
+
+                              <div class="col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
-                                        <label> Remark
-                                            <span>*</span></label>
+                                        <label for="payment">Payment Date <span>*</span></label>
                                     </div>
-                                    <div class="fullwidth-textarea">
-                                        <textarea rows="3"></textarea>
+                                    <div class="form__input">
+                                        <select class="form-control" name="role" id="role">
+                                            <option value="cash">Cash</option>
+                                            <option value="credit card">Creadit Card</option>
+                                            <option value="paypal">Paypal</option>
+                                           
+                                        </select>
                                     </div>
-
-
                                 </div>
                             </div>
+                            
+                          
 
                         </div>
                     </div>
@@ -119,44 +124,6 @@ $content = '
         </div>
 
     </div>
-
-    
-<div class="card__wrapper">
-    <h3>Items</h3>
-
-    <div class="row d-flex ">
-        
-        <div class="col-md-2">
-            <label class="form-label">Unit</label>
-            <select class="form-select">
-                <option>Select Unit</option>
-            </select>
-        </div>
-
-        <div class="col-md-4">
-            <label class="form-label">Description</label>
-            <input type="text" class="form-control"/>
-        </div>
-
-        <div class="col-md-2">
-            <label class="form-label">Quantity</label>
-            <input type="number" class="form-control" value="0"/>
-        </div>
-
-        <div class="col-md-2">
-            <label class="form-label">Unit Price</label>
-            <input type="number" class="form-control" value="0" step="0.01"/>
-        </div>
-
-        <div class="col-md-2 align-items-center mt-1">
-           <label class="form-label"></label>
-            <button class="btn btn-danger w-100">Remove</button>
-        </div>
-
-    </div>
-
-    <button class="btn btn-primary mt-3 add">Add Item</button>
-</div>
 
 
 

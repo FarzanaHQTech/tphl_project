@@ -812,6 +812,16 @@
 		altFormat: "F j, Y",
 		dateFormat: "Y-m-d",
 	});
+	$("#launchingDate").flatpickr({
+		altInput: true,
+		altFormat: "F j, Y",
+		dateFormat: "Y-m-d",
+	});
+	$("#handOverDate").flatpickr({
+		altInput: true,
+		altFormat: "F j, Y",
+		dateFormat: "Y-m-d",
+	});
 	$("#purchaseDate2").flatpickr({
 		altInput: true,
 		altFormat: "F j, Y",

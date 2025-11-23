@@ -201,14 +201,12 @@
 
                            </ul>
                        </li>
-
                        <li class="slide">
                            <a href="leads.php" class="sidebar__menu-item">
                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
                                <span class="sidebar__menu-label">Leads</span>
                            </a>
                        </li>
-
                        <li class="slide has-sub">
                            <a href="javascript:void(0);" class="sidebar__menu-item">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
@@ -234,10 +232,10 @@
                            </a>
                            <ul class="sidebar-menu child1">
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee.html">Add Purchase</a>
+                                   <a class="sidebar__menu-item" href="create-purchase.php">Add Purchase</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee-profile.html">Purchase List</a>
+                                   <a class="sidebar__menu-item" href="purchase-lists.php">Purchase List</a>
                                </li>
 
                            </ul>
@@ -251,10 +249,10 @@
                            </a>
                            <ul class="sidebar-menu child1">
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee.html">Add Camera</a>
+                                   <a class="sidebar__menu-item" href="create-camera.php">Add Camera</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee-profile.html">Camera List</a>
+                                   <a class="sidebar__menu-item" href="camera-lists.php">Camera List</a>
                                </li>
 
                            </ul>
@@ -268,10 +266,10 @@
                                <span class="sidebar__menu-label">Project</span>
                            </a>
                            <ul class="sidebar-menu child1">
-                               <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Project
+                               <li class="slide"><a class="sidebar__menu-item" href="create-project.php">Add Project
                                    </a>
                                </li>
-                               <li class="slide"><a class="sidebar__menu-item" href="project.html">Project List </a>
+                               <li class="slide"><a class="sidebar__menu-item" href="project-lists.php">Project List </a>
                                </li>
 
 
@@ -284,10 +282,10 @@
                                <span class="sidebar__menu-label">Popular Project</span>
                            </a>
                            <ul class="sidebar-menu child1">
-                               <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Popular
+                               <li class="slide"><a class="sidebar__menu-item" href="create-popular-project.php">Add Popular
                                    </a>
                                </li>
-                               <li class="slide"><a class="sidebar__menu-item" href="project.html">Popular List </a>
+                               <li class="slide"><a class="sidebar__menu-item" href="popular-projects.php">Popular List </a>
                                </li>
 
 
@@ -300,7 +298,7 @@
                                <span class="sidebar__menu-label">Order</span>
                            </a>
                            <ul class="sidebar-menu child1">
-                               <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Order
+                               <li class="slide"><a class="sidebar__menu-item" href="create-order.php">Add Order
                                    </a>
                                </li>
                                <li class="slide"><a class="sidebar__menu-item" href="project.html">Order List</a>
@@ -309,6 +307,8 @@
 
                            </ul>
                        </li>
+
+
                        <li class="slide has-sub">
                            <a href="javascript:void(0);" class="sidebar__menu-item">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
