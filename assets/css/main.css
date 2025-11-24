@@ -82,7 +82,7 @@
   --clr-text-taxonomy: #A9ABB6;
   --clr-text-secondary: #525252;
   --clr-text-rating: #EC8D1D;
-  --clr-theme-primary: #6C5FFC;
+  --clr-theme-primary: #135737;
   --clr-theme-secondary: #1ABC9C;
   --clr-theme-tertiary: #ABA3FD;
   --clr-action-danger: #FF3A29;
@@ -855,7 +855,7 @@ input[type=file] {
   border: none;
 }
 .btn-primary:hover {
-  background-color: rgba(108, 95, 252, 0.8);
+  background-color: #0f241a;
   color: #FFFFFF;
 }
 
@@ -865,7 +865,7 @@ input[type=file] {
   border: none;
 }
 .btn-secondary:hover {
-  background-color: rgba(26, 188, 156, 0.8);
+  background-color: rgba(26, 188, 126, 0.8);
   color: #FFFFFF;
 }
 
@@ -5596,7 +5596,7 @@ img {
 
 .header-logo img {
   height: 100%;
-  width: 150px;
+  width: 100%;
 }
 [bd-theme=bd-theme-dark] .header-logo .main-logo {
   display: none;

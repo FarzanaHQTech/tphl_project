@@ -112,6 +112,8 @@ $content = '
                                 </div>
                             </div>
                     </div>
+
+                    
                         <div class="col-6 col-xl-6 col-lg-6">
                             <div class="from__input-box">
                                 <div class="form__input-title">
@@ -124,9 +126,33 @@ $content = '
                         </div>
 
 
+                          <div class="clo-xl-6 col-6 col-lg-6">
+                            <div class="from__input-box">
+                                <div class="form__input-title">
+                                    <label for="priority">priority <span>*</span></label>
+                                </div>
+                                <div class="form__input">
+                                    <select class="form-control" name="role" id="role">
+                                        <option value="priority1">priority-1</option>
+                                        <option value="priority2">priority-2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-
-
+                          <div class="clo-xl-6 col-6 col-lg-6">
+                            <div class="from__input-box">
+                                <div class="form__input-title">
+                                    <label for="coordinator">Project Coordinator <span>*</span></label>
+                                </div>
+                                <div class="form__input">
+                                    <select class="form-control" name="role" id="role">
+                                        <option value="coordinator1">coordinator-1</option>
+                                        <option value="coordinator2">coordinator-2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                             
                             <div class="col-lg-12 col-12">
                                 <div class="from__input-box">
@@ -190,7 +216,8 @@ $content = '
                                     </div>
                                     <div class="form__input">
                                         <input class="form-control" name="building" id="building" type="text">
-                                    </div>
+                                
+                                        </div>
                                 </div>
                           </div>
 
@@ -266,7 +293,14 @@ $content = '
                                 </div>
                             </div>
                         </div>
+
+
+
+
                         
+
+
+
                     </div>
                     
                     </div>

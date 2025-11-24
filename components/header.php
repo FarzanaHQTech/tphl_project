@@ -75,7 +75,7 @@
                                 </div>
                             </a>
                         </div>
-                        <h2 class="header__title">Hello Thomas <span><img src="../../assets/images/shape/hand.png"
+                        <h2 class="header__title">Hello Mehedi<span><img src="../../assets/images/shape/hand.png"
                                     alt="image"></span></h2>
                     </div>
                     <div class="app__header-right">

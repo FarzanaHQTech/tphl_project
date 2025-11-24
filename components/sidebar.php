@@ -2,8 +2,8 @@
        <div class="app-sidebar" id="sidebar">
            <div class="main-sidebar-header">
                <a href="index.html" class="header-logo">
-                   <img class="main-logo" src="../../assets/images/logo/logo.svg" alt="logo">
-                   <img class="dark-logo" src="../../assets/images/logo/logo-white.svg" alt="logo">
+                   <img class="main-logo" src="../../assets/images/logo/tphl_logo.png" alt="logo">
+                   <img class="dark-logo" src="../../assets/images/logo/TPHL_Logo.png" alt="logo">
                </a>
            </div>
            <div class="main-sidebar" id="sidebar-scroll">
@@ -125,7 +125,7 @@
                            </a>
                            <ul class="sidebar-menu child1">
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="faq.html">Add FAQ </a>
+                                   <a class="sidebar__menu-item" href="create-faq.php">Add FAQ </a>
                                </li>
                                <li class="slide">
                                    <a class="sidebar__menu-item" href="faq-lists.php">Faq List</a>
@@ -287,8 +287,6 @@
                                </li>
                                <li class="slide"><a class="sidebar__menu-item" href="popular-projects.php">Popular List </a>
                                </li>
-
-
                            </ul>
                        </li>
                        <li class="slide has-sub">
@@ -301,10 +299,8 @@
                                <li class="slide"><a class="sidebar__menu-item" href="create-order.php">Add Order
                                    </a>
                                </li>
-                               <li class="slide"><a class="sidebar__menu-item" href="project.html">Order List</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="order-lists.php">Order List</a>
                                </li>
-
-
                            </ul>
                        </li>
 
@@ -316,10 +312,10 @@
                                <span class="sidebar__menu-label">Review</span>
                            </a>
                            <ul class="sidebar-menu child1">
-                               <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Review
+                               <li class="slide"><a class="sidebar__menu-item" href="create-review.php">Add Review
                                    </a>
                                </li>
-                               <li class="slide"><a class="sidebar__menu-item" href="project.html">Review List</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="review-lists.php">Review List</a>
                                </li>
 
 
@@ -332,11 +328,11 @@
                                <span class="sidebar__menu-label">Notification</span>
                            </a>
                            <ul class="sidebar-menu child1">
-                               <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add
+                               <li class="slide"><a class="sidebar__menu-item" href="create-notification.php">Add
                                        Notification
                                    </a>
                                </li>
-                               <li class="slide"><a class="sidebar__menu-item" href="project.html">Notification
+                               <li class="slide"><a class="sidebar__menu-item" href="notification-lists.php">Notification
                                        List</a>
                                </li>
 
@@ -350,13 +346,11 @@
                                <span class="sidebar__menu-label">Payment</span>
                            </a>
                            <ul class="sidebar-menu child1">
-                               <li class="slide"><a class="sidebar__menu-item" href="project-create.html">Add Payment
+                               <li class="slide"><a class="sidebar__menu-item" href="create-payment.php">Add Payment
                                    </a>
                                </li>
-                               <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Payment List</a>
-                               </li>
-
-
+                               <li class="slide"><a class="sidebar__menu-item" href="payment-lists.php">Payment List</a>
+                               </li>`
                            </ul>
                        </li>
 
@@ -369,63 +363,53 @@
                            </a>
                            <ul class="sidebar-menu child1">
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee.html">Employee</a>
+                                   <a class="sidebar__menu-item" href="employee-lists.php"> Employee List</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee-profile.html">Employee Profile</a>
+                                   <a class="sidebar__menu-item" href="departments.php">Department List</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="designations.html">Designations</a>
-                               </li>
-                               <li class="slide">
-                                   <a class="sidebar__menu-item" href="attendance.html">Admin Attendance</a>
-                               </li>
-                               <li class="slide">
-                                   <a class="sidebar__menu-item" href="employee-attendance.html">Employee
-                                       Attendance</a>
-                               </li>
-                               <li class="slide">
-                                   <a class="sidebar__menu-item" href="biometric-attendance.html">Biometric
-                                       Attendance</a>
-                               </li>
-                               <li class="slide">
-                                   <a class="sidebar__menu-item" href="office-loan.html">Office Loan</a>
-                               </li>
-                               <li class="slide">
-                                   <a class="sidebar__menu-item" href="personal-loan.html">Personal Loan</a>
+                                   <a class="sidebar__menu-item" href="designations.php">Designation List</a>
                                </li>
 
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="leaves.html">Admin leaves</a>
+                                   <a class="sidebar__menu-item" href="leaves.php"> Leave List</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="holidays.html">Holidays</a>
+                                   <a class="sidebar__menu-item" href="salary-lists.php"> Salary List</a>
+                               </li>
+                              
+                               <li class="slide">
+                                   <a class="sidebar__menu-item" href="create-attendence.php">Add Attendence</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="timesheet.html">Time Sheet</a>
+                                   <a class="sidebar__menu-item" href="attendence-list.php"> Attendence List</a>
                                </li>
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="schedule.html">Schedule</a>
+                                   <a class="sidebar__menu-item" href="holidays.php"> Holiday List</a>
                                </li>
+                              
                                <li class="slide">
-                                   <a class="sidebar__menu-item" href="overtime.html">Overtime</a>
+                                   <a class="sidebar__menu-item" href="weekends.php"> Weekend List</a>
                                </li>
-                               <li class="slide">
-                                   <a class="sidebar__menu-item" href="warning.html">Warning</a>
-                               </li>
+                              
+                           
+
+                               
+                            
                            </ul>
                        </li>
 
 
                        <li class="slide">
-                           <a href="eaves-employee.html" class="sidebar__menu-item">
+                           <a href="employee-leaves.php" class="sidebar__menu-item">
                                <div class="side-menu__icon"><i class="fa-solid fa-calendar-check"></i></div>
                                <span class="sidebar__menu-label">Employee leaves</span>
                            </a>
                        </li>
 
                        <li class="slide">
-                           <a href="eaves-employee.html" class="sidebar__menu-item">
+                           <a href="inventories.php" class="sidebar__menu-item">
                                <div class="side-menu__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
                                <span class="sidebar__menu-label">Inventories</span>
                            </a>

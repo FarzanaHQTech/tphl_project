@@ -1,6 +1,6 @@
 <?php
-$page_title = "Create Order ";
-$page = 'Add Order';
+$page_title = "Create payment ";
+$page = 'Add payment';
 $show_breadcrumb = true;
 $content = '
 
@@ -11,56 +11,24 @@ $content = '
             <div class="card__wrapper">
                 <div class="row gy-20">
 
-                    <!-- User -->
+                
+                    <!-- product -->
                     <div class="col-6 col-lg-6">
                         <div class="from__input-box">
                             <div class="form__input-title">
-                                <label for="user">User <span>*</span></label>
-                            </div>
-                            <div class="form__input">
-                                <select class="form-control" name="user" id="user">
-                                    <option value="user1">User-1</option>
-                                    <option value="user2">User-2</option>
-                                    <option value="user3">User-3</option>
-                                    <option value="user4">User-4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project -->
-                    <div class="col-6 col-lg-6">
-                        <div class="from__input-box">
-                            <div class="form__input-title">
-                                <label for="project">Project <span>*</span></label>
-                            </div>
-                            <div class="form__input">
-                                <select class="form-control" name="project" id="project">
-                                    <option value="project1">Project-1</option>
-                                    <option value="project2">Project-2</option>
-                                    <option value="project3">Project-3</option>
-                                    <option value="project4">Project-4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product -->
-                    <div class="col-6 col-lg-6">
-                        <div class="from__input-box">
-                            <div class="form__input-title">
-                                <label for="product">Product <span>*</span></label>
+                                <label for="product">product <span>*</span></label>
                             </div>
                             <div class="form__input">
                                 <select class="form-control" name="product" id="product">
-                                    <option value="product1">Product-1</option>
-                                    <option value="product2">Product-2</option>
-                                    <option value="product3">Product-3</option>
-                                    <option value="product4">Product-4</option>
+                                    <option value="product1">product-1</option>
+                                    <option value="product2">product-2</option>
+                                    <option value="product3">product-3</option>
+                                    <option value="product4">product-4</option>
                                 </select>
                             </div>
                         </div>
                     </div>
+
 
                     <!-- Amount -->
                     <div class="col-6 col-lg-6">
@@ -70,6 +38,35 @@ $content = '
                             </div>
                             <div class="form__input">
                                 <input class="form-control" name="amount" id="amount" type="number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment by -->
+                    <div class="col-6 col-lg-6">
+                        <div class="from__input-box">
+                            <div class="form__input-title">
+                                <label for="paymentBy">payment By <span>*</span></label>
+                            </div>
+                            <div class="form__input">
+                                <select class="form-control" name="product" id="product">
+                                    <option value="user1">user-1</option>
+                                    <option value="user2">user-2</option>
+                                    <option value="user3">user-3</option>
+                                    <option value="user4">user-4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transaction ID -->
+                    <div class="col-6 col-lg-6">
+                        <div class="from__input-box">
+                            <div class="form__input-title">
+                                <label for="transactionID">Transaction ID <span>*</span></label>
+                            </div>
+                            <div class="form__input">
+                                <input class="form-control" name="transactionID" id="transactionID" type="number">
                             </div>
                         </div>
                     </div>
@@ -111,21 +108,37 @@ $content = '
                             </div>
                         </div>
                     </div>
-                    <!-- Transaction id -->
-                    <div class="col-12 col-lg-12 ">
+                    <!-- Payment Method -->
+                    <div class="col-6 col-lg-6">
                         <div class="from__input-box">
                             <div class="form__input-title">
-                                <label for="paymentMethod">Transaction ID<span>*</span></label>
+                                <label for="paymentType">Payment Type <span>*</span></label>
                             </div>
-                    </div>
-                           
-                            <div class="form_input">
-                                <input class="form-control" name="transactionId" id="transactionId">
+                            <div class="form__input">
+                                <select class="form-control" name="paymentType" id="paymentType">
+                                    <option value="BookingMoney">Booking Money</option>
+                                    <option value="landRegistrasion">Land Registration</option>
+                                    <option value="serviceCharge">service Charge</option>
+                                </select>
                             </div>
-
-                           
                         </div>
                     </div>
+                    <!-- Entity Type -->
+                    <div class="col-6 col-lg-6">
+                        <div class="from__input-box">
+                            <div class="form__input-title">
+                                <label for="entityType">Entity Type <span>*</span></label>
+                            </div>
+                            <div class="form__input">
+                                <select class="form-control" name="entityType" id="entityType">
+                                    <option value="BookingMoney">Product</option>
+                                   
+                                  
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                
 
                     <!-- pdf upload -->
                     <div class="col-xxl-12  col-12">

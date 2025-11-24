@@ -53,6 +53,7 @@
                                                             <label>Size Image<span>*</span></label>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="dropzone dz-clickable" id="myNewDropzone">
                                                         <div class="dz-default dz-message"><i class="fa-thin fa-cloud-arrow-up"></i>
                                                             <h6>Drop files here or click to upload.</h6><span class="note needsclick">(This is just a demo
