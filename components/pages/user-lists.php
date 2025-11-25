@@ -42,12 +42,12 @@ $content = '
                         <div class="card__wrapper">
                             <div class="employee__wrapper text-center">
                                 <div class="employee__thumb mb-15">
-                                    <a href="employee-profile.html"><img src="assets/images/avatar/avatar16.png"
+                                    <a href="user-profile.php"><img src="../../assets/images/avatar/avatar16.png"
                                             alt="image"></a>
                                 </div>
                                 <div class="employee__content">
                                     <div class="employee__meta mb-15">
-                                        <h4 class="mb-8"><a href="employee-profile.html">Naira Muskan</a></h4>
+                                        <h4 class="mb-8"><a href="user-profile.php">Naira Muskan</a></h4>
                                         <p>Chief Executive Officer</p>
                                     </div>
                                     <div class="common-social mb-20">
@@ -61,7 +61,7 @@ $content = '
                                         <div class="d-flex align-items-center justify-content-center gap-15">
                                             <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                                             <a class="btn btn-outline-theme-border"
-                                                href="employee-profile.html">View</a>
+                                                href="user-profile.php">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -73,12 +73,12 @@ $content = '
                         <div class="card__wrapper">
                             <div class="employee__wrapper text-center">
                                 <div class="employee__thumb mb-15">
-                                    <a href="employee-profile.html"><img src="assets/images/avatar/avatar2.png"
+                                    <a href="user-profile.php"><img src="../../assets/images/avatar/avatar2.png"
                                             alt="image"></a>
                                 </div>
                                 <div class="employee__content">
                                     <div class="employee__meta mb-15">
-                                        <h4 class="mb-8"><a href="employee-profile.html">Emily Johnson</a></h4>
+                                        <h4 class="mb-8"><a href="user-profile.php">Emily Johnson</a></h4>
                                         <p>Chief Innovation Officer</p>
                                     </div>
                                     <div class="common-social mb-20">
@@ -92,7 +92,7 @@ $content = '
                                         <div class="d-flex align-items-center justify-content-center gap-15">
                                             <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                                             <a class="btn btn-outline-theme-border"
-                                                href="employee-profile.html">View</a>
+                                                href="user-profile.php">View</a>
                                         </div>
                                     </div>
                                 </div>

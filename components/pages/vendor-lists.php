@@ -51,7 +51,7 @@ $content = '
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="vendor-details.html.html"><img src="assets/images/avatar/avatar13.png" alt="image"></a>
+                                            <a href="vendor-details.html.html"><img src="../../assets/images/avatar/avatar13.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
@@ -81,7 +81,7 @@ $content = '
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="vendor-details.html.html"><img src="assets/images/avatar/avatar15.png" alt="image"></a>
+                                            <a href="vendor-details.html.html"><img src="../../assets/images/avatar/avatar15.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
@@ -111,7 +111,7 @@ $content = '
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="vendor-details.html.html"><img src="assets/images/avatar/avatar.png" alt="image"></a>
+                                            <a href="vendor-details.html.html"><img src="../../assets/images/avatar/avatar.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
@@ -142,7 +142,7 @@ $content = '
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="vendor-details.html.html"><img src="assets/images/avatar/avatar12.png" alt="image"></a>
+                                            <a href="vendor-details.html.html"><img src="../../assets/images/avatar/avatar12.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">

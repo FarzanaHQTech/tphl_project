@@ -2,8 +2,8 @@
 
 
 <?php
-$page_title = "Camera lists";   
-$page = "Camera list";   
+$page_title = "notification lists";   
+$page = "Notification list";   
 $show_breadcrumb = true;
 
 $content = '
@@ -35,7 +35,7 @@ $content = '
                     <div class="col-xxl-12">
                         <div class="card__wrapper">
                             <div class="card__title-wrap mb-20">
-                                <h3 class="card__heading-title">Product-Request </h3>
+                                <h3 class="card__heading-title">Notification Lists</h3>
                             </div>
                             <div class="card__table table-responsive">
                                 <table class="table table-bordered mb-0">

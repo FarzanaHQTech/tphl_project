@@ -4,19 +4,11 @@
     $show_breadcrumb = true;
     $content='
   
-  <div class="col-xxl-12">
-                        <div class="row">
-                            
-                       
-                            <div class="col-xxl-6">
-                                <div class="card__wrapper">
-                                       
-                                          <a href="./create-purchase.php" class="btn btn-primary w-100" >Add Purchase</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+   <div class="text-end m-4">
+      <a href="./create-purchase.php" class="btn btn-primary w-auto px-3 ">Add Purchase</a>
+     </div>
 
+  <div class="col-xxl-12">
             <div class="row">
                     <div class="col-xxl-12">
                         <div class="card__wrapper">
@@ -65,11 +57,8 @@
                                                     <a href="./edit-requisition.php" class="table__icon edit">
                                                         <i class="fa-sharp fa-light fa-pen"></i>
                                                     </a>
-                                                    <button data-bs-target="#showItemsModal"
-                                                    data-bs-toggle="modal"  
-                                                    type="button" class="btn btn-primary w-50" >
-                                                        <i class="fa-regular fa-eye"></i>
-                                                    </button>
+                                                    <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#showItemsModal"><i
+                                                            class="fa-regular fa-eye"></i></button>
                                                 </div>
                                             </td>
 

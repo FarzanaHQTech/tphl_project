@@ -84,7 +84,7 @@ $content = '
                                     <span><i class="fa-sharp fa-regular fa-users"></i></span>
                                 </div>
                                 <div class="card__title-wrap">
-                                    <h6 class="card__sub-title mb-10">Total Client</h6>
+                                    <h6 class="card__sub-title mb-10">Total Customer</h6>
                                     <div class="d-flex flex-wrap align-items-end gap-10">
                                         <h3 class="card__title">151</h3>
                                         <span class="card__desc style_two"><span class="price-increase"><i
@@ -104,7 +104,7 @@ $content = '
                                 <div class="card__title-wrap">
                                     <h6 class="card__sub-title mb-10">Total Revenue</h6>
                                     <div class="d-flex flex-wrap align-items-end gap-10">
-                                        <h3 class="card__title">$55</h3>
+                                        <h3 class="card__title">BDT55</h3>
                                         <span class="card__desc style_two"><span class="price-increase"><i
                                                     class="fa-light fa-arrow-up"></i> +2.15%</span> Than Last
                                             Month</span>
@@ -120,7 +120,7 @@ $content = '
                                     <span><i class="fa-sharp fa-light fa-suitcase"></i></span>
                                 </div>
                                 <div class="card__title-wrap">
-                                    <h6 class="card__sub-title mb-10">Total Jobs</h6>
+                                    <h6 class="card__sub-title mb-10">Total Requisition</h6>
                                     <div class="d-flex flex-wrap align-items-end gap-10">
                                         <h3 class="card__title">55</h3>
                                         <span class="card__desc style_two"><span class="price-increase"><i
@@ -138,7 +138,7 @@ $content = '
                                     <span><i class="icon-tickets1"></i></span>
                                 </div>
                                 <div class="card__title-wrap">
-                                    <h6 class="card__sub-title mb-10">Total Ticket</h6>
+                                    <h6 class="card__sub-title mb-10">Total Orders</h6>
                                     <div class="d-flex flex-wrap align-items-end gap-10">
                                         <h3 class="card__title">55</h3>
                                         <span class="card__desc style_two"><span class="price-increase"><i
@@ -411,7 +411,7 @@ $content = '
                                     <div class="card__box-wrapp">
                                         <h6 class="card__sub-title mb-15">Total Order</h6>
                                         <div class="card__meta-box d-flex align-items-center gap-20 mb-25">
-                                            <h3 class="card__title">$84.00K</h3>
+                                            <h3 class="card__title">BDT84.00K</h3>
                                             <span class="card__desc style_two"><span class="price-increase"><i
                                                         class="fa-light fa-arrow-up"></i> +17.5%</span> Than Last
                                                 Week</span>
@@ -491,7 +491,7 @@ $content = '
                                     <div class="card__box-wrapp">
                                         <h6 class="card__sub-title mb-15">Total Order</h6>
                                         <div class="card__meta-box d-flex align-items-center gap-20 mb-25">
-                                            <h3 class="card__title">$84.00K</h3>
+                                            <h3 class="card__title">BDT84.00K</h3>
                                             <span class="card__desc style_two"><span class="price-increase"><i
                                                         class="fa-light fa-arrow-up"></i> +17.5%</span> Than Last
                                                 Week</span>
@@ -571,7 +571,7 @@ $content = '
                                     <div class="card__box-wrapp">
                                         <h6 class="card__sub-title mb-15">Total Order</h6>
                                         <div class="card__meta-box d-flex align-items-center gap-20 mb-25">
-                                            <h3 class="card__title">$84.00K</h3>
+                                            <h3 class="card__title">BDT84.00K</h3>
                                             <span class="card__desc style_two"><span class="price-increase"><i
                                                         class="fa-light fa-arrow-up"></i> +17.5%</span> Than Last
                                                 Week</span>
@@ -676,9 +676,9 @@ $content = '
                                         </div>
                                         <p>Lorem ipsum dolor sit amet consecte</p>
                                         <div class="timeline__thumb">
-                                            <img src="assets/images/product/item1.png" alt="image">
-                                            <img src="assets/images/product/item2.png" alt="image">
-                                            <img src="assets/images/product/item3.png" alt="image">
+                                            <img src="../../assets/images/product/item1.png" alt="image">
+                                            <img src="../../assets/images/product/item2.png" alt="image">
+                                            <img src="../../assets/images/product/item3.png" alt="image">
                                         </div>
                                     </div>
                                 </li>
@@ -693,11 +693,11 @@ $content = '
                                         <div class="avatar">
                                             <ul>
                                                 <li><img class="img-48 border-circle"
-                                                        src="assets/images/avatar/avatar1.png" alt="image"></li>
+                                                        src="../../assets/images/avatar/avatar1.png" alt="image"></li>
                                                 <li><img class="img-48 border-circle"
-                                                        src="assets/images/avatar/avatar2.png" alt="image"></li>
+                                                        src="../../assets/images/avatar/avatar2.png" alt="image"></li>
                                                 <li><img class="img-48 border-circle"
-                                                        src="assets/images/avatar/avatar3.png" alt="image"></li>
+                                                        src="../../assets/images/avatar/avatar3.png" alt="image"></li>
                                             </ul>
                                         </div>
                                     </div>

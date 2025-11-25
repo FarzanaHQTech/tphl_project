@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-style-mode" content="1">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/logo/tphl_logo.png">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
@@ -573,7 +573,7 @@
                                         <img src="../../assets/images/avatar/avatar.png" alt="img not found">
                                     </div>
                                     <div class="user__content">
-                                        <h5>Jhon Smith</h5>
+                                        <h5>Mehedi</h5>
                                         <span>online</span>
                                     </div>
                                 </div>

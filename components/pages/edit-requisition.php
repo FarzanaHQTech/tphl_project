@@ -54,7 +54,7 @@ $content = '
                                                         <label> Remark
                                                             <span>*</span></label>
                                                     </div>
-                                                  <div class="fullwidth-textarea">
+                                                  <div class="fullwidth-textarea form__input">
                                                         <textarea rows="3"></textarea>
                                                     </div>
                                                     

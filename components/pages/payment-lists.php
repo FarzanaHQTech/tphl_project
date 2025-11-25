@@ -61,11 +61,10 @@
                                                     <a href="./edit-requisition.php" class="table__icon edit">
                                                         <i class="fa-sharp fa-light fa-pen"></i>
                                                     </a>
-                                                    <button data-bs-target="#showItemsModal"
-                                                    data-bs-toggle="modal"  
-                                                    type="button" class="btn btn-primary w-50" >
-                                                        <i class="fa-regular fa-eye"></i>
-                                                    </button>
+                                                    <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#showItemsModal"><i
+                                                            class="fa-regular fa-eye"></i></button>
+
+                                                   
                                                 </div>
                                             </td>
 

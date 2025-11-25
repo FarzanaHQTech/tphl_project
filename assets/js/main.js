@@ -119,56 +119,107 @@
 		type: "iframe",
 	});
 
+// my code 
+function bd_settings_append($x) {
+    var settings = $('body');
+    let dark;
+    $x === true ? dark = 'd-block' : dark = 'd-none';
+
+    var settings_html = `
+    <div class="ts-panel">
+        <div class="ts-inner">
+
+            <h4 class="ts-title">Template Settings</h4>
+
+            <!-- Theme Toggle -->
+            <div class="ts-toggle-item ${dark}">
+                <label class="ts-switch">
+                    <span>Dark Mode</span>
+                    <input type="checkbox" id="bd-theme-toggler">
+                    <span class="ts-slider"></span>
+                </label>
+            </div>
+
+            <!-- RTL Toggle -->
+            <div class="ts-toggle-item">
+                <label class="ts-switch">
+                    <span>RTL Mode</span>
+                    <input type="checkbox" id="bd-dir-toggler">
+                    <span class="ts-slider"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <!-- Sidebar Toggle Button -->
+        <button class="ts-toggle-btn">
+            <!--<span class="ts-icon-gear">⚙️</span>-->
+			<i class="fa-regular fa-moon" style="color: black;
+    				font-size: 20px;"></i>
+
+            <span class="ts-icon-close">✖</span>
+        </button>
+    </div>
+    `;
+
+    settings.append(settings_html);
+}
+
+
+
+
+
+
 	/* settings append in body Js */
-	function bd_settings_append($x) {
-		var settings = $('body');
-		let dark;
-		$x === true ? dark = 'd-block' : dark = 'd-none';
-		/* no need switcher then add 'd-none' */
-		var settings_html = `<div class="bd-theme-settings-area transition-3">
-		<div class="bd-theme-wrapper">
-		<div class="bd-theme-header text-center">
-		   <h4 class="bd-theme-header-title">Template Settings</h4>
-		</div>
+	// function bd_settings_append($x) {
+	// 	var settings = $('body');
+	// 	let dark;
+	// 	$x === true ? dark = 'd-block' : dark = 'd-none';
+	// 	/* no need switcher then add 'd-none' */
+	// 	var settings_html = `<div class="bd-theme-settings-area transition-3">
+	// 	<div class="bd-theme-wrapper">
+	// 	<div class="bd-theme-header text-center">
+	// 	   <h4 class="bd-theme-header-title">Template Settings</h4>
+	// 	</div>
 
-		<!-- THEME TOGGLER -->
-		<div class="bd-theme-toggle mb-20 ${dark}">
-		   <label class="bd-theme-toggle-main" for="bd-theme-toggler">
-		   <span class="bd-theme-toggle-dark"><i class="fa-light fa-moon"></i> Dark </span>
-				 <input type="checkbox" id="bd-theme-toggler">
-				 <i class="bd-theme-toggle-slide"></i>
-				 <span class="bd-theme-toggle-light active"><i class="fa-light fa-sun-bright"></i> Light</span>
-		   </label>
-		</div>
+	// 	<!-- THEME TOGGLER -->
+	// 	<div class="bd-theme-toggle mb-20 ${dark}">
+	// 	   <label class="bd-theme-toggle-main" for="bd-theme-toggler">
+	// 	   <span class="bd-theme-toggle-dark"><i class="fa-light fa-moon"></i> Dark </span>
+	// 			 <input type="checkbox" id="bd-theme-toggler">
+	// 			 <i class="bd-theme-toggle-slide"></i>
+	// 			 <span class="bd-theme-toggle-light active"><i class="fa-light fa-sun-bright"></i> Light</span>
+	// 	   </label>
+	// 	</div>
 
-		<!--  RTL SETTINGS  mb-20 -->
-		<div class="bd-theme-dir">
-		   <label class="bd-theme-dir-main" for="bd-dir-toggler">
-			  <span class="bd-theme-dir-rtl"> RTL</span>
-				 <input type="checkbox" id="bd-dir-toggler">
-				 <i class="bd-theme-dir-slide"></i>
-			  <span class="bd-theme-dir-ltr active"> LTR</span>
-		   </label>
-		</div>
+	// 	<!--  RTL SETTINGS  mb-20 -->
+	// 	<div class="bd-theme-dir">
+	// 	   <label class="bd-theme-dir-main" for="bd-dir-toggler">
+	// 		  <span class="bd-theme-dir-rtl"> RTL</span>
+	// 			 <input type="checkbox" id="bd-dir-toggler">
+	// 			 <i class="bd-theme-dir-slide"></i>
+	// 		  <span class="bd-theme-dir-ltr active"> LTR</span>
+	// 	   </label>
+	// 	</div>
 
-		<div class="bd-theme-settings">
-		   <div class="bd-theme-settings-wrapper">
-			  <div class="bd-theme-settings-open">
-				 <button class="bd-theme-settings-open-btn">
-					<span class="bd-theme-settings-gear">
-					   <i class="fa-light fa-gear"></i>
-					</span>
-					<span class="bd-theme-settings-close">
-					   <i class="fa-regular fa-xmark"></i>
-					</span>
-				 </button>
-			  </div>
-		   </div>
-		</div>
-	 </div>
-		 </div>`;
-		settings.append(settings_html);
-	}
+	// 	<div class="bd-theme-settings">
+	// 	   <div class="bd-theme-settings-wrapper">
+	// 		  <div class="bd-theme-settings-open">
+	// 			 <button class="bd-theme-settings-open-btn">
+	// 				<span class="bd-theme-settings-gear">
+	// 				   <i class="fa-light fa-gear"></i>
+	// 				</span>
+	// 				<span class="bd-theme-settings-close">
+	// 				   <i class="fa-regular fa-xmark"></i>
+	// 				</span>
+	// 			 </button>
+	// 		  </div>
+	// 	   </div>
+	// 	</div>
+	//  </div>
+	// 	 </div>`;
+	// 	settings.append(settings_html);
+	// }
 
 	function bd_rtl_settings() {
 		$('#bd-dir-toggler').on("change", function () {
@@ -2253,5 +2304,8 @@
 	});
 
 
+$('body').on("click", ".ts-toggle-btn", function () {
+    $(".ts-panel").toggleClass("open");
+});
 
 })(jQuery);

@@ -1,6 +1,6 @@
 <?php
-$page_title = "product page";
-$page = 'Products';
+$page_title = "Review page";
+$page = 'Review Lists';
 $show_breadcrumb = true;
 $content = '
     <div class="col-xxl-12">
@@ -23,7 +23,7 @@ $content = '
                                     <tbody class="table__body">
                                         <tr>
                                             <td><input type="checkbox" class="selectedId" name="selectedId"></td>
-                                            <td><img src="https://admin.dpremiumhomes.com/_next/image?url=https%3A%2F%2Fapi.dpremiumhomes.com%2Fstorage%2Fproducts%2F1752859894_687a84f68525a_Project%20Image.png&w=48&q=75" alt="image"></td>
+                                            <td><img src="../../assets/images/blog/blog-image-1" alt="image"></td>
                                             <td>Test</td>
                                             <td>Thanks</td>
                                             <td>Customer</td>

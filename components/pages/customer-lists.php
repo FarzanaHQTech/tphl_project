@@ -51,11 +51,11 @@
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar13.png" alt="image"></a>
+                                            <a href="customer-details.php"><img src="../../assets/images/avatar/avatar13.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
-                                                <h4 class="mb-8"><a href="customer-details.html">Sarah Martinez</a></h4>
+                                                <h4 class="mb-8"><a href="customer-details.php">Sarah Martinez</a></h4>
                                                 <span>DataMinds Tech</span>
                                                 <p>Software Developer</p>
                                             </div>
@@ -70,7 +70,7 @@
                                                 <div class="d-flex align-items-center justify-content-center gap-15">
                                                     <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                                                     <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editCustomer">Edit</button>
-                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.php">View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,11 +81,11 @@
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar15.png" alt="image"></a>
+                                            <a href="customer-details.php"><img src="../../assets/images/avatar/avatar15.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
-                                                <h4 class="mb-8"><a href="customer-details.html">Amanda Taylor</a></h4>
+                                                <h4 class="mb-8"><a href="customer-details.php">Amanda Taylor</a></h4>
                                                 <span>CyberTech Solutions</span>
                                                 <p>Technical Lead</p>
                                             </div>
@@ -100,7 +100,7 @@
                                                 <div class="d-flex align-items-center justify-content-center gap-15">
                                                     <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                                                     <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editCustomer">Edit</button>
-                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.php">View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -111,11 +111,11 @@
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar.png" alt="image"></a>
+                                            <a href="customer-details.php"><img src="../../assets/images/avatar/avatar.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
-                                                <h4 class="mb-8"><a href="customer-details.html">Christopher Wilson</a>
+                                                <h4 class="mb-8"><a href="customer-details.php">Christopher Wilson</a>
                                                 </h4>
                                                 <span>AgileTech Solutions</span>
                                                 <p>Chief Architect</p>
@@ -131,7 +131,7 @@
                                                 <div class="d-flex align-items-center justify-content-center gap-15">
                                                     <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                                                     <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editCustomer">Edit</button>
-                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.php">View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -142,11 +142,11 @@
                                 <div class="card__wrapper">
                                     <div class="client__wrapper text-center">
                                         <div class="client__thumb mb-15">
-                                            <a href="customer-details.html"><img src="assets/images/avatar/avatar12.png" alt="image"></a>
+                                            <a href="customer-details.php"><img src="../../assets/images/avatar/avatar12.png" alt="image"></a>
                                         </div>
                                         <div class="client__content">
                                             <div class="client__meta">
-                                                <h4 class="mb-8"><a href="customer-details.html">Matthew Clark</a></h4>
+                                                <h4 class="mb-8"><a href="customer-details.php">Matthew Clark</a></h4>
                                                 <span>InnoTech Solutions</span>
                                                 <p>Chief Digital Officer</p>
                                             </div>
@@ -161,7 +161,7 @@
                                                 <div class="d-flex align-items-center justify-content-center gap-15">
                                                     <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                                                     <button type="button" class="btn btn-outline-theme-border" data-bs-toggle="modal" data-bs-target="#editCustomer">Edit</button>
-                                                    <a class="btn btn-outline-theme-border" href="customer-details.html">View</a>
+                                                    <a class="btn btn-outline-theme-border" href="customer-details.php">View</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
                 
- // <!-- add new client profile modal -->
+ <!-- add new client profile modal -->
     <div class="modal fade" id="addNewCustomer" tabindex="-1" aria-labelledby="addNewCustomerLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">

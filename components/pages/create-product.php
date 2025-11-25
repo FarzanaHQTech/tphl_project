@@ -232,7 +232,7 @@ $content = '
                                     <label> Description
                                         <span>*</span></label>
                                 </div>
-                                <div class="fullwidth-textarea">
+                                <div class="fullwidth-textarea form__input">
                                     <textarea rows="3" name="description"></textarea>
                                 </div>
 

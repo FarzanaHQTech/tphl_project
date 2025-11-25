@@ -1,9 +1,9 @@
        <!-- app-sidebar-start -->
        <div class="app-sidebar" id="sidebar">
            <div class="main-sidebar-header">
-               <a href="index.html" class="header-logo">
+               <a href="home.php" class="header-logo">
                    <img class="main-logo" src="../../assets/images/logo/tphl_logo.png" alt="logo">
-                   <img class="dark-logo" src="../../assets/images/logo/TPHL_Logo.png" alt="logo">
+                   <img class="dark-logo" src="../../assets/images/logo/logo_white.png" alt="logo">
                </a>
            </div>
            <div class="main-sidebar" id="sidebar-scroll">
@@ -392,11 +392,6 @@
                                <li class="slide">
                                    <a class="sidebar__menu-item" href="weekends.php"> Weekend List</a>
                                </li>
-                              
-                           
-
-                               
-                            
                            </ul>
                        </li>
 
@@ -423,7 +418,7 @@
                            </a>
                            <ul class="sidebar-menu child1">
 
-                               <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Auction List</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="auctions.php">Auction List</a>
                                </li>
                            </ul>
                        </li>
@@ -436,16 +431,16 @@
                            </a>
                            <ul class="sidebar-menu child1">
 
-                               <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Account List</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="accounts-list.php">Account List</a>
                                </li>
 
-                               <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Journal List</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="journal-lists.php">Journal List</a>
                                </li>
 
-                               <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Ledger List</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="ledger-lists.php">Ledger List</a>
                                </li>
 
-                               <li class="slide"><a class="sidebar__menu-item" href="expense.ht">Additional Salary</a>
+                               <li class="slide"><a class="sidebar__menu-item" href="additional-salary.php">Additional Salary</a>
                                </li>
                            </ul>
                        </li>
@@ -455,6 +450,7 @@
                </nav>
 
            </div>
+
        </div>
        <div class="app__offcanvas-overlay"></div>
        <!-- app-sidebar-end -->

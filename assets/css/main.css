@@ -82,7 +82,8 @@
   --clr-text-taxonomy: #A9ABB6;
   --clr-text-secondary: #525252;
   --clr-text-rating: #EC8D1D;
-  --clr-theme-primary: #135737;
+  /* --clr-theme-primary: #135737; */
+  --clr-theme-primary: #19915a;
   --clr-theme-secondary: #1ABC9C;
   --clr-theme-tertiary: #ABA3FD;
   --clr-action-danger: #FF3A29;
@@ -2921,6 +2922,8 @@ input[type=file] {
   height: 26px;
   line-height: 26px;
 }
+
+
 .bd-theme-toggle input {
   display: none;
 }
@@ -2970,6 +2973,8 @@ input[type=file] {
 .bd-theme-dir {
   text-align: center;
 }
+
+
 .bd-theme-dir-main {
   display: inline-block;
   width: 160px;
@@ -16111,7 +16116,7 @@ strong ~ p {
 
 
     .perm-table thead th {
-        background: linear-gradient(to right, #4fbcff, #4ce3c9);
+        background: linear-gradient(to right, #247539, #4ce3c9);
         color: #fff;
         font-weight: 600;
         text-transform: uppercase;

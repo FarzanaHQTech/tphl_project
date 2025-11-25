@@ -31,7 +31,7 @@
                     <div class="col-xxl-12">
                         <div class="card__wrapper">
                             <div class="card__title-wrap mb-20">
-                                <h3 class="card__heading-title">Product-Request </h3>
+                                <h3 class="card__heading-title">Projects </h3>
                             </div>
                             <div class="card__table table-responsive">
                                 <table class="table table-bordered mb-0">
@@ -52,7 +52,7 @@
                                         <tr>
                                             <td><input type="checkbox" class="selectedId" name="selectedId"></td>
                                            
-                                             <td>#1 <img src="https://admin.dpremiumhomes.com/_next/image?url=https%3A%2F%2Fapi.dpremiumhomes.com%2Fstorage%2Fproducts%2F1752859894_687a84f68525a_Project%20Image.png&w=48&q=75" alt="image"></td>
+                                             <td>#1 <img src="../../assets/images/blog/blog-image-1" alt="image"></td>
                                             <td class="table__cat">The Premium Lak</td>
                                             <td class="table__cat">Popular Project - 1</td>
                                             

@@ -4,8 +4,7 @@ $page = 'Permission';
 $show_breadcrumb = true;
 
 $content = '
-
-                   <!-- TOP ROLE INPUT -->
+ <!-- TOP ROLE INPUT -->
     <div class="row mb-4">
         <div class="col-lg-10">
             <input type="text" class="form-control" placeholder="New Role Name">
@@ -32,8 +31,8 @@ $content = '
         <table class="table table-bordered perm-table align-middle">
             <thead>
                 <tr>
-                    <th width="25%">Module</th>
-                    <th>Permissions</th>
+                    <th class="thead-secondary text-light" width="25%">Module</th>
+                    <th class="text-light">Permissions</th>
                 </tr>
             </thead>
 
@@ -41,7 +40,7 @@ $content = '
 
                 <!-- ROW TEMPLATE -->
                 <tr>
-                    <td class="perm-module">Role</td>
+                    <td class="perm-module ">Role</td>
                     <td class="perm-checkbox">
                         <label><span>List</span> <input type="checkbox"></label>
                         <label><span>Create</span> <input type="checkbox"></label>

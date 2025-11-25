@@ -6,8 +6,8 @@
     $show_breadcrumb = true;
     $content='
     <div class="breadcrumb__btn my-4">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewLead">Add Lead</button>
-            </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewLead">Add Lead</button>
+    </div>
 
         <div class="row">
                     <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -83,8 +83,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/1.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">SwiftTech
+                                                        <img src="../../assets/images/user/1.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy no-copy" href="company-details.html">SwiftTech
                                                         Solutions
                                                         <span>Pleasantville, CA</span>
                                                 </a>
@@ -112,8 +112,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/2.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">BlueWave Group
+                                                        <img src="../../assets/images/user/2.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">BlueWave Group
                                                         <span>Willow Springs, NY</span>
                                                 </a>
                                                 </span>
@@ -140,8 +140,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/3.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Summit
+                                                        <img src="../../assets/images/user/3.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Summit
                                                         Inc.
                                                         <span>Maplewood, TX</span></a>
                                                 </span>
@@ -158,6 +158,7 @@
                                                             class="fa-sharp fa-light fa-pen"></i></button>
                                                     <button class="removeBtn table__icon delete"><i
                                                             class="fa-regular fa-trash"></i></button>
+                                                            
                                                 </div>
                                             </td>
                                         </tr>
@@ -168,8 +169,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/4.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Nexus Corporation
+                                                        <img src="../../assets/images/user/4.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Nexus Corporation
                                                         <span>Cedar Hills, FL</span></a>
                                                 </span>
                                             </td>
@@ -195,8 +196,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/5.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Stellar Ltd.
+                                                        <img src="../../assets/images/user/5.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Stellar Ltd.
                                                         <span>Pinecrest, WA</span></a>
                                                 </span>
                                             </td>
@@ -222,8 +223,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/6.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Horizon LLC
+                                                        <img src="../../assets/images/user/6.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Horizon LLC
                                                         <span>Redwood City, IL</span></a>
                                                 </span>
                                             </td>
@@ -249,8 +250,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/7.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Cascade Group
+                                                        <img src="../../assets/images/user/7.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Cascade Group
                                                         <span>Cascade Falls, GA</span></a>
                                                 </span>
                                             </td>
@@ -276,8 +277,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/8.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Stellar Solutions
+                                                        <img src="../../assets/images/user/8.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Stellar Solutions
                                                         <span>Pinecrest, WA</span></a>
                                                 </span>
                                             </td>
@@ -303,8 +304,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/9.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Dynamics Inc
+                                                        <img src="../../assets/images/user/9.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Dynamics Inc
                                                         <span>Cedar Hills, FL</span></a>
                                                 </span>
                                             </td>
@@ -330,8 +331,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/10.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Quantum ltd.
+                                                        <img src="../../assets/images/user/10.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Quantum ltd.
                                                         <span>Quantum Valley, OH</span></a>
                                                 </span>
                                             </td>
@@ -357,8 +358,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/11.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Apex International
+                                                        <img src="../../assets/images/user/11.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Apex International
                                                         <span>Summit City, AZ</span></a>
                                                 </span>
                                             </td>
@@ -384,8 +385,8 @@
                                             <td>
                                                 <span class="table-avatar d-flex gap-10 align-items-center">
                                                     <a href="company-details.html" class="company__thumb">
-                                                        <img src="assets/images/user/12.png" alt="image"></a>
-                                                    <a class="d-inline-grid" href="company-details.html">Synergy Systems
+                                                        <img src="../../assets/images/user/12.png" alt="image"></a>
+                                                    <a class="d-inline-grid no-copy" href="company-details.html">Synergy Systems
                                                         Ltd.
                                                         <span>Harmony Heights, NV</span></a>
                                                 </span>
@@ -549,21 +550,21 @@
                                                 </div>
                                                 <div class="from__input-box">
                                                     <select id="ownerName" class="multiple-img">
-                                                        <option data-image="assets/images/avatar/avatar1.png" selected>
+                                                        <option data-image="../../assets/images/avatar/avatar1.png" selected>
                                                             Ethan Mitchell</option>
-                                                        <option data-image="assets/images/avatar/avatar2.png">
+                                                        <option data-image="../../assets/images/avatar/avatar2.png">
                                                             Madison
                                                             Turner</option>
-                                                        <option data-image="assets/images/avatar/avatar3.png">
+                                                        <option data-image="../../assets/images/avatar/avatar3.png">
                                                             Mason
                                                             Rodriguez</option>
-                                                        <option data-image="assets/images/avatar/avatar4.png">
+                                                        <option data-image="../../assets/images/avatar/avatar4.png">
                                                             Lily
                                                             Campbell</option>
-                                                        <option data-image="assets/images/avatar/avatar5.png">
+                                                        <option data-image="../../assets/images/avatar/avatar5.png">
                                                             Carter
                                                             White</option>
-                                                        <option data-image="assets/images/avatar/avatar6.png">
+                                                        <option data-image="../../assets/images/avatar/avatar6.png">
                                                             Olivia
                                                             Bennett</option>
                                                     </select>
@@ -672,7 +673,7 @@
                                     <div class="col-lg-6">
                                         <div class="label__content-wrapper">
                                             <span class="label__subtitle">Company Name</span>
-                                            <h6 class="label__title"><img class="img-36 border-circle mr-10" src="assets/images/user/1.png" alt="image">SwiftTech Solutions</h6>
+                                            <h6 class="label__title"><img class="img-36 border-circle mr-10" src="../../assets/images/user/1.png" alt="image">SwiftTech Solutions</h6>
 
                                         </div>
                                     </div>
@@ -715,7 +716,7 @@
                                     <div class="col-md-6">
                                         <div class="label__content-wrapper">
                                             <span class="label__subtitle">Owner Name</span>
-                                            <h6 class="label__title"><img class="img-36 border-circle" src="assets/images/avatar/avatar1.png" alt="image"> Ethan
+                                            <h6 class="label__title"><img class="img-36 border-circle" src="../../assets/images/avatar/avatar1.png" alt="image"> Ethan
                                                 Mitchell
                                             </h6>
                                         </div>
@@ -893,21 +894,21 @@
                                                 </div>
                                                 <div class="from__input-box">
                                                     <select id="ownerName2" class="multiple-img">
-                                                        <option data-image="assets/images/avatar/avatar1.png" selected>
+                                                        <option data-image="../../assets/images/avatar/avatar1.png" selected>
                                                             Ethan Mitchell</option>
-                                                        <option data-image="assets/images/avatar/avatar2.png">
+                                                        <option data-image="../../assets/images/avatar/avatar2.png">
                                                             Madison
                                                             Turner</option>
-                                                        <option data-image="assets/images/avatar/avatar3.png">
+                                                        <option data-image="../../assets/images/avatar/avatar3.png">
                                                             Mason
                                                             Rodriguez</option>
-                                                        <option data-image="assets/images/avatar/avatar4.png">
+                                                        <option data-image="../../assets/images/avatar/avatar4.png">
                                                             Lily
                                                             Campbell</option>
-                                                        <option data-image="assets/images/avatar/avatar5.png">
+                                                        <option data-image="../../assets/images/avatar/avatar5.png">
                                                             Carter
                                                             White</option>
-                                                        <option data-image="assets/images/avatar/avatar6.png">
+                                                        <option data-image="../../assets/images/avatar/avatar6.png">
                                                             Olivia
                                                             Bennett</option>
                                                     </select>
