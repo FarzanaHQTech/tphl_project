@@ -2,9 +2,8 @@
 $page_title = "Create Purchase ";
 $page = 'Add Purchase ';
 $show_breadcrumb = true;
-$content = '
 
-    
+?>
 <form action="#">
     <div class="row">
         <div class="col-xxl-12">
@@ -62,7 +61,7 @@ $content = '
                                 </div>
                             </div>
 
-                             <div class="col-6 col-xl-6 col-lg-6">
+                            <div class="col-6 col-xl-6 col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
                                         <label for="contact">Contact <span>*</span></label>
@@ -73,7 +72,7 @@ $content = '
                                 </div>
                             </div>
 
-                            
+
                             <div class="col-lg-12">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
@@ -97,7 +96,7 @@ $content = '
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-6">
                                 <div class="from__input-box">
                                     <div class="form__input-title">
@@ -120,43 +119,43 @@ $content = '
 
     </div>
 
-    
-<div class="card__wrapper">
-    <h3>Items</h3>
 
-    <div class="row d-flex ">
-        
-        <div class="col-md-2">
-            <label class="form-label">Unit</label>
-            <select class="form-select">
-                <option>Select Unit</option>
-            </select>
+    <div class="card__wrapper">
+        <h3>Items</h3>
+
+        <div class="row d-flex ">
+
+            <div class="col-md-2">
+                <label class="form-label">Unit</label>
+                <select class="form-select">
+                    <option>Select Unit</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Description</label>
+                <input type="text" class="form-control" />
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Quantity</label>
+                <input type="number" class="form-control" value="0" />
+            </div>
+
+            <div class="col-md-2">
+                <label class="form-label">Unit Price</label>
+                <input type="number" class="form-control" value="0" step="0.01" />
+            </div>
+
+            <div class="col-md-2 align-items-center mt-1">
+                <label class="form-label"></label>
+                <button class="btn btn-danger w-100">Remove</button>
+            </div>
+
         </div>
 
-        <div class="col-md-4">
-            <label class="form-label">Description</label>
-            <input type="text" class="form-control"/>
-        </div>
-
-        <div class="col-md-2">
-            <label class="form-label">Quantity</label>
-            <input type="number" class="form-control" value="0"/>
-        </div>
-
-        <div class="col-md-2">
-            <label class="form-label">Unit Price</label>
-            <input type="number" class="form-control" value="0" step="0.01"/>
-        </div>
-
-        <div class="col-md-2 align-items-center mt-1">
-           <label class="form-label"></label>
-            <button class="btn btn-danger w-100">Remove</button>
-        </div>
-
+        <button class="btn btn-primary mt-3 add">Add Item</button>
     </div>
-
-    <button class="btn btn-primary mt-3 add">Add Item</button>
-</div>
 
 
 
@@ -164,8 +163,3 @@ $content = '
         <button class="btn btn-primary">Add Requisition</button>
     </div>
 </form>
-    
-';
-include "../layouts/master.php";
-?>
-

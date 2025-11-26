@@ -2,9 +2,8 @@
 $page_title = "Create Order ";
 $page = 'Add Order';
 $show_breadcrumb = true;
-$content = '
 
-    
+?>
 <form action="#">
     <div class="row">
         <div class="col-xxl-12">
@@ -117,37 +116,37 @@ $content = '
                             <div class="form__input-title">
                                 <label for="paymentMethod">Transaction ID<span>*</span></label>
                             </div>
-                    </div>
-                           
-                            <div class="form_input">
-                                <input class="form-control" name="transactionId" id="transactionId">
-                            </div>
+                        </div>
 
-                           
+                        <div class="form_input">
+                            <input class="form-control" name="transactionId" id="transactionId">
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- pdf upload -->
+                <div class="col-xxl-12  col-12">
+                    <div class="from__input-box">
+                        <div class="form__input-title">
+                            <label>PDF Image<span>*</span></label>
                         </div>
                     </div>
 
-                    <!-- pdf upload -->
-                    <div class="col-xxl-12  col-12">
-                            <div class="from__input-box">
-                                <div class="form__input-title">
-                                    <label>PDF Image<span>*</span></label>
-                                </div>
-                            </div>
-
-                            <div class="dropzone dz-clickable" id="myNewDropzone">
-                                <div class="dz-default dz-message"><i class="fa-thin fa-cloud-arrow-up"></i>
-                                    <h6>Drop files here or click to upload.</h6><span class="note needsclick">(This is just a demo
-                                        dropzone. Selected files are
-                                        not actually uploaded.)</span>
-                                </div>
-                            </div>
+                    <div class="dropzone dz-clickable" id="myNewDropzone">
+                        <div class="dz-default dz-message"><i class="fa-thin fa-cloud-arrow-up"></i>
+                            <h6>Drop files here or click to upload.</h6><span class="note needsclick">(This is just a demo
+                                dropzone. Selected files are
+                                not actually uploaded.)</span>
                         </div>
-
-                </div>
-            </div> 
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
 
 
 
@@ -156,7 +155,3 @@ $content = '
         <button class="btn btn-primary">Add Requisition</button>
     </div>
 </form>
-    
-';
-include "../layouts/master.php";
-?>

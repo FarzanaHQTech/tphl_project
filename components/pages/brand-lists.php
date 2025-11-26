@@ -2,12 +2,13 @@
     $page_title = "Brand List";
     $page = ' Brand lists';
     $show_breadcrumb = true;
-    $content='
+
+?>
   <div class="row gy-20">
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                             <img src="../../assets/images/blog/blog-image-1.png" alt="image">
+                             <img src="assets/images/blog/blog-image-1.png" alt="image">
                             </div>
                             <div class="bd-blog-content">
                                 <div class="bd-blog-meta-list">
@@ -35,7 +36,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                             <img src="../../assets/images/blog/blog-image-1.png" alt="image">
+                             <img src="assets/images/blog/blog-image-1.png" alt="image">
                             </div>
                             <div class="bd-blog-content">
                                 <div class="bd-blog-meta-list">
@@ -66,7 +67,3 @@
                         <button type="button" class="btn btn-primary">Load More</button>
                     </div>
  </div>
-    
-';
-include "../layouts/master.php";
-?>

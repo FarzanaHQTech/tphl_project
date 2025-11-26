@@ -2,15 +2,17 @@
 $page_title = "Attendence Page";
 $page = 'Attendence';
 $show_breadcrumb = true;
-$content = '
 
-                
+// include "../layouts/master.php";
+?>
+
+           
              <div class="col-xxl-12">
                         <div class="row">
                             <div class="col-xxl-6">
                                 <div class="card__wrapper">
                                        
-                                          <a href="./create-attencence.php" class="btn btn-primary " >Add Attencence</a>
+                                          <a href="?page=create-attencence" class="btn btn-primary " >Add Attencence</a>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +190,7 @@ $content = '
                                                             <a class="employee__avatar mr-5"
                                                                 href="employee-profile.html"><img
                                                                     class="img-48 border-circle"
-                                                                    src="../../assets/images/avatar/avatar1.png"
+                                                                    src="assets/images/avatar/avatar1.png"
                                                                     alt="User Image"></a>
                                                             <a href="employee-profile.html">Emily Johnson</a>
                                                         </span>
@@ -254,7 +256,7 @@ $content = '
                                                             <a class="employee__avatar mr-5"
                                                                 href="employee-profile.html"><img
                                                                     class="img-48 border-circle"
-                                                                    src="../../assets/images/avatar/avatar3.png"
+                                                                    src="assets/images/avatar/avatar3.png"
                                                                     alt="User Image"></a>
                                                             <a href="employee-profile.html">Alexander Smith</a>
                                                         </span>
@@ -460,7 +462,3 @@ $content = '
                             </div>
                         </div>
                     <!-- Designations Edit Modal End -->
-';
-include "../layouts/master.php";
-?>
-

@@ -1,23 +1,22 @@
 <?php
-$current_page = basename($_SERVER['PHP_SELF']);
-
+$current_page = $GLOBALS['current_page'];
+?>
+<?php
 if (!isset($page_title)) {
     $page_title = 'Blank'; // default title
 }
-require __DIR__ . '/../header.php';
 
+require __DIR__ . '/../header.php';
 ?>
 <!--=======================================================================-->
 <!------------------------  Content Start From Here --------------------->
 <!--=======================================================================-->
 
-
 <?php
 if (isset($show_breadcrumb) && $show_breadcrumb === true) {
     include __DIR__ . '/../breadcrumb-area.php';
+
 }
-
-
 ?>
 <div class="app__slide-wrapper">
     <?php
@@ -27,11 +26,10 @@ if (isset($show_breadcrumb) && $show_breadcrumb === true) {
     ?>
 </div>
 
-
 <!--=======================================================================-->
 <!----------------------------  Content End Here ------------------------->
 <!--=======================================================================-->
-<?php
 
+<?php
 require __DIR__ . '/../footer.php';
 ?>

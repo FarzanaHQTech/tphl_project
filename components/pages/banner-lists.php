@@ -2,12 +2,13 @@
     $page_title = "Banner details Page";
     $page = 'Banner Details';
     $show_breadcrumb = true;
-    $content='
-    <div class="row gy-20">
+
+?>
+   <div class="row gy-20">
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="banner-details.php"><img src="../../assets/images/blog/blog-image-1.png" alt="image"></a>
+                                <a href="index.php?page=banner-details"><img src="assets/images/blog/blog-image-1.png" alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
                                 <div class="bd-blog-meta-list">
@@ -15,22 +16,22 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="banner-details.php">John
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=banner-details">John
                                                 Doe</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="banner-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=banner-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="banner-details.php">Navigating Modern Workforce
+                                <h4 class="bd-blog-title"><a href="index.php?page=banner-details">Navigating Modern Workforce
                                         Dynamics</a></h4>
                                 <p>Dive into the complexities of HRM with HR Insights, where each topic</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="banner-details.php">
+                                    <a href="index.php?page=banner-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -51,7 +52,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="banner-details.php"><img src="../../assets/images/blog/blog-image-2.png" alt="image"></a>
+                                <a href="index.php?page=banner-details"><img src="assets/images/blog/blog-image-2.png" alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
                                 <div class="bd-blog-meta-list">
@@ -59,23 +60,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="banner-details.php">Jane
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=banner-details">Jane
                                                 Smith</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="banner-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=banner-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="banner-details.php">Strategies for a Motivated
+                                <h4 class="bd-blog-title"><a href="index.php?page=banner-details">Strategies for a Motivated
                                         Workforce</a></h4>
                                 <p>Explore the best practices in HRM with HR Masters, where each strategy
                                 </p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="banner-details.php">
+                                    <a href="index.php?page=banner-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -97,8 +98,3 @@
 
                    
                 </div>
-    
-    
-';
-include "../layouts/master.php";
-?>

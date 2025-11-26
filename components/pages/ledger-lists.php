@@ -3,7 +3,7 @@ $page_title = "Journal Page";
 $page = 'Journal Management';
 $show_breadcrumb = true;
 
-$content = '
+?>
 <div class="col-xxl-12">
     <div class="row">
         <div class="col-xxl-6">
@@ -20,7 +20,7 @@ $content = '
             <div class="card__wrapper">
                 <div class="d-flex align-items-center justify-content-between gap-15">
                     <button class="btn btn-secondary w-100">Search</button>
-                    <a href="create-ledger.php" class="btn btn-primary w-100">Add Ledger</a>
+                    <a href="index.php?page=create-ledger" class="btn btn-primary w-100">Add Ledger</a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@ $content = '
                                 <a class="table_icon download">
                                     <i class="fa-regular fa-arrow-down-to-bracket"></i>
                                 </a>
-                                <a href="edit-ledger.php" class="table__icon edit">
+                                <a href="pindex,php?page=edit-ledger" class="table__icon edit">
                                     <i class="fa-sharp fa-light fa-pen"></i>
                                 </a>
                                 <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#ledgerDetails">
@@ -80,7 +80,7 @@ $content = '
                                 <a class="table_icon download">
                                     <i class="fa-regular fa-arrow-down-to-bracket"></i>
                                 </a>
-                                <a href="edit-ledger.php" class="table__icon edit">
+                                <a href="index,php?page=edit-ledger" class="table__icon edit">
                                     <i class="fa-sharp fa-light fa-pen"></i>
                                 </a>
                                 <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#ledgerDetails">
@@ -96,9 +96,3 @@ $content = '
         </div>
     </div>
 </div>
-
-
-';
-
-include "../layouts/master.php";
-?>

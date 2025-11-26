@@ -6,7 +6,7 @@ $page_title = "Camera lists";
 $page = "Camera list";   
 $show_breadcrumb = true;
 
-$content = '
+?>
 
   <div class="col-xxl-12">
                         <div class="row">
@@ -91,7 +91,3 @@ $content = '
                     </div>
                     
                 </div>
-            
-';
-include "../layouts/master.php";
-?>

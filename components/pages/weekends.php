@@ -3,7 +3,8 @@ $page_title = "Weekends page";
 $page = 'Weekends';
 $addPage = true;
 $show_breadcrumb = true;
-$content = '
+
+?>
 <div class="container mt-5">
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
@@ -24,23 +25,64 @@ $content = '
                 <tbody id="weekendTable">
                 </tbody>
             </table>
- 
+
             <button class="btn btn-primary" onclick="saveWeekend()">Save Changes</button>
         </div>
     </div>
-</div>           
-';
-include "../layouts/master.php";
-?>
+</div>
+
+
+
 <script>
-    const days = [
-        { id: 1, name: "Sunday", start: "10:00", end: "19:00", weekend: false },
-        { id: 2, name: "Monday", start: "10:00", end: "19:00", weekend: true },
-        { id: 3, name: "Tuesday", start: "10:00", end: "19:00", weekend: true },
-        { id: 4, name: "Wednesday", start: "10:00", end: "19:00", weekend: true },
-        { id: 5, name: "Thursday", start: "10:00", end: "19:00", weekend: true },
-        { id: 6, name: "Friday", start: "04:00", end: "19:00", weekend: true },
-        { id: 7, name: "Saturday", start: "10:00", end: "19:00", weekend: true },
+    const days = [{
+            id: 1,
+            name: "Sunday",
+            start: "10:00",
+            end: "19:00",
+            weekend: false
+        },
+        {
+            id: 2,
+            name: "Monday",
+            start: "10:00",
+            end: "19:00",
+            weekend: true
+        },
+        {
+            id: 3,
+            name: "Tuesday",
+            start: "10:00",
+            end: "19:00",
+            weekend: true
+        },
+        {
+            id: 4,
+            name: "Wednesday",
+            start: "10:00",
+            end: "19:00",
+            weekend: true
+        },
+        {
+            id: 5,
+            name: "Thursday",
+            start: "10:00",
+            end: "19:00",
+            weekend: true
+        },
+        {
+            id: 6,
+            name: "Friday",
+            start: "04:00",
+            end: "19:00",
+            weekend: true
+        },
+        {
+            id: 7,
+            name: "Saturday",
+            start: "10:00",
+            end: "19:00",
+            weekend: true
+        },
     ];
 
     function loadTable() {
@@ -79,4 +121,3 @@ include "../layouts/master.php";
 
     loadTable();
 </script>
-

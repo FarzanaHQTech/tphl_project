@@ -3,7 +3,10 @@ $page_title = "Additional Salary";
 $page = 'Additional Salary';
 $show_breadcrumb = true;
 
-$content = '
+
+// include "../layouts/master.php";
+?>
+
 <div class="col-xxl-12">
     <div class="row">
         <!-- Search Input -->
@@ -22,7 +25,7 @@ $content = '
             <div class="card__wrapper">
                 <div class="d-flex align-items-center justify-content-between gap-15">
                     <button class="btn btn-secondary w-100">Search</button>
-                    <a href="create-additional-salary.php" class="btn btn-primary w-100">Add Additional Salary</a>
+                    <a href="?page=create-additional-salary" class="btn btn-primary w-100">Add Additional Salary</a>
                 </div>
             </div>
         </div>
@@ -63,7 +66,7 @@ $content = '
                                 <a class="table_icon download">
                                     <i class="fa-regular fa-arrow-down-to-bracket"></i>
                                 </a>
-                                <a href="edit-additional-salary.php" class="table__icon edit">
+                                <a href="?page=edit-additional-salary" class="table__icon edit">
                                     <i class="fa-sharp fa-light fa-pen"></i>
                                 </a>
                                 <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#salaryDetails">
@@ -101,12 +104,6 @@ $content = '
         </div>
     </div>
 </div>
-
-';
-
-include "../layouts/master.php";
-?>
-
 
 
 

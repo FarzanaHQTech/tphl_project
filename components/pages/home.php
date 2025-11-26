@@ -2,7 +2,7 @@
 $page_title = "Home";   // এই পেজের Title
 
 $show_breadcrumb = false;
-$content = '
+?>
 
                 <div class="row g-20">
                     <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -676,9 +676,9 @@ $content = '
                                         </div>
                                         <p>Lorem ipsum dolor sit amet consecte</p>
                                         <div class="timeline__thumb">
-                                            <img src="../../assets/images/product/item1.png" alt="image">
-                                            <img src="../../assets/images/product/item2.png" alt="image">
-                                            <img src="../../assets/images/product/item3.png" alt="image">
+                                            <img src="assets/images/product/item1.png" alt="image">
+                                            <img src="assets/images/product/item2.png" alt="image">
+                                            <img src="assets/images/product/item3.png" alt="image">
                                         </div>
                                     </div>
                                 </li>
@@ -693,11 +693,11 @@ $content = '
                                         <div class="avatar">
                                             <ul>
                                                 <li><img class="img-48 border-circle"
-                                                        src="../../assets/images/avatar/avatar1.png" alt="image"></li>
+                                                        src="assets/images/avatar/avatar1.png" alt="image"></li>
                                                 <li><img class="img-48 border-circle"
-                                                        src="../../assets/images/avatar/avatar2.png" alt="image"></li>
+                                                        src="assets/images/avatar/avatar2.png" alt="image"></li>
                                                 <li><img class="img-48 border-circle"
-                                                        src="../../assets/images/avatar/avatar3.png" alt="image"></li>
+                                                        src="assets/images/avatar/avatar3.png" alt="image"></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -822,6 +822,4 @@ $content = '
                     </div>
                 </div>
             
-';
-include "../layouts/master.php";
-?>
+

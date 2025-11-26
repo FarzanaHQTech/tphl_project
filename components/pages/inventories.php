@@ -2,9 +2,10 @@
 $page_title = "Inventories Page";
 $page = 'Inventories';
 $show_breadcrumb = true;
-$content = '
-  
- <div class="col-xxl-12">
+
+?>
+
+<div class="col-xxl-12">
 
     <div class="row">
         <div class="col-xxl-12">
@@ -38,11 +39,11 @@ $content = '
                                 <td class="table_cat"><span class="bd-badge bg-primary">Available</span></td>
                                 <td class="table__icon-box">
                                     <div class="d-flex align-items-center justify-content-center gap-10">
-                                        
+
                                         <a href="#" class="table__icon edit">
                                             <i class="fa-sharp fa-light fa-pen"></i>
                                         </a>
-                                    
+
                                     </div>
                                 </td>
                             </tr>
@@ -57,11 +58,11 @@ $content = '
                                 <td class="table_cat"><span class="bd-badge bg-danger">Low Stock</span></td>
                                 <td class="table__icon-box">
                                     <div class="d-flex align-items-center justify-content-center gap-10">
-                                     
-                                        <a href="./edit-requisition.php" class="table__icon edit">
+
+                                        <a href="index.php?page=edit-requisition.php" class="table__icon edit">
                                             <i class="fa-sharp fa-light fa-pen"></i>
                                         </a>
-                                        
+
                                     </div>
                                 </td>
                             </tr>
@@ -78,10 +79,3 @@ $content = '
 
 
 </div>
-    
-    
-';
-include "../layouts/master.php";
-?>
-
-

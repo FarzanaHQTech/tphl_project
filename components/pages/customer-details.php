@@ -2,7 +2,8 @@
 $page_title = "Customer details ";
 $page = 'Customer details';
 $show_breadcrumb = true;
-$content = '
+
+?>
 <div class="row">
     <div class="col-xxl-7">
         <div class="card__wrapper height-equal">
@@ -125,8 +126,6 @@ $content = '
             </div>
         </div>
     </div>
->
+    >
 
-</div>';
-include "../layouts/master.php";
-?>
+</div>'

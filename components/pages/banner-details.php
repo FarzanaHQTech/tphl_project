@@ -3,9 +3,9 @@
     $page = 'Banner';
     $show_breadcrumb = true;
     $addPage = false;
-    $content='
- 
-                    <div class="row">
+
+?>
+          <div class="row">
                     <div class="col-xxl-8 col-xl-8 col-sm-12">
                         <div class="card__wrapper">
                             <div class="post-details-wrapper">
@@ -438,8 +438,3 @@
                         </div>
                     </div>
                 </div>
-    
-    
-';
-include "../layouts/master.php";
-?>

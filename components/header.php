@@ -9,36 +9,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-style-mode" content="1">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/logo/tphl_logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/tphl_logo.png">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/animate.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/apexcharts.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/jquery-jvectormap-2.0.5.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/magnific-popup.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/icomoon.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/fontawesome-pro.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/rating.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/dropzone.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/dropify.min.css">
-    <link rel="stylesheet" href="../../assets/css/vendor/spacing.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/datatables.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/buttons.bootstrap5.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/select2.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/jquery.timepicker.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/tagify.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/flatpickr.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/jquery-ui.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/fullcalendar.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/ion.rangeSlider.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/simplebar.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/waves.min.css">
-    <link rel="stylesheet" href="../../assets/css/plugins/nano.min.css">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.css">
+    <link rel="stylesheet" href="assets/css/plugins/apexcharts.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery-jvectormap-2.0.5.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/icomoon.css">
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
+    <link rel="stylesheet" href="assets/css/vendor/rating.css">
+    <link rel="stylesheet" href="assets/css/vendor/dropzone.css">
+    <link rel="stylesheet" href="assets/css/plugins/dropify.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/spacing.css">
+    <link rel="stylesheet" href="assets/css/plugins/datatables.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/buttons.bootstrap5.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery.timepicker.css">
+    <link rel="stylesheet" href="assets/css/plugins/tagify.css">
+    <link rel="stylesheet" href="assets/css/plugins/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/plugins/fullcalendar.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css">
+    <link rel="stylesheet" href="assets/css/plugins/waves.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nano.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="body-area">
@@ -55,10 +55,16 @@
     </div>
     <!-- Preloader start -->
 
+
+
     <!-- Dashboard area start -->
     <div class="page__full-wrapper">
 
-<?php require __DIR__ . '../sidebar.php'; ?>
+<?php 
+   
+           
+require __DIR__ . '/sidebar.php'; ?>
+
 
             <!-- App header area start -->
              
@@ -75,8 +81,12 @@
                                 </div>
                             </a>
                         </div>
-                        <h2 class="header__title">Hello Mehedi<span><img src="../../assets/images/shape/hand.png"
-                                    alt="image"></span></h2>
+                        
+                    <h2 class="header__title">
+                        Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : '' ?>
+                        <span><img src="assets/images/shape/hand.png" alt="image"></span>
+                    </h2>
+
                     </div>
                     <div class="app__header-right">
                         <div class="app__herader-input p-relative">
@@ -570,10 +580,11 @@
                             <a id="userportfolio" href="#">
                                 <div class="user__portfolio">
                                     <div class="user__portfolio-thumb">
-                                        <img src="../../assets/images/avatar/avatar.png" alt="img not found">
+                                        <img src="assets/images/avatar/avatar.png" alt="img not found">
                                     </div>
+
                                     <div class="user__content">
-                                        <h5>Mehedi</h5>
+                                        <h5><?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name']:'' ?></h5>
                                         <span>online</span>
                                     </div>
                                 </div>
@@ -622,7 +633,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="signup-basic.html"><svg width="18" height="18" viewBox="0 0 18 18"
+                                        <a href="?page=admin-registration"><svg width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M12.9224 9.03197C12.5765 8.86754 12.2235 8.7259 11.8644 8.60724C13.0275 7.73424 13.7812 6.34413 13.7812 4.78125C13.7812 2.14488 11.6364 0 8.99999 0C6.36359 0 4.21874 2.14488 4.21874 4.78125C4.21874 6.34585 4.97418 7.73734 6.13943 8.61016C5.07181 8.96165 4.07003 9.50858 3.19323 10.2298C1.58546 11.5522 0.4676 13.3969 0.0456193 15.4239C-0.0866386 16.059 0.0718107 16.7114 0.480256 17.2136C0.886698 17.7134 1.48938 18 2.13373 18H10.793C11.1813 18 11.4961 17.6852 11.4961 17.2969C11.4961 16.9086 11.1813 16.5938 10.793 16.5938H2.13373C1.83356 16.5938 1.65247 16.4262 1.57126 16.3264C1.43102 16.1539 1.37674 15.9295 1.42234 15.7105C2.15201 12.2056 5.24351 9.64527 8.8136 9.55892C8.87544 9.56131 8.93756 9.56251 8.99999 9.56251C9.06303 9.56251 9.12578 9.56128 9.18822 9.55885C10.2823 9.58452 11.3345 9.8342 12.3187 10.3021C12.6694 10.4687 13.0888 10.3196 13.2556 9.96885C13.4223 9.61813 13.2731 9.19868 12.9224 9.03197ZM9.17149 8.15193C9.11443 8.15091 9.05726 8.15039 8.99999 8.15039C8.94325 8.15039 8.88651 8.15095 8.82984 8.152C7.04759 8.06309 5.62499 6.58519 5.62499 4.78125C5.62499 2.92026 7.139 1.40625 8.99999 1.40625C10.861 1.40625 12.375 2.92026 12.375 4.78125C12.375 6.58474 10.9531 8.06236 9.17149 8.15193Z"
@@ -635,7 +646,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="signin-basic.html"><svg width="18" height="18" viewBox="0 0 18 18"
+                                        <a href="?page=admin-login"><svg width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_643_343)">
                                                     <path

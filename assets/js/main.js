@@ -166,10 +166,6 @@ function bd_settings_append($x) {
 }
 
 
-
-
-
-
 	/* settings append in body Js */
 	// function bd_settings_append($x) {
 	// 	var settings = $('body');

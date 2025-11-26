@@ -3,17 +3,18 @@ $page_title = "Salary Page";
 $page = 'Salary List';
 $show_breadcrumb = true;
 
-$content = '
+
+?>
 <div class="row">
     <div class="col-xxl-12">
         <div class="card__wrapper">
 
-            <a href="./create-salary.php" class="btn btn-primary ">Add Salary</a>
+            <a href="index.php?page=create-salary" class="btn btn-primary ">Add Salary</a>
         </div>
     </div>
 </div>
 <div class="row">
-                         
+
     <div class="col-xxl-12">
         <div class="card__wrapper">
             <div class="card__title-wrap mb-20">
@@ -73,7 +74,3 @@ $content = '
         </div>
     </div>
 </div>
-
-';
-include "../layouts/master.php";
-?>

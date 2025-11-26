@@ -2,10 +2,10 @@
 $page_title = "Create Salaey ";
 $page = 'Add salary ';
 $show_breadcrumb = true;
-$content = '
 
-    
- <form action="#">
+?>
+
+<form action="#">
     <div class="row">
         <div class="col-xxl-12">
             <div class="card__wrapper">
@@ -105,15 +105,10 @@ $content = '
 
                 </div>
 
-                    <div class="submit__btn text-center my-3">
-                        <button class="btn btn-primary">Add Saary</button>
-                    </div>
+                <div class="submit__btn text-center my-3">
+                    <button class="btn btn-primary">Add Saary</button>
+                </div>
             </div>
-                </div>
-                </div>
-            </form>
-    
-';
-include "../layouts/master.php";
-?>
-
+        </div>
+    </div>
+</form>

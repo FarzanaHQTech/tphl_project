@@ -3,8 +3,7 @@ $page_title = "Attendance Create";
 $page = "Add Attendance";
 $show_breadcrumb = true;
 
-$content='
-
+?>
 
 <form action="#" method="POST">
     <div class="row">
@@ -89,7 +88,3 @@ $content='
     </div>
 </form>
 
-';
-
-include "../layouts/master.php";
-?>

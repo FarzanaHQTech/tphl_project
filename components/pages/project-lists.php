@@ -1,85 +1,85 @@
 <?php
-    $page_title = "project Page";
-    $page = 'Project';
-    $show_breadcrumb = true;
-    $content='
-  
+$page_title = "project Page";
+$page = 'Project';
+$show_breadcrumb = true;
+
+?>
+<div class="col-xxl-12">
+  <div class="row">
+
+
+    <div class="col-xxl-6">
+      <div class="card__wrapper">
+
+        <a href="index.php?page=create-project" class="btn btn-primary w-100">Add Project</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-xxl-12">
-                        <div class="row">
-                            
-                       
-                            <div class="col-xxl-6">
-                                <div class="card__wrapper">
-                                       
-                                          <a href="./create-project.php" class="btn btn-primary w-100" >Add Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="card__wrapper">
+      <div class="card__title-wrap mb-20">
+        <h3 class="card__heading-title">Product-Request </h3>
+      </div>
+      <div class="card__table table-responsive">
+        <table class="table table-bordered mb-0">
+          <thead>
+            <tr class="table__title">
+              <th><input type="checkbox" id="selectall"></th>
+              <th>Iamge</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Land Area</th>
+              <th>Launching Date</th>
+              <th>Hand Over Date</th>
+              <th>Building Height</th>
+              <th>Status</th>
+              <th>Action</th>
 
-            <div class="row">
-                    <div class="col-xxl-12">
-                        <div class="card__wrapper">
-                            <div class="card__title-wrap mb-20">
-                                <h3 class="card__heading-title">Product-Request </h3>
-                            </div>
-                            <div class="card__table table-responsive">
-                                <table class="table table-bordered mb-0">
-                                    <thead>
-                                        <tr class="table__title">
-                                            <th><input type="checkbox" id="selectall"></th>
-                                            <th>Iamge</th>
-                                            <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Land Area</th>
-                                            <th>Launching Date</th>
-                                            <th>Hand Over Date</th>
-                                            <th>Building Height</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="table__body">
+            <tr>
+              <td><input type="checkbox" class="selectedId" name="selectedId"></td>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table__body">
-                                        <tr>
-                                            <td><input type="checkbox" class="selectedId" name="selectedId"></td>
-                                           
-                                              <td><img src="https://admin.dpremiumhomes.com/_next/image?url=https%3A%2F%2Fapi.dpremiumhomes.com%2Fstorage%2Fproducts%2F1752859894_687a84f68525a_Project%20Image.png&w=48&q=75" alt="image"></td>
-                                            <td class="table__cat">The Premium Lak</td>
-                                            <td class="table__cat">Ashulia Model Thana</td>
-                                            <td class="table__cat">3600</td>
-                                            <td class="table__cat">2025-10-17</td>
-                                            <td class="table__cat">2026-10-17</td>
-                                            <td class="table__cat">10</td>
+              <td><img src="https://admin.dpremiumhomes.com/_next/image?url=https%3A%2F%2Fapi.dpremiumhomes.com%2Fstorage%2Fproducts%2F1752859894_687a84f68525a_Project%20Image.png&w=48&q=75" alt="image"></td>
+              <td class="table__cat">The Premium Lak</td>
+              <td class="table__cat">Ashulia Model Thana</td>
+              <td class="table__cat">3600</td>
+              <td class="table__cat">2025-10-17</td>
+              <td class="table__cat">2026-10-17</td>
+              <td class="table__cat">10</td>
 
-                                            <td><span class="bd-badge bg-success">Active</span></td>
-                                           
-                                            <td class="table__icon-box">
-                                                <div class="d-flex align-items-center justify-content-center gap-10">
-                                                    <a href="#" class="table__icon download">
-                                                        <i class="fa-regular fa-arrow-down-to-bracket"></i>
-                                                    </a>
-                                                    <a href="./edit-requisition.php" class="table__icon edit">
-                                                        <i class="fa-sharp fa-light fa-pen"></i>
-                                                    </a>
-                                                      <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#showItemsModal"><i
-                                                            class="fa-regular fa-eye"></i></button>  
-                                                   
-                                                </div>
-                                            </td>
+              <td><span class="bd-badge bg-success">Active</span></td>
 
+              <td class="table__icon-box">
+                <div class="d-flex align-items-center justify-content-center gap-10">
+                  <a href="#" class="table__icon download">
+                    <i class="fa-regular fa-arrow-down-to-bracket"></i>
+                  </a>
+                  <a href="index.php?page=404.php" class="table__icon edit">
+                    <i class="fa-sharp fa-light fa-pen"></i>
+                  </a>
+                  <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#showItemsModal"><i
+                      class="fa-regular fa-eye"></i></button>
 
-                                        </tr>
-                                     
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
+              </td>
 
-   <!--Show Modal -->
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--Show Modal -->
 <div class="modal fade" id="showItemsModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -121,8 +121,3 @@
     </div>
   </div>
 </div>
-    
-    
-';
-include "../layouts/master.php";
-?>

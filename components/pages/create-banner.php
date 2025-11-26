@@ -2,7 +2,8 @@
     $page_title = "Create banner";
     $page = 'Add banner';
     $show_breadcrumb = true;
-    $content='
+  
+?>
   <form action="#">
                     <div class="row">
                         <div class="col-xxl-12">
@@ -93,8 +94,3 @@
                         </div>
                     </div>
                 </form>
-    
-    
-';
-include "../layouts/master.php";
-?>

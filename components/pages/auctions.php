@@ -3,7 +3,7 @@ $page_title = "Auction Page";
 $page = 'Auction Management';
 $show_breadcrumb = true;
 
-$content = '
+?>
 <form action="#">
     <div class="row">
         <div class="col-xxl-12">
@@ -102,7 +102,7 @@ $content = '
                                             <a class="table_icon download ">
                                                 <i class="fa-regular fa-arrow-down-to-bracket"></i>
                                             </a>
-                                             <a href="./edit-requisition.php" class="table__icon edit">
+                                             <a href="index.php?page=edit-requisition" class="table__icon edit">
                                                 <i class="fa-sharp fa-light fa-pen"></i>
                                             </a>
                                                 <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#leadDetails"><i
@@ -124,7 +124,7 @@ $content = '
                                             <a class="table_icon download ">
                                                 <i class="fa-regular fa-arrow-down-to-bracket"></i>
                                             </a>
-                                             <a href="./edit-requisition.php" class="table__icon edit">
+                                             <a href="index.php?page=edit-requisition" class="table__icon edit">
                                                 <i class="fa-sharp fa-light fa-pen"></i>
                                             </a>
                                              <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#leadDetails"><i
@@ -142,7 +142,3 @@ $content = '
         </div>
     </div>
 </form>
-';
-
-include "../layouts/master.php";
-?>

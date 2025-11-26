@@ -2,12 +2,13 @@
     $page_title = "blog page";
     $page = 'Blogs';
     $show_breadcrumb = true;
-    $content='
-                 <div class="row gy-20">
+
+?>
+                <div class="row gy-20">
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-1.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-1.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -16,22 +17,22 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">John
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">John
                                                 Doe</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">Navigating Modern Workforce
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">Navigating Modern Workforce
                                         Dynamics</a></h4>
                                 <p>Dive into the complexities of HRM with HR Insights, where each topic</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -52,7 +53,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-2.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-2.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -61,23 +62,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Jane
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Jane
                                                 Smith</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">Strategies for a Motivated
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">Strategies for a Motivated
                                         Workforce</a></h4>
                                 <p>Explore the best practices in HRM with HR Masters, where each strategy
                                 </p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -98,7 +99,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-3.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-3.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -107,23 +108,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Robert
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Robert
                                                 Brown</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">The Future of Workforce
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">The Future of Workforce
                                         Management</a></h4>
                                 <p>Unveil the latest in HRM technology with HR Tech Trends, where each
                                     innovation</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -144,7 +145,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-4.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-4.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -153,23 +154,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Emily
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Emily
                                                 Johnson</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">Developing Tomorrows Leaders
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">Developing Tomorrows Leaders
                                         Today</a></h4>
                                 <p>Delve into leadership practices in HRM with Leadership Edge, where each
                                     principle</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -190,7 +191,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-5.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-5.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -199,23 +200,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Alex
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Alex
                                                 Johnson</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">Enhancing CRM
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">Enhancing CRM
                                         Efficiency: Top Strategies for Success</a></h4>
                                 <p>Explore how efficient CRM systems can transform customer relationships
                                     and drive business marketing growth.</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -236,7 +237,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-6.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-6.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -245,23 +246,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Alex
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Alex
                                                 Johnson</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">Whats
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">Whats
                                         Shaping the Future of Customer Management</a></h4>
                                 <p>Stay ahead with the latest CRM trends that are set to revolutionize how
                                     businesses engage with customers.</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -282,7 +283,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-7.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-7.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -291,23 +292,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Alex
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Alex
                                                 Johnson</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">Maximizing ROI with
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">Maximizing ROI with
                                         CRM: Tips for Businesses</a></h4>
                                 <p>Learn how to optimize CRM strategies to increase return on investment and
                                     enhance customer satisfaction.</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -328,7 +329,7 @@
                     <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
                         <article class="bd-blog-wrapper">
                             <div class="bd-blog-thumb">
-                                <a href="blog-details.php"><img src="../../assets/images/blog/blog-image-8.png"
+                                <a href="index.php?page=blog-details"><img src="assets/images/blog/blog-image-8.png"
                                         alt="image"></a>
                             </div>
                             <div class="bd-blog-content">
@@ -337,23 +338,23 @@
                                         <span class="meta-icon">
                                             <i class="fa-solid fa-user"></i>
                                         </span>
-                                        <span class="meta-text"><a class="meta-author" href="blog-details.php">Alex
+                                        <span class="meta-text"><a class="meta-author" href="index.php?page=blog-details">Alex
                                                 Johnson</a></span>
                                     </div>
                                     <div class="bd-blog-meta-item">
                                         <span class="meta-icon">
                                             <i class="fa-sharp fa-light fa-calendar"></i>
                                         </span>
-                                        <span class="meta-text"><a href="blog-details.php">July 11,
+                                        <span class="meta-text"><a href="index.php?page=blog-details">July 11,
                                                 2024</a></span>
                                     </div>
                                 </div>
-                                <h4 class="bd-blog-title"><a href="blog-details.php">The Role of AI in
+                                <h4 class="bd-blog-title"><a href="index.php?page=blog-details">The Role of AI in
                                         Modern CRM Systems</a></h4>
                                 <p>Discover how AI is transforming CRM systems, enhancing automation, and
                                     improving customer insights.</p>
                                 <div class="btn-text-icon p-relative">
-                                    <a href="blog-details.php">
+                                    <a href="index.php?page=blog-details">
                                         <span>Read More</span>
                                         <i>
                                             <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
@@ -375,6 +376,3 @@
                         <button type="button" class="btn btn-primary">Load More</button>
                     </div>
                 </div>
-';
-include "../layouts/master.php";
-?>
