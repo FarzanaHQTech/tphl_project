@@ -54,9 +54,6 @@
         </div>
     </div>
     <!-- Preloader start -->
-
-
-
     <!-- Dashboard area start -->
     <div class="page__full-wrapper">
 
@@ -83,7 +80,7 @@ require __DIR__ . '/sidebar.php'; ?>
                         </div>
                         
                     <h2 class="header__title">
-                        Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : '' ?>
+                        Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : 'Admin' ?>
                         <span><img src="assets/images/shape/hand.png" alt="image"></span>
                     </h2>
 
@@ -584,7 +581,7 @@ require __DIR__ . '/sidebar.php'; ?>
                                     </div>
 
                                     <div class="user__content">
-                                        <h5><?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name']:'' ?></h5>
+                                        <h5><?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name']:'Admin' ?></h5>
                                         <span>online</span>
                                     </div>
                                 </div>

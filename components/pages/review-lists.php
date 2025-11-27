@@ -4,6 +4,10 @@ $page = 'Review Lists';
 $show_breadcrumb = true;
 
 ?>
+<div class="text-end m-4">
+  <a href="index.php?page=create-review" class="btn btn-primary w-auto px-3 ">Add review</a>
+</div>
+
 <div class="col-xxl-12">
     <div class="card__wrapper">
         <div class="table__wrapper table-responsive">

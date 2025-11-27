@@ -4,7 +4,7 @@ $page = 'Order List';
 $show_breadcrumb = true;
 ?>
 <div class="text-end m-4">
-  <a href="index.php?page=create-purchase" class="btn btn-primary w-auto px-3 ">Add Purchase</a>
+  <a href="index.php?page=create-order" class="btn btn-primary w-auto px-3 ">Add order</a>
 </div>
 
 <div class="col-xxl-12">

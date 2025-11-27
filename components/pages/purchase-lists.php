@@ -4,19 +4,10 @@ $page = 'Purchase';
 $show_breadcrumb = true;
 
 ?>
-]
-<div class="col-xxl-12">
-  <div class="row">
-
-
-    <div class="col-xxl-6">
-      <div class="card__wrapper">
-
-        <a href="index.php?page=create-purchase" class="btn btn-primary w-100">Add Purchase</a>
-      </div>
-    </div>
-  </div>
+<div class="text-end m-4">
+  <a href="index.php?page=create-purchase" class="btn btn-primary w-auto px-3 ">Add Purchase</a>
 </div>
+
 
 <div class="row">
   <div class="col-xxl-12">
@@ -59,9 +50,8 @@ $show_breadcrumb = true;
                   <a href="index.php?page=edit-requisition" class="table__icon edit">
                     <i class="fa-sharp fa-light fa-pen"></i>
                   </a>
-                  <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#                                                    showItemsModal
-"><i
-                      class="fa-regular fa-eye"></i></button>
+                  <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#showItemsModal">
+                    <i  class="fa-regular fa-eye"></i></button>
                 </div>
               </td>
 

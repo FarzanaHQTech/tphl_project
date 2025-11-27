@@ -20,7 +20,7 @@ $show_breadcrumb = true;
       <div class="card__wrapper">
         <div class="d-flex align-items-center justify-content-between gap-15">
           <button class="btn btn-secondary w-100">Search</button>
-          <a href="index.php?page=create-popular-project" class="btn btn-primary w-100">Add Popular Project Name</a>
+          <a href="index.php?page=create-popular-project" class="btn btn-primary w-100">Add Popular Project </a>
         </div>
       </div>
     </div>

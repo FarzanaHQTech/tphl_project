@@ -304,6 +304,24 @@ $show_breadcrumb = true;
                                     <div class="col-md-12">
                                         <div class="from__input-box">
                                             <div class="form__input-title">
+                                                <label for="largeSelect" class="form-label">Employee
+                                                    <span>*</span></label>
+                                            </div>
+                                            <div class="form__input">
+                                                <select id="largeSelect" class="form-select">
+                                                    <option value="0">Select Employee Name</option>
+                                                    <option value="1">Employee 1</option>
+                                                    <option value="2">Employee 2</option>
+                                                    <option value="3">Employee 3</option>
+                                                    <option value="4">Employee 4</option>
+                                                    <option value="5">Employee 5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="from__input-box">
+                                            <div class="form__input-title">
                                                 <label for="largeSelect" class="form-label">Leave
                                                     Type<span>*</span></label>
                                             </div>

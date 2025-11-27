@@ -165,6 +165,6 @@ $show_breadcrumb = true;
 
 
     <div class="submit__btn text-center mb-20">
-        <button class="btn btn-primary">Add Requisition</button>
+        <button class="btn btn-primary">Add Payment</button>
     </div>
 </form>

@@ -27,7 +27,7 @@ $show_breadcrumb = true;
                                             <label for="label"> Message<span>*</span></label>
                                         </div>
                                         <div class="form__input">
-                                            <input class="form-control" name="message" id="message" type="text">
+                                            <textarea class="form-control" name="message" id="message" type="text"></textarea>
                                         </div>
                                     </div>
                                 </div>

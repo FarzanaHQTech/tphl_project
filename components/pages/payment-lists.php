@@ -5,17 +5,8 @@ $show_breadcrumb = true;
 
 ?>
 
-<div class="col-xxl-12">
-  <div class="row">
-
-
-    <div class="col-xxl-6">
-      <div class="card__wrapper">
-
-        <a href="index,php?page=create-payment" class="btn btn-primary ">Add Payment</a>
-      </div>
-    </div>
-  </div>
+<div class="text-end m-4">
+  <a href="?page=create-payment" class="btn btn-primary w-auto px-3 ">Add Payment</a>
 </div>
 
 <div class="row">

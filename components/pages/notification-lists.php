@@ -20,13 +20,12 @@ $show_breadcrumb = true;
             <div class="card__wrapper">
                 <div class="d-flex align-items-center justify-content-between gap-15">
                     <button class="btn btn-secondary w-100">Search</button>
-                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addNewCustomer">Add notification</button>
+                    <a href="?page=create-notification" class="btn btn-primary w-100" >Add notification</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="row">
     <div class="col-xxl-12">
         <div class="card__wrapper">
@@ -63,9 +62,6 @@ $show_breadcrumb = true;
                                 </div>
                             </td>
                         </tr>
-
-
-
                     </tbody>
                 </table>
             </div>
@@ -73,3 +69,4 @@ $show_breadcrumb = true;
     </div>
 
 </div>
+

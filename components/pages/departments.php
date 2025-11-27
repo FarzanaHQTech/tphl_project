@@ -6,7 +6,7 @@ $show_breadcrumb = true;
 
 ?>
 <div class="breadcrumb__btn my-4 text-align-end">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewDepartment">Add Lead</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewDepartment">Add Department</button>
 </div>
 
 <div class="row">

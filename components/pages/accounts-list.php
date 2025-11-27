@@ -7,7 +7,7 @@ $show_breadcrumb = true;
     <div class="row">
         <div class="col-xxl-6">
             <div class="card__wrapper">
-                <div class="from__input-box">
+                <div class="from__input-box ">
                     <div class="form__input">
                         <input type="text" class="form-control" id="accountsName" placeholder="Accounts Item Name">
                     </div>

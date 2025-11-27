@@ -4,17 +4,8 @@ $page = 'Project';
 $show_breadcrumb = true;
 
 ?>
-<div class="col-xxl-12">
-  <div class="row">
-
-
-    <div class="col-xxl-6">
-      <div class="card__wrapper">
-
-        <a href="index.php?page=create-project" class="btn btn-primary w-100">Add Project</a>
-      </div>
-    </div>
-  </div>
+<div class="text-end m-4">
+  <a href="index.php?page=create-project" class="btn btn-primary w-auto px-3 ">Add Project</a>
 </div>
 
 <div class="row">

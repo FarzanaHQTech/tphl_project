@@ -224,7 +224,7 @@ $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     <script src="assets/js/vendor/rangeslider-script.js"></script>
     <script src="assets/js/vendor/jquery.barrating.js"></script>
     <script src="assets/js/vendor/rating-script.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
     <script src="assets/js/vendor/sidebar.js"></script>
 
 </body>

@@ -45,7 +45,7 @@ $show_breadcrumb = true;
                                         <label for="message">Message<span>*</span></label>
                                     </div>
                                     <div class="form__input">
-                                        <input class="form-control" name="message" id="message" type="text">
+                                        <textarea class="form-control" name="message" id="message" type="text"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@ $show_breadcrumb = true;
                             </div>
 
                             <div class="submit__btn text-center mb-20">
-                                <button class="btn btn-primary">Add Camera</button>
+                                <button class="btn btn-primary">Add Notification</button>
                             </div>
                         </div>
                     </div>

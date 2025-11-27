@@ -42,12 +42,12 @@ $show_breadcrumb = true;
         <div class="card__wrapper">
             <div class="employee__wrapper text-center">
                 <div class="employee__thumb mb-15">
-                    <a href="user-profile.php"><img src="assets/images/avatar/avatar16.png"
+                    <a href="?page=user-profile"><img src="assets/images/avatar/avatar16.png"
                             alt="image"></a>
                 </div>
                 <div class="employee__content">
                     <div class="employee__meta mb-15">
-                        <h4 class="mb-8"><a href="user-profile.php">Naira Muskan</a></h4>
+                        <h4 class="mb-8"><a href="?page=user-profile">Naira Muskan</a></h4>
                         <p>Chief Executive Officer</p>
                     </div>
                     <div class="common-social mb-20">
@@ -61,7 +61,7 @@ $show_breadcrumb = true;
                         <div class="d-flex align-items-center justify-content-center gap-15">
                             <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                             <a class="btn btn-outline-theme-border"
-                                href="user-profile.php">View</a>
+                                href="?page=user-profile">View</a>
                         </div>
                     </div>
                 </div>
@@ -73,12 +73,12 @@ $show_breadcrumb = true;
         <div class="card__wrapper">
             <div class="employee__wrapper text-center">
                 <div class="employee__thumb mb-15">
-                    <a href="user-profile.php"><img src="assets/images/avatar/avatar2.png"
+                    <a href="?page=user-profile"><img src="assets/images/avatar/avatar2.png"
                             alt="image"></a>
                 </div>
                 <div class="employee__content">
                     <div class="employee__meta mb-15">
-                        <h4 class="mb-8"><a href="user-profile.php">Emily Johnson</a></h4>
+                        <h4 class="mb-8"><a href="?page=user-profile">Emily Johnson</a></h4>
                         <p>Chief Innovation Officer</p>
                     </div>
                     <div class="common-social mb-20">
@@ -92,7 +92,7 @@ $show_breadcrumb = true;
                         <div class="d-flex align-items-center justify-content-center gap-15">
                             <a class="btn btn-outline-theme-border" href="tel:+15551234567">Call</a>
                             <a class="btn btn-outline-theme-border"
-                                href="user-profile.php">View</a>
+                                href="?page=user-profile">View</a>
                         </div>
                     </div>
                 </div>
@@ -104,5 +104,51 @@ $show_breadcrumb = true;
 
     <div class="d-flex justify-content-center mt-20 mb-20">
         <button type="button" class="btn btn-primary">Load More</button>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addLocation" tabindex="-1" aria-labelledby="addLocationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addLocationLabel">Edit Customer</h5>
+                <button type="button" class="bd-btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa-solid fa-xmark-large"></i></button>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="row">
+
+                        <div class="col-xxl-12">
+                            <div class="row gy-10">
+                                <div class="col-xl-12">
+                                    <div class="card__wrapper">
+                                        <div class="row gy-20">
+                                            <div class="col-lg-12">
+                                                <div class="from__input-box">
+                                                    <div class="form__input-title">
+                                                        <label for="name">Location Title<span>*</span></label>
+                                                    </div>
+                                                    <div class="form__input">
+                                                        <input class="form-control" name="name" id="name" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="submit__btn text-center mb-20">
+                                                <button class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
     </div>
 </div>
