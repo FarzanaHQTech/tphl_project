@@ -94,7 +94,7 @@ $show_breadcrumb = true;
                                         <label>Hand Over Date<span>*</span></label>
                                     </div>
                                     <div class="form__input">
-                                        <input class="form-control" id="handOverDate" type="date" placeholder="Launching Date">
+                                        <input class="form-control" id="handOverDate" type="date" placeholder="Hand Over Date">
                                     </div>
                                 </div>
                             </div>

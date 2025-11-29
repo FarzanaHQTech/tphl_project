@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="assets/css/plugins/waves.min.css">
     <link rel="stylesheet" href="assets/css/plugins/nano.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <?php
  $userFile = "data/user.json";
@@ -224,7 +225,7 @@ $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     <script src="assets/js/vendor/rangeslider-script.js"></script>
     <script src="assets/js/vendor/jquery.barrating.js"></script>
     <script src="assets/js/vendor/rating-script.js"></script>
-    <!-- <script src="assets/js/main.js"></script> -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/vendor/sidebar.js"></script>
 
 </body>

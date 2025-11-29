@@ -25,7 +25,7 @@ $show_breadcrumb = true;
             <div class="card__wrapper">
                 <div class="d-flex align-items-center justify-content-between gap-15">
                     <button class="btn btn-secondary w-100">Search</button>
-                    <a href="?page=create-additional-salary" class="btn btn-primary w-100">Add Additional Salary</a>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#addAdditionalSalary" class="btn btn-primary w-100">Add Additional Salary</button>
                 </div>
             </div>
         </div>
@@ -105,51 +105,49 @@ $show_breadcrumb = true;
     </div>
 </div>
 
+<div class="modal fade" id="addAdditionalSalary" tabindex="-1" aria-labelledby="addAdditionalSalaryLabel">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
 
+            <div class="modal-header">
+                <h5 class="modal-title" id="addAdditionalSalaryLabel">Add Additional Salary</h5>
+                <button type="button" class="bd-btn-close" data-bs-dismiss="modal"></button>
+            </div>
 
-<!-- Ledger List Table -->
-<!-- <div class="container">
-    <div class="row g-3">
-        <div class="col-12">
-            <label for="employee" class="form-label">Select Employee</label>
-            <select id="employee" name="user_id" class="form-select">
-                <option value="">Select Employee</option>
-                <option value="1">John Doe</option>
-                <option value="2">Jane Smith</option>
-            </select>
+            <div class="modal-body">
+                <form action="#">
+
+                    <div class="card__wrapper mb-20">
+
+                        <div class="col-12 mb-3">
+                            <label for="employee" class="form-label">Select Employee</label>
+                            <select id="employee" name="user_id" class="form-select">
+                                <option value="">Select Employee</option>
+                                <option value="1">John Doe</option>
+                                <option value="2">Jane Smith</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12  mb-3">
+                            <label for="additional-salary-name" class="form-label">Additional Salary Name</label>
+                            <input type="text" id="additional-salary-name" name="additional_salary" class="form-control" placeholder="Enter salary name">
+                        </div>
+
+                        <div class="col-12  mb-3">
+                            <label for="reason" class="form-label">Reason</label>
+                            <textarea type="text" id="reason" name="reason" class="form-control" placeholder="Reason"></textarea>
+                        </div>
+
+                        <div class="col-12  mb-3">
+                            <label for="date" class="form-label">Date</label>
+                            <input type="date" id="date" name="date" class="form-control">
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
         </div>
-
-        <div class="col-12 col-md-8">
-            <label for="additional-salary-name" class="form-label">Additional Salary Name</label>
-            <input 
-                type="text" 
-                id="additional-salary-name" 
-                name="additional_salary" 
-                class="form-control"
-                placeholder="Enter salary name"
-            >
-        </div>
-
-        <div class="col-12 col-md-8">
-            <label for="reason" class="form-label">Reason</label>
-            <input 
-                type="text" 
-                id="reason" 
-                name="reason" 
-                class="form-control"
-                placeholder="Reason"
-            >
-        </div>
-
-        <div class="col-12 col-md-4">
-            <label for="date" class="form-label">Date</label>
-            <input 
-                type="date" 
-                id="date" 
-                name="date" 
-                class="form-control"
-            >
-        </div>
-
     </div>
-</div> -->
+</div>

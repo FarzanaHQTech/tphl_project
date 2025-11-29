@@ -196,7 +196,7 @@
                        </li>
 
 
-                       <li class="slide has-sub<?= isMenuOpen(['create-requisition', 'requisition-lists'], $current_page) ?>">
+                       <li class="slide has-sub <?= isMenuOpen(['create-requisition', 'requisition-lists'], $current_page) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-requisition', 'requisition-lists'], $current_page) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
                                <div class="side-menu__icon"><i class="fa-solid fa-clipboard-list"></i></div>

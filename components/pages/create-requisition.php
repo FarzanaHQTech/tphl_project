@@ -73,41 +73,153 @@ $show_breadcrumb = true;
     <div class="card__wrapper">
         <h3>Items</h3>
 
-        <div class="row d-flex ">
+        <div id="itemWrapper">
 
-            <div class="col-md-2">
-                <label class="form-label">Unit</label>
-                <select class="form-select">
-                    <option>Select Unit</option>
-                </select>
-            </div>
+            <div class="row itemRow d-flex align-items-end mb-3">
 
-            <div class="col-md-4">
-                <label class="form-label">Description</label>
-                <input type="text" class="form-control" />
-            </div>
+                <div class="col-md-2">
+                    <label class="form-label">Unit</label>
+                    <select class="form-select unit">
+                        <option value="">Select Unit</option>
+                        <option>A Unit</option>
+                        <option>B Unit</option>
+                        <option>C Unit</option>
+                    </select>
+                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">Quantity</label>
-                <input type="number" class="form-control" value="0" />
-            </div>
+                <div class="col-md-4">
+                    <label class="form-label">Description</label>
+                    <input type="text" class="form-control description" placeholder="description" />
+                </div>
 
-            <div class="col-md-2">
-                <label class="form-label">Unit Price</label>
-                <input type="number" class="form-control" value="0" step="0.01" />
-            </div>
+                <div class="col-md-2">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" class="form-control quantity" value="0" />
+                </div>
 
-            <div class="col-md-2 align-items-center mt-1">
-                <label class="form-label"></label>
-                <button class="btn btn-danger w-100">Remove</button>
+                <div class="col-md-2">
+                    <label class="form-label">Unit Price</label>
+                    <input type="number" class="form-control uPrice" value="0" step="0.01" />
+                </div>
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-danger w-100 remove">Remove</button>
+                </div>
+
             </div>
 
         </div>
 
-        <button class="btn btn-primary mt-3 add">Add Item</button>
+        <button type="button" class="btn btn-primary mt-3" id="addBtn">Add Item</button>
+        <button type="button" class="btn btn-success mt-3" id="saveBtn">Save All</button>
+
+
     </div>
+
+
+
 
     <div class="submit__btn text-center mb-20">
         <button class="btn btn-primary">Add Requisition</button>
     </div>
 </form>
+
+
+
+<script>
+    const addBtn = document.querySelector("#addBtn");
+    const itemWrapper = document.querySelector("#itemWrapper");
+    const saveBtn = document.querySelector("#saveBtn");
+
+    /* Load Items From Storage */
+    function loadItems() {
+        let saved = localStorage.getItem("itemData");
+        if (!saved) return;
+
+        let items = JSON.parse(saved);
+
+        items.forEach(item => {
+            renderRow(item.unit, item.description, item.quantity, item.price);
+        });
+    }
+
+    /* Render a Row */
+    function renderRow(unit = "", description = "", quantity = 0, price = 0) {
+        const div = document.createElement("div");
+        div.classList.add("row", "itemRow", "d-flex", "align-items-end", "mb-3");
+
+        div.innerHTML = `
+            <div class="col-md-2">
+                <select class="form-select unit">
+                    <option value="">Select Unit</option>
+                    <option ${unit === "A Unit" ? "selected" : ""}>A Unit</option>
+                    <option ${unit === "B Unit" ? "selected" : ""}>B Unit</option>
+                    <option ${unit === "C Unit" ? "selected" : ""}>C Unit</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <input type="text" class="form-control description" value="${description}">
+            </div>
+
+            <div class="col-md-2">
+                <input type="number" class="form-control quantity" value="${quantity}">
+            </div>
+
+            <div class="col-md-2">
+                <input type="number" class="form-control uPrice" value="${price}" step="0.01">
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-danger w-100 remove">Remove</button>
+            </div>
+        `;
+
+        itemWrapper.appendChild(div);
+    }
+
+    /* Add Item*/
+    addBtn.addEventListener("click", () => {
+        renderRow();
+        saveToLocalStorage();
+    });
+
+    /* Remove Item */
+    itemWrapper.addEventListener("click", (e) => {
+        if (e.target.classList.contains("remove")) {
+            e.target.closest(".itemRow").remove();
+            saveToLocalStorage();
+        }
+    });
+
+    /*  Auto Save on input */
+    itemWrapper.addEventListener("input", saveToLocalStorage);
+
+    /*  Save to LocalStorage*/
+    function saveToLocalStorage() {
+        let rows = document.querySelectorAll(".itemRow");
+        let items = [];
+
+        rows.forEach(row => {
+            items.push({
+                unit: row.querySelector(".unit").value,
+                description: row.querySelector(".description").value,
+                quantity: row.querySelector(".quantity").value,
+                price: row.querySelector(".uPrice").value,
+            });
+        });
+
+        localStorage.setItem("itemData", JSON.stringify(items));
+    }
+
+    /*  Final Save Button*/
+    saveBtn.addEventListener("click", () => {
+        let items = JSON.parse(localStorage.getItem("itemData") || "[]");
+        console.log("Sending to backend:", items);
+        alert("Check console!");
+    });
+
+    /*  Load Saved Items*/
+    loadItems();
+</script>
+

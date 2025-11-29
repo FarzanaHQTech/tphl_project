@@ -37,33 +37,38 @@
     <link rel="stylesheet" href="assets/css/plugins/simplebar.css">
     <link rel="stylesheet" href="assets/css/plugins/waves.min.css">
     <link rel="stylesheet" href="assets/css/plugins/nano.min.css">
+
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <?php
 if (session_status() === PHP_SESSION_NONE) {
+
     session_start();
 }
 
 $userFile = "./components/data/user.json";
 
-if(!file_exists($userFile)){
-    file_put_contents($userFile,"[]");
+if (!file_exists($userFile)) {
+    file_put_contents($userFile, "[]");
 }
 
 $users = json_decode(file_get_contents($userFile), true);
 $message = "";
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     $found = false;
 
-    foreach($users as $u){
-        if($u['email'] === $email){
+    foreach ($users as $u) {
+        if ($u['email'] === $email) {
 
-            if(password_verify($password, $u['password'])){
-                
+            $found = true; // 🔥 THIS IS IMPORTANT
+
+            if (password_verify($password, $u['password'])) {
+
                 $_SESSION['user'] = [
                     "name" => $u['name'],
                     "email" => $u['email'],
@@ -74,7 +79,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         window.location.href='?page=home';
                       </script>";
                 exit;
-
             } else {
                 $message = "Incorrect password!";
                 break;
@@ -82,17 +86,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
     }
 
-    if(!$found){
+    if (!$found) {
         $message = "User Not Found!";
     }
 }
+
 ?>
+
 <body class="body-area">
+
 
     <div class="container-xxl">
         <!-- register area start-->
         <div class="authentication-wrapper basic-authentication">
             <div class="authentication-inner">
+                <div class="text-center my-3">
+                    <p class="text-danger"><?php echo $message ?></p>
+                </div>
                 <div class="card__wrapper">
                     <div class="authentication-top text-center mb-20">
                         <a href="javascript:;" class="authentication-logo logo-black">
@@ -104,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <h4 class="mb-15">Welcome to Manez</h4>
                         <p class="mb-15">Please sign-in to your account and start the adventure</p>
                     </div>
-                    <form class="" method="POST" action="?page=admin-login" >
+                    <form class="" method="POST" action="?page=admin-login">
                         <div class="from__input-box">
                             <div class="form__input-title">
                                 <label for="nameEmail">Email or Username</label>
@@ -139,7 +149,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         </div>
                     </form>
                     <p class="text-center">
-                        
+
                         <span>New on our platform?</span>
                         <a href="?page=admin-registration">
                             <span>Create an account</span>
@@ -219,7 +229,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <script src="assets/js/vendor/rangeslider-script.js"></script>
     <script src="assets/js/vendor/jquery.barrating.js"></script>
     <script src="assets/js/vendor/rating-script.js"></script>
-    <!-- <script src="assets/js/main.js"></script> -->
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/vendor/sidebar.js"></script>
 
 </body>
