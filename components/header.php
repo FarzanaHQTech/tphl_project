@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php echo $page_title?></title>
+    <title><?php echo $page_title ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-style-mode" content="1">
@@ -57,14 +57,11 @@
     <!-- Dashboard area start -->
     <div class="page__full-wrapper">
 
-<?php 
-   
-           
-require __DIR__ . '/sidebar.php'; ?>
+        <?php
 
 
-            <!-- App header area start -->
-             
+        require __DIR__ . '/sidebar.php'; ?>
+        <!-- App header area start -->
         <div class="page__body-wrapper">
             <div class="app__header__area">
                 <div class="app__header-inner">
@@ -78,11 +75,11 @@ require __DIR__ . '/sidebar.php'; ?>
                                 </div>
                             </a>
                         </div>
-                        
-                    <h2 class="header__title">
-                        Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : 'Admin' ?>
-                        <span><img src="assets/images/shape/hand.png" alt="image"></span>
-                    </h2>
+
+                        <h2 class="header__title">
+                            Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : 'Admin' ?>
+                            <span><img src="assets/images/shape/hand.png" alt="image"></span>
+                        </h2>
 
                     </div>
                     <div class="app__header-right">
@@ -581,7 +578,7 @@ require __DIR__ . '/sidebar.php'; ?>
                                     </div>
 
                                     <div class="user__content">
-                                        <h5><?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name']:'Admin' ?></h5>
+                                        <h5><?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : 'Admin' ?></h5>
                                         <span>online</span>
                                     </div>
                                 </div>
@@ -677,5 +674,5 @@ require __DIR__ . '/sidebar.php'; ?>
                 </div>
             </div>
 
-                    <div class="body__overlay"></div>
+        <div class="body__overlay"></div>
             <!-- App header area end -->

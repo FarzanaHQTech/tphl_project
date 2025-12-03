@@ -398,6 +398,15 @@
                            </ul>
                        </li>
 
+                        
+                       <li class="slide <?= ($current_page  == 'site-employee-live') ? 'active' : '' ?>">
+                           <a href="index.php?page=site-employee-live" class="sidebar__menu-item <?= ($current_page  == 'site-employee-live') ? 'active' : '' ?>">
+                               <div class="side-menu__icon"><i class="fa-solid fa-camera"></i></div>
+                               <span class="sidebar__menu-label">Site Employee Live </span>
+                           </a>
+                       </li>
+
+
 
                        <li class="slide has-sub <?= isMenuOpen(['create-attendence', 'employee-lists','departments','designations','leaves','salary-lists','attendence-lists','holidays','weekends'], $current_page) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-attendence', 'employee-lists','departments','designation','leaves','salary-lists','attendence-lists','holidays','weekends'], $current_page) ?>">
