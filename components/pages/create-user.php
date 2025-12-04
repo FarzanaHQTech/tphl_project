@@ -1,6 +1,5 @@
 <?php
 $page_title = "Create User";
-$page = 'Add User';
 $show_breadcrumb = true;
 
 ?>

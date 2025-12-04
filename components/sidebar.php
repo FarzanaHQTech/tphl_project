@@ -23,6 +23,15 @@
                            </a>
                        </li>
 
+                       <li class="slide <?=  ($current_page === 'home')? 'active' : '' ?>">
+                         <a href="index.php?page=home"
+                               class="sidebar__menu-item <?= ($current_page === 'home') ? 'active' : '' ?>">
+                               <div class="side-menu__icon"><i class="icon-house"></i></div>
+                               <span class="sidebar__menu-label">Home</span>
+                           </a>
+
+                       </li>
+
                        <li class="slide <?= ($current_page  == 'product-request') ? 'active' : '' ?>">
                            <a href="index.php?page=product-request" class="sidebar__menu-item <?= ($current_page  == 'product-request') ? 'active' : '' ?>">
                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>

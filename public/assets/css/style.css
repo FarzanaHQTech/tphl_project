@@ -1,0 +1,128 @@
+.fullwidth-textarea {
+    width: 100%;
+    display: block;
+}
+
+.fullwidth-textarea textarea {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    resize: vertical; 
+    border:1px solid #dfdede ;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.no-copy {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.ts-panel {
+    position: fixed;
+    top: 15%;
+    right: 0;
+    transform: translateY(-50%) translateX(100%);
+    width: 240px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px;
+    transition: 0.35s ease;
+    z-index: 999;
+}
+
+.ts-panel.open {
+    transform: translateY(-50%) translateX(0);
+}
+
+.ts-inner {
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.ts-panel.open .ts-inner {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ts-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.ts-toggle-item {
+    margin-bottom: 20px;
+}
+
+.ts-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ts-switch input {
+    display: none;
+}
+
+.ts-slider {
+    width: 40px;
+    height: 22px;
+    background: #d1d1d1;
+    border-radius: 30px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.ts-slider:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    top: 2px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.ts-switch input:checked + .ts-slider {
+    background: #333;
+}
+
+.ts-switch input:checked + .ts-slider:before {
+    transform: translateX(18px);
+}
+
+/* Toggle Button */
+.ts-toggle-btn {
+  position: absolute;
+    left: -40px;
+    top: 41%;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #ddd;
+    /* border-right: none; */
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ts-icon-close { display: none; }
+.ts-panel.open .ts-icon-gear { display: none; }
+.ts-panel.open .ts-icon-close { display: block; }
+

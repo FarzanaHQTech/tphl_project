@@ -1,27 +1,22 @@
-<?php
-
-// class Model 
-// {
-//     protected $db;
-
-//     public function __construct($config)
-//     {
-//         require_once "../app/core/Database.php";
-//         $this->db = new Database($config);
-//     }
-// }
-?>
-
 <?php 
 class Model 
 {
     protected $db;
 
-    public function __construct($config)
-
+    public function __construct($db = null)
     {
-       require_once "./app/config/config.php";
+        if ($db) {
+            $this->db = $db;
+        } else {
+            $config = require __DIR__ . "/../config/config.php";
+            $database = new Database($config);
+            $this->db = $database->conn;
+        }
     }
-} 
 
+    public function getDb()
+    {
+        return $this->db;
+    }
+}
 ?>
