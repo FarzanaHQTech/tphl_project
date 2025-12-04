@@ -2,23 +2,47 @@
 
 class Property extends Model
 {
-    public function getAll()
+
+protected $db;
+
+    public function __construct($db)
     {
-        $sql = "SELECT * FROM properties ORDER BY id DESC";
-        return $this->db->query($sql);
+        $this->db = $db;   
     }
 
-    public function create($data)
-    {
-        $title = $this->db->escape($data['title']);
-        $description = $this->db->escape($data['description']);
-        $price = $this->db->escape($data['price']);
-        $location = $this->db->escape($data['location']);
-        $image = $this->db->escape($data['image']);
+ public function getAll()
+{
+    $stmt = $this->db->prepare("SELECT * FROM properties ORDER BY id DESC");
+    $stmt->execute();
 
-        $sql = "INSERT INTO properties (title, description, price, location, image)
-                VALUES ('$title', '$description', '$price', '$location', '$image')";
+    $result = $stmt->get_result();  
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+  public function create($data)
+{
+    $sql = "
+        INSERT INTO properties (title, description, price, location, image)
+        VALUES (?, ?, ?, ?, ?)
+    ";
 
-        return $this->db->query($sql);
-    }
+    // prepare
+    $stmt = $this->db->prepare($sql);
+
+    // bind_param(type_string, var1, var2, ...)
+    // s = string, d = double/float, i = integer
+    $stmt->bind_param(
+        "ssdss", 
+        $data['title'],
+        $data['description'],
+        $data['price'],
+        $data['location'],
+        $data['image']
+    );
+
+    // execute
+    return $stmt->execute();
+    
+    
+}
+
 }
