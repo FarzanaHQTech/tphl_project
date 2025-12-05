@@ -40,6 +40,7 @@ $routes = [
     "create-permission"    => ["controller" => "PermissionController", "method" => "create"],
     "store-permission"     => ["controller" => "PermissionController", "method" => "store"],
     "roles"                => ["controller" => "RoleController", "method" => "index"],
+    "store-role"           =>["controller" => "RoleController", "method" => "store"],
 ];
 
 // Detect route

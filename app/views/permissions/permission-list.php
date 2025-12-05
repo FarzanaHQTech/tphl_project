@@ -3,13 +3,14 @@ $page_title = "permission";
 $page = 'Permission';
 $show_breadcrumb = true;
 ?>
+
 <!-- TOP ROLE INPUT -->
 <div class="row mb-4">
-    
-        <div class="col-lg-2 text-end">
+
+    <div class="col-lg-2 text-end">
         <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#addNewRole">Add Role</button>
 
-</div>
+    </div>
 </div>
 
 
@@ -115,16 +116,20 @@ $show_breadcrumb = true;
                 <form action="<?= $GLOBALS['base_url'] ?>/store-role" method="POST">
                     <div class="card__wrapper mb-20">
                         <div class="row g-20 gy-20 align-items-center justify-content-center">
-                            <div class="col-lg-10">
-                                <input type="text" class="form-control" name="role_name" placeholder="New Role Name" required>
-                            </div>
                             <div class="col-lg-12">
-                                <select class="form-select" name="permission_id" required>
-                                    <option value="">Select Permission</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">Manager</option>
-                                    <option value="3">Employee</option>
-                                </select>
+                                <input type="text" class="form-control" name="name" placeholder="New Role Name" required>
+                            </div>
+                            <div class="col-lg-12" >
+                                 <label for="permission" class="col-12 col-form-label">Permissions</label>
+                                <div class="dropdown bootstrap-select show-tick w-100 show dropup">
+                                    <select multiple="multiple" name="permissions[]"  class="selectpicker w-100 " data-live-search="true" style="background-color: transparent!important; " >
+                                        <?php foreach ($permissions as $permission): ?>
+                                            <option value="<?= $permission['id'] ?>">
+                                                <?= $permission['name'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>

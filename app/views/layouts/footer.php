@@ -7,7 +7,11 @@
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        $('.selectpicker').selectpicker();
+    });
+</script>
     <!-- JS -->
     <script src="assets/js/vendor/calendar-activision.js"></script>
     <script src="assets/js/vendor/jquery-3.7.0.js"></script>
@@ -62,6 +66,7 @@
     <script src="assets/js/vendor/rating-script.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/vendor/sidebar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/js/bootstrap-select.min.js"></script>
 
 </body>
 </html>
