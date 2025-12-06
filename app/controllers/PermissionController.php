@@ -2,23 +2,24 @@
 class PermissionController extends Controller
 {
     protected $permissionModel;
-
+    protected $roleModel;
     public function __construct($db = null)
     {
         $this->permissionModel = new Permission($db);
+        $this->roleModel = new Role($db);
     }
-    // List all permissions
   // List all permissions
     public function index()
     {
-        
+        $roles = $this->roleModel->getRolesWithPermissions();
         $permissions = $this->permissionModel->getAll();
         $this->view("permissions/permission-list", [
             "current_route" => "permissions",
             "active" => "permissions",
             "page_title" => "Permissions List",
             "show_breadcrumb" => true,
-            "permissions" => $permissions
+            "permissions" => $permissions,
+            "roles" => $roles,
         ]);
 
           

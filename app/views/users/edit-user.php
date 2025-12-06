@@ -1,6 +1,6 @@
 <?php
-$page_title = "Create User";
-$page = 'Add User';
+$page_title = "Edit User";
+$page = 'Edit User';
 $show_breadcrumb = true;
 
 ?>
@@ -10,7 +10,7 @@ $show_breadcrumb = true;
     <div class="col-xxl-12 col-xl-12 col-lg-12">
 
         <div class="card__title-wrap mb-20">
-            <h5 class="card__heading-title">Add New User</h5>
+            <h5 class="card__heading-title">Edit User</h5>
         </div>
 
         <form action="<?= $GLOBALS['base_url'] ?>/store-user" method="POST" enctype="multipart/form-data">
@@ -20,14 +20,14 @@ $show_breadcrumb = true;
                     <!-- Full Name -->
                     <div class="col-lg-6 mb-3">
                         <label for="fullName">Full Name <span>*</span></label>
-                        <input class="form-control" name="full_name" id="fullName" type="text" required>
+                        <input class="form-control" name="full_name" id="full_Name" type="text" required>
                     </div>
 
                     <!-- Contact Number -->
                     <div class="col-lg-6 mb-3">
                         <label for="contactnumber">Contact Number <span>*</span></label>
 
-                        <input class="form-control" minlength="11" maxlength="11" name="phone" min="11" max="11" id="contactnumber" type="text" required>
+                        <input class="form-control" minlength="11" maxlength="11" name="phone" min="11" max="11"  id="contactnumber" type="text" required >
                     </div>
 
                     <!-- Email -->

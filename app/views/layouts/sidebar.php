@@ -59,7 +59,7 @@
                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
                                <span class="sidebar__menu-label">Role & Permissions</span>
                            </a>
-                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-permission', 'permissionss'], $current_route) ? 'display:block;' : 'display:none;' ?>">
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-permission', 'permissions'], $current_route) ? 'display:block;' : 'display:none;' ?>">
                                <li class="slide <?= isActive('create-permission', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('create-permission', $current_route) ?>" href="<?= $base_url ?>/create-permission">Add permission</a>
                                </li>

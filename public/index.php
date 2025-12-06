@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . "../../app/helpers/helper.php";
 // Enable debug
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -7,14 +8,14 @@ $root = dirname(__DIR__);
 // Base URL globally
 $GLOBALS['base_url'] = '/tphl_project/public';
 // Autoload classes
-spl_autoload_register(function($class) use ($root) {
+spl_autoload_register(function ($class) use ($root) {
     $paths = [
         $root . "/app/core/$class.php",
         $root . "/app/models/$class.php",
         $root . "/app/controllers/$class.php"
     ];
-    foreach ($paths as $file){
-        if(file_exists($file)){
+    foreach ($paths as $file) {
+        if (file_exists($file)) {
             require $file;
             return;
         }
@@ -32,15 +33,26 @@ $db = $database->conn;
 $routes = [
     "home"                 => ["controller" => "HomeController", "method" => "index"],
     "product-request"      => ["controller" => "ProductRequestController", "method" => "index"],
+
+    
+    // users
     "user-lists"           => ["controller" => "UserController", "method" => "index"],
     "create-user"          => ["controller" => "UserController", "method" => "create"],
+    "store-user"          => ["controller" => "UserController", "method" => "store"],
+    "edit-user"          => ["controller" => "UserController", "method" => "edit"],
+    "update-user"          => ["controller" => "UserController", "method" => "update"],
+
+
     "customer-lists"       => ["controller" => "CustomerController", "method" => "index"],
     "create-customer"      => ["controller" => "CustomerController", "method" => "create"],
+    // permission
     "permissions"          => ["controller" => "PermissionController", "method" => "index"],
     "create-permission"    => ["controller" => "PermissionController", "method" => "create"],
     "store-permission"     => ["controller" => "PermissionController", "method" => "store"],
-    "roles"                => ["controller" => "RoleController", "method" => "index"],
-    "store-role"           =>["controller" => "RoleController", "method" => "store"],
+    // Roles
+    "store-role"           => ["controller" => "RoleController", "method" => "store"],
+    "get-role"      => ["controller" => "RoleController", "method" => "edit"],    
+    "update-role"   => ["controller" => "RoleController", "method" => "update"],
 ];
 
 // Detect route
