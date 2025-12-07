@@ -1757,7 +1757,81 @@ function bd_settings_append($x) {
 		});
 	});
 
+// $(document).ready(function() {
+//     $('.removeBtnCus').on('click', function(e) {
+//         e.preventDefault(); // prevent default action
+
+//         const deptId = $(this).data('id');
+//         const deptName = $(this).data('name');
+
+//         Swal.fire({
+//             title: "Are you sure?",
+//             text: `You are about to delete ${deptName}. This action cannot be undone!`,
+//             icon: "warning",
+//             showCancelButton: true,
+//             confirmButtonColor: "#3085d6",
+//             cancelButtonColor: "#d33",
+//             confirmButtonText: "Yes, delete it!"
+//         }).then((result) => {
+//             if (result.isConfirmed) {
+//                 // Use the JS variable for action
+//                 const form = $('<form>', {
+//                     'method': 'POST',
+//                     'action': base_url + '/delete-department' // now works correctly
+//                 }).append($('<input>', {
+//                     'type': 'hidden',
+//                     'name': 'id',
+//                     'value': deptId
+//                 }));
+
+//                 $('body').append(form);
+//                 form.submit();
+//             }
+//         });
+//     });
+// });
+
+
+
 	// crypto order list search js 
+	
+	$(document).ready(function() {
+    $('.removeBtnCust').on('click', function(e) {
+        e.preventDefault();
+
+        const itemId = $(this).data('id');
+        const itemName = $(this).data('name');
+        const actionUrl = $(this).data('action'); // delete-department or delete-designation
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: `You are about to delete "${itemName}". This action cannot be undone!`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Create and submit a temporary form
+                const form = $('<form>', {
+                    method: 'POST',
+                    action: base_url + '/' + actionUrl
+                }).append($('<input>', {
+                    type: 'hidden',
+                    name: 'id',
+                    value: itemId
+                }));
+
+                $('body').append(form);
+                form.submit();
+            }
+        });
+    });
+});
+
+	
+	
 	$(document).ready(function () {
 		// Initialize the repeater
 		$('#productTableRepeater').repeater({

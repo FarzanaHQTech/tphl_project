@@ -53,6 +53,33 @@ $routes = [
     "store-role"           => ["controller" => "RoleController", "method" => "store"],
     "get-role"      => ["controller" => "RoleController", "method" => "edit"],    
     "update-role"   => ["controller" => "RoleController", "method" => "update"],
+
+    // Tasks
+
+    'tasks' => ["controller" => "TaskController","method" => "index"],
+    'create-task' => ["controller" => "TaskController","method" => "create"],
+    'store-task' => ["controller" => "TaskController","method" => "store"],
+    'show-task' => ["controller" => "TaskController","method" => "show"],
+    'edit-task' => ["controller" => "TaskController","method" => "edit"],
+    'update-task' => ["controller" => "TaskController","method" => "update"],
+    'delete-task' => ["controller" => "TaskController","method" => "delete"],
+
+    // hrm 
+    'departments' => ['controller' => 'DepartmentController','method' => "index"],
+    'store-department' => ['controller' => 'DepartmentController','method' => "store"],
+    'update-department' => ['controller' => 'DepartmentController','method' => "update"],
+    'delete-department' => ['controller' => 'DepartmentController','method' => "delete"],
+    // designations 
+    'designations' => ['controller' => 'DesignationController','method' => "index"],
+    'store-designation' => ['controller' => 'DesignationController','method' => "store"],
+    'update-designation' => ['controller' => 'DesignationController','method' => "update"],
+    'delete-designation' => ['controller' => 'DesignationController','method' => "delete"],
+    // employees 
+    'employee-lists' => ['controller' => 'EmployeeController','method' => "index"],
+    'create-employee' => ['controller' => 'EmployeeController','method' => "create"],
+    'store-employee' => ['controller' => 'EmployeeController','method' => "store"],
+    'update-employee' => ['controller' => 'EmployeeController','method' => "update"],
+    'delete-employee' => ['controller' => 'EmployeeController','method' => "delete"],
 ];
 
 // Detect route

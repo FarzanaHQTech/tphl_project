@@ -23,7 +23,7 @@
                            </a>
                        </li>
 
-                       <li class="slide <?= isActive('product-request', $current_route) ?>">
+                       <li class="slide d-none <?= isActive('product-request', $current_route) ?>">
                            <a href="<?= $base_url ?>/product-request" class="sidebar__menu-item <?= isActive('product-request', $current_route) ?>">
                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
                                <span class="sidebar__menu-label">Product Request</span>
@@ -46,7 +46,7 @@
                                </li>
                            </ul>
                        </li>
-                     <!-- <li class="slide < isActive('permissions',$current_route ) ?>">
+                       <!-- <li class="slide < isActive('permissions',$current_route ) ?>">
                            <a href="<$base_url  ?>/permissions" class="sidebar__menu-item <isActive('permissions', $current_route) ?>">
                                <div class="side-menu__icon"><i class="fa-solid fa-tags"></i></div>
                                <span class="sidebar__menu-label">Permissions</span>
@@ -68,7 +68,27 @@
                                </li>
                            </ul>
                        </li>
-                       <li class="slide has-sub <?= isActive(['create-customer', 'customer-lists'], $current_route) ?>">
+
+
+                       <li class="slide has-sub <?= isActive(['create-task', 'tasks'], $current_route) ?>">
+                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-task', 'tasks'], $current_route) ?>">
+                               <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                               <div class="side-menu__icon"><i class="fas fa-clipboard-list"></i>
+                               </div>
+                               <span class="sidebar__menu-label">Task Manage</span>
+                           </a>
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-task', 'tasks'], $current_route) ? 'display:block;' : 'display:none;' ?>">
+                               <li class="slide <?= isActive('create-task', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('create-task', $current_route) ?>" href="<?= $base_url ?>/create-task">Add Task</a>
+                               </li>
+                               <li class="slide <?= isActive('tasks', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('tasks', $current_route) ?>" href="<?= $base_url ?>/tasks">Task List</a>
+                               </li>
+                           </ul>
+                       </li>
+
+
+                       <li class="slide has-sub d-none<?= isActive(['create-customer', 'customer-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-customer', 'customer-lists'], $current_route) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
                                <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
@@ -100,13 +120,13 @@
                            </ul>
                        </li>
 
-                       <li class="slide has-sub <?= isActive(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists'], $current_route) ?>">
+                       <li class="slide has-sub <?= isActive(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists','create-attendance','attendance-lists','holiday-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists'], $current_route) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
                                <div class="side-menu__icon"><i class="fa-solid fa-users-gear"></i></div>
                                <span class="sidebar__menu-label">HR</span>
                            </a>
-                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists'], $current_route) ? 'display:block;' : '' ?>">
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists','weekend-lists'], $current_route) ? 'display:block;' : '' ?>">
                                <li class="slide <?= isActive('employee-lists', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('employee-lists', $current_route) ?>" href="employee-lists">Employee List</a>
                                </li>
@@ -118,6 +138,21 @@
                                </li>
                                <li class="slide <?= isActive('leaves', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('leaves', $current_route) ?>" href="leaves">Leave List</a>
+                               </li>
+                               <li class="slide <?= isActive('salary-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('salary-lists', $current_route) ?>" href="salary-list">Salary Lists</a>
+                               </li>
+                               <li class="slide <?= isActive('create-attendance', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('create-attendance', $current_route) ?>" href="create-attendance">Add Attendance </a>
+                               </li>
+                               <li class="slide <?= isActive('attendance-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('attendance-lists', $current_route) ?>" href="attendance-lists">Attendance Lists</a>
+                               </li>
+                               <li class="slide <?= isActive('holiday-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('holiday-lists', $current_route) ?>" href="holiday-lists">Attendance Lists</a>
+                               </li>
+                               <li class="slide <?= isActive('weekend-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('weekend-lists', $current_route) ?>" href="weekend-lists">Attendance Lists</a>
                                </li>
                            </ul>
                        </li>

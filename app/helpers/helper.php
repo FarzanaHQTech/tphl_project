@@ -45,7 +45,7 @@ function paginateLinksSecondary($route, $currentPage, $totalPages)
     $currentPage = intval($currentPage);
     $totalPages  = intval($totalPages);
 
-    if ($totalPages <= 1) return ""; // pagination প্রয়োজন নাই
+    if ($totalPages <= 1) return ""; // pagination no need
 
     $html  = '<nav>';
     $html .= '<ul class="pagination pagination-secondary">';
