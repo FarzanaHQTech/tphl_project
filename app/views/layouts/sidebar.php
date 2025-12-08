@@ -70,19 +70,19 @@
                        </li>
 
 
-                       <li class="slide has-sub <?= isActive(['create-task', 'tasks'], $current_route) ?>">
-                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-task', 'tasks'], $current_route) ?>">
+                       <li class="slide has-sub <?= isActive(['create-task', 'task-lists'], $current_route) ?>">
+                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-task', 'task-lists'], $current_route) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
                                <div class="side-menu__icon"><i class="fas fa-clipboard-list"></i>
                                </div>
                                <span class="sidebar__menu-label">Task Manage</span>
                            </a>
-                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-task', 'tasks'], $current_route) ? 'display:block;' : 'display:none;' ?>">
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-task', 'task-lists'], $current_route) ? 'display:block;' : 'display:none;' ?>">
                                <li class="slide <?= isActive('create-task', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('create-task', $current_route) ?>" href="<?= $base_url ?>/create-task">Add Task</a>
                                </li>
-                               <li class="slide <?= isActive('tasks', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('tasks', $current_route) ?>" href="<?= $base_url ?>/tasks">Task List</a>
+                               <li class="slide <?= isActive('task-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('task-lists', $current_route) ?>" href="<?= $base_url ?>/task-lists">Task List</a>
                                </li>
                            </ul>
                        </li>
@@ -104,7 +104,7 @@
                            </ul>
                        </li>
 
-                       <li class="slide has-sub <?= isActive(['create-product', 'product-lists'], $current_route) ?>">
+                       <li class="d-none slide has-sub <?= isActive(['create-product', 'product-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-product', 'product-lists'], $current_route) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
                                <div class="side-menu__icon"><i class="fa-solid fa-box"></i></div>

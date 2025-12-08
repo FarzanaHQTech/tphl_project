@@ -1,12 +1,19 @@
+
+
+
+
 <?php
 require __DIR__ . "../../app/helpers/helper.php";
+
+
+
 // Enable debug
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $root = dirname(__DIR__);
-// Base URL globally
 $GLOBALS['base_url'] = '/tphl_project/public';
+
 // Autoload classes
 spl_autoload_register(function ($class) use ($root) {
     $paths = [
@@ -29,12 +36,14 @@ $config = require $root . "/app/config/config.php";
 $database = new Database($config);
 $db = $database->conn;
 
-// Routes
+// Routes (regex for ID)
 $routes = [
-    "home"                 => ["controller" => "HomeController", "method" => "index"],
+
+""                 => ["controller" => "HomeController", "method" => "index"],
+"home"                 => ["controller" => "HomeController", "method" => "index"],
     "product-request"      => ["controller" => "ProductRequestController", "method" => "index"],
 
-    
+
     // users
     "user-lists"           => ["controller" => "UserController", "method" => "index"],
     "create-user"          => ["controller" => "UserController", "method" => "create"],
@@ -51,70 +60,72 @@ $routes = [
     "store-permission"     => ["controller" => "PermissionController", "method" => "store"],
     // Roles
     "store-role"           => ["controller" => "RoleController", "method" => "store"],
-    "get-role"      => ["controller" => "RoleController", "method" => "edit"],    
+    "get-role"      => ["controller" => "RoleController", "method" => "edit"],
     "update-role"   => ["controller" => "RoleController", "method" => "update"],
 
     // Tasks
 
-    'tasks' => ["controller" => "TaskController","method" => "index"],
-    'create-task' => ["controller" => "TaskController","method" => "create"],
-    'store-task' => ["controller" => "TaskController","method" => "store"],
-    'show-task' => ["controller" => "TaskController","method" => "show"],
-    'edit-task' => ["controller" => "TaskController","method" => "edit"],
-    'update-task' => ["controller" => "TaskController","method" => "update"],
-    'delete-task' => ["controller" => "TaskController","method" => "delete"],
+    'task-lists' => ["controller" => "TaskController", "method" => "index"],
+    'create-task' => ["controller" => "TaskController", "method" => "create"],
+    'store-task' => ["controller" => "TaskController", "method" => "store"],
+    'show-task' => ["controller" => "TaskController", "method" => "show"],
+    'edit-task' => ["controller" => "TaskController", "method" => "edit"],
+    'update-task' => ["controller" => "TaskController", "method" => "update"],
+    'delete-task' => ["controller" => "TaskController", "method" => "delete"],
 
     // hrm 
-    'departments' => ['controller' => 'DepartmentController','method' => "index"],
-    'store-department' => ['controller' => 'DepartmentController','method' => "store"],
-    'update-department' => ['controller' => 'DepartmentController','method' => "update"],
-    'delete-department' => ['controller' => 'DepartmentController','method' => "delete"],
+    'departments' => ['controller' => 'DepartmentController', 'method' => "index"],
+    'store-department' => ['controller' => 'DepartmentController', 'method' => "store"],
+    'update-department' => ['controller' => 'DepartmentController', 'method' => "update"],
+    'delete-department' => ['controller' => 'DepartmentController', 'method' => "delete"],
     // designations 
-    'designations' => ['controller' => 'DesignationController','method' => "index"],
-    'store-designation' => ['controller' => 'DesignationController','method' => "store"],
-    'update-designation' => ['controller' => 'DesignationController','method' => "update"],
-    'delete-designation' => ['controller' => 'DesignationController','method' => "delete"],
-    // employees 
-    'employee-lists' => ['controller' => 'EmployeeController','method' => "index"],
-    'create-employee' => ['controller' => 'EmployeeController','method' => "create"],
-    'store-employee' => ['controller' => 'EmployeeController','method' => "store"],
-    'update-employee' => ['controller' => 'EmployeeController','method' => "update"],
-    'delete-employee' => ['controller' => 'EmployeeController','method' => "delete"],
+    'designations' => ['controller' => 'DesignationController', 'method' => "index"],
+    'store-designation' => ['controller' => 'DesignationController', 'method' => "store"],
+    'update-designation' => ['controller' => 'DesignationController', 'method' => "update"],
+    'delete-designation' => ['controller' => 'DesignationController', 'method' => "delete"],
+
+    "employee-lists" => ["controller" => "EmployeeController", "method" => "index"],
+    "create-employee" => ["controller" => "EmployeeController", "method" => "create"],
+    "store-employee" => ["controller" => "EmployeeController", "method" => "store"],
+    "edit-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "edit"],
+    "update-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "update"],
+    "delete-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "delete"],
 ];
 
+
+
 // Detect route
-$route = $_GET['route'] ?? null;
-if (!$route) {
-    $uri = strtok($_SERVER["REQUEST_URI"], '?');
+$route = trim(strtok($_SERVER["REQUEST_URI"], '?'), '/');
+if ($route === '') {
+    $route = 'home'; // default route
+}
 
-    // Remove /tphl_project/public from URI
-    $base_folder = '/tphl_project/public';
-    if (strpos($uri, $base_folder) === 0) {
-        $uri = substr($uri, strlen($base_folder));
-    }
+// Remove base folder
+$base_folder = 'tphl_project/public';
+if (strpos($route, $base_folder) === 0) {
+    $route = substr($route, strlen($base_folder));
+}
+$route = trim($route, '/');
 
-    $route = trim($uri, "/");
-    if ($route === "") {
-        $route = "home";
+$matched = false;
+$params = [];
+
+foreach ($routes as $pattern => $routeInfo) {
+    if (preg_match("#^$pattern$#", $route, $matches)) {
+        $controllerName = $routeInfo['controller'];
+        $methodName = $routeInfo['method'];
+        $params = array_slice($matches, 1); // ID captured here
+        $matched = true;
+        break;
     }
 }
 
-// Validate route
-if (!isset($routes[$route])) {
+if (!$matched) {
     die("404 - Route not found: $route");
 }
 
-// Controller + method
-$controllerName = $routes[$route]["controller"];
-$methodName     = $routes[$route]["method"];
-
-// Instantiate
+// Instantiate controller
 $controller = new $controllerName($db);
 
-// Validate method
-if (!method_exists($controller, $methodName)) {
-    die("404 - Method not found: $methodName");
-}
-
-// Execute
-$controller->$methodName();
+// Call method with ID param if exists
+call_user_func_array([$controller, $methodName], $params);

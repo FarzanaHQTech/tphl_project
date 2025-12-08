@@ -1,22 +1,23 @@
 CREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    employee_id INT,
-    title VARCHAR(255),
-    description TEXT,
+    employee_id INT UNSIGNED NOT NULL, 
+    title VARCHAR(255) NOT NULL,
+    description TEXT NULL,
     start_date DATE,
-    deadline DATE,
+    deadline DATETIME,  
 
     employee_accept TINYINT(1) DEFAULT 0,  
     status ENUM('pending','in_progress','completed','expired') DEFAULT 'pending',
-    progress INT DEFAULT 0,                 -- % completed
-    remaining_time VARCHAR(20),             -- example '12:10:20'
-
+    progress INT DEFAULT 0, 
     priority ENUM('low','medium','high','urgent') DEFAULT 'medium',
     
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (employee_id) REFERENCES employees(id)
-);
+    
+    FOREIGN KEY (employee_id) REFERENCES employees(id),
+    INDEX idx_employee_id (employee_id)
+) ENGINE=InnoDB;
+
 
 CREATE TABLE departments (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -45,6 +46,7 @@ CREATE TABLE employees (
     phone VARCHAR(20) NOT NULL,
     emergency_contact VARCHAR(20) NULL,
     qualification VARCHAR(100) NULL,
+    photo VARCHAR(200) NULL,
     experience TEXT NULL,
     address TEXT NOT NULL,
     pass_num VARCHAR(100) NULL,

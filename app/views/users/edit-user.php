@@ -27,7 +27,7 @@ $show_breadcrumb = true;
                     <div class="col-lg-6 mb-3">
                         <label for="contactnumber">Contact Number <span>*</span></label>
 
-                        <input class="form-control" minlength="11" maxlength="11" name="phone" min="11" max="11"  id="contactnumber" type="text" required >
+                        <input class="form-control" minlength="11" maxlength="11" name="phone"   id="contactnumber" type="text" required >
                     </div>
 
                     <!-- Email -->

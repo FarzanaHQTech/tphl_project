@@ -18,7 +18,8 @@ class EmployeeController extends Controller
     public function index()
     {
         $searchTerm = $_GET['q'] ?? '';
-        $departmentFilter = $_GET['department'] ?? '';
+        $departmentFilter = $_GET['department_id'] ?? '';
+
 
         $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
         $perPage = 10;
@@ -67,12 +68,12 @@ class EmployeeController extends Controller
     {
         $data = [
             'full_name'       => $_POST['full_name'] ?? '',
-            'employee_id'     => $_POST['employee_id'] ?? '',
+            'employeeId'     => $_POST['employee_id'] ?? '',
             'username'        => $_POST['username'] ?? '',
             'email'           => $_POST['email'] ?? '',
             'father_name'     => $_POST['father_name'] ?? '',
             'phone'           => $_POST['phone'] ?? '',
-            'emergency_contact'=> $_POST['emergency_contact'] ?? '',
+            'emergency_contact' => $_POST['emergency_contact'] ?? '',
             'qualification'   => $_POST['qualification'] ?? '',
             'experience'      => $_POST['experience'] ?? '',
             'address'         => $_POST['address'] ?? '',
@@ -87,6 +88,7 @@ class EmployeeController extends Controller
             'social_media1'   => $_POST['social_media1'] ?? '',
             'social_media2'   => $_POST['social_media2'] ?? '',
             'social_media3'   => $_POST['social_media3'] ?? '',
+            'photo'           => $_POST['photo'] ?? '',
         ];
 
         // Call model create function
@@ -99,56 +101,62 @@ class EmployeeController extends Controller
     }
 
     // Edit Employee Page
-    public function edit($id)
-    {
-        $employee = $this->employeeModel->find($id);
-        $departments = $this->departmentModel->getAll();
-        $designations = $this->designationModel->getAll();
+public function edit($id)
+{
+    $employee = $this->employeeModel->find($id);
+    $departments = $this->departmentModel->getAll();
+    $designations = $this->designationModel->getAll();
 
-        $this->view("hrm/employees/edit-employee", [
-            "current_route"   => "edit-employee",
-            "page_title"      => "Edit Employee",
-            "show_breadcrumb" => true,
-            "employee"        => $employee,
-            "departments"     => $departments,
-            "designations"    => $designations
-        ]);
+    $this->view("hrm/employees/edit-employee", [
+        "current_route"   => "edit-employee",
+        "page_title"      => "Edit Employee",
+        "show_breadcrumb" => true,
+        "employee"        => $employee,
+        "departments"     => $departments,
+        "designations"    => $designations
+    ]);
+}
+
+
+public function update($id)
+{
+    $data = [
+        'full_name'         => $_POST['full_name'] ?? '',
+        'employee_id'       => $_POST['employee_id'] ?? '',
+        'username'          => $_POST['username'] ?? '',
+        'email'             => $_POST['email'] ?? '',
+        'father_name'       => $_POST['father_name'] ?? '',
+        'phone'             => $_POST['phone'] ?? '',
+        'emergency_contact' => $_POST['emergency_contact'] ?? '',
+        'qualification'     => $_POST['qualification'] ?? '',
+        'experience'        => $_POST['experience'] ?? '',
+        'address'           => $_POST['address'] ?? '',
+        'pass_num'          => $_POST['pass_num'] ?? '',
+        'department_id'     => $_POST['department_id'] ?? null,
+        'designation_id'    => $_POST['designation_id'] ?? null,
+        'joining_date'      => $_POST['joining_date'] ?? null,
+        'account_holder_name' => $_POST['account_holder_name'] ?? '',
+        'account_number'    => $_POST['account_number'] ?? '',
+        'bank_name'         => $_POST['bank_name'] ?? '',
+        'branch_name'       => $_POST['branch_name'] ?? '',
+        'social_media1'     => $_POST['social_media1'] ?? '',
+        'social_media2'     => $_POST['social_media2'] ?? '',
+        'social_media3'     => $_POST['social_media3'] ?? '',
+    ];
+
+    // শুধু input name 'photo' পাঠাও
+    $photoInputName = 'photo';
+
+    if ($this->employeeModel->update($id, $data, $photoInputName)) {
+        header("Location: {$GLOBALS['base_url']}/employee-lists");
+        exit;
+    } else {
+        echo "<h3 style='color:red'>Failed to update employee</h3>";
     }
+}
 
-    // Update Employee
-    public function update($id)
-    {
-        $data = [
-            'full_name'       => $_POST['full_name'] ?? '',
-            'employee_id'     => $_POST['employee_id'] ?? '',
-            'username'        => $_POST['username'] ?? '',
-            'email'           => $_POST['email'] ?? '',
-            'father_name'     => $_POST['father_name'] ?? '',
-            'phone'           => $_POST['phone'] ?? '',
-            'emergency_contact'=> $_POST['emergency_contact'] ?? '',
-            'qualification'   => $_POST['qualification'] ?? '',
-            'experience'      => $_POST['experience'] ?? '',
-            'address'         => $_POST['address'] ?? '',
-            'pass_num'        => $_POST['pass_num'] ?? '',
-            'department_id'   => $_POST['department_id'] ?? 0,
-            'designation_id'  => $_POST['designation_id'] ?? 0,
-            'joining_date'    => $_POST['joining_date'] ?? null,
-            'account_holder_name' => $_POST['account_holder_name'] ?? '',
-            'account_number'  => $_POST['account_number'] ?? '',
-            'bank_name'       => $_POST['bank_name'] ?? '',
-            'branch_name'     => $_POST['branch_name'] ?? '',
-            'social_media1'   => $_POST['social_media1'] ?? '',
-            'social_media2'   => $_POST['social_media2'] ?? '',
-            'social_media3'   => $_POST['social_media3'] ?? '',
-        ];
 
-        if ($this->employeeModel->update($id, $data)) {
-            header("Location: {$GLOBALS['base_url']}/employee-lists");
-            exit;
-        } else {
-            echo "<h3 style='color:red'>Failed to update employee</h3>";
-        }
-    }
+
 
     // Delete Employee
     public function delete($id)

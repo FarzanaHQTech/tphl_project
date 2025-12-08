@@ -1,6 +1,6 @@
  <?php
-    $page_title = "Create User";
-    $page = 'Add User';
+    $page_title = "Create Employee";
+    $page = 'Add Employee';
     $show_breadcrumb = true;
 
     ?>
@@ -13,7 +13,7 @@
              <h5 class="card__heading-title">Add New Employee</h5>
          </div>
 
-         <form action="<?= $GLOBALS['base_url'] ?>/store-employee">
+         <form action="<?= $GLOBALS['base_url'] ?>/store-employee" method="POST" enctype="multipart/form-data">
              <div class="card__wrapper mb-20">
                  <div class="row g-20 gy-20 align-items-center justify-content-center">
                      <div class="col-lg-6">
@@ -21,7 +21,7 @@
                              <div class="form__input-title">
                                  <label for="full_name">Full Name <span>*</span></label>
                              </div>
-                             <div class="form__input">
+                             <div classqA="form__input">
                                  <input class="form-control" name="full_name" id="full_name" type="text">
                              </div>
                          </div>
@@ -32,7 +32,7 @@
                                  <label for="father_name">Father Name</label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="lastname" id="father_name" type="text">
+                                 <input class="form-control" name="father_name" id="father_name" type="text">
                              </div>
                          </div>
                      </div>
@@ -42,7 +42,7 @@
                                  <label for="phone">Contact Number <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="phone" id="phone" type="text">
+                                 <input class="form-control" name="phone" id="phone" type="text"  minlength="11" maxlength="11">
                              </div>
                          </div>
                      </div>
@@ -52,7 +52,7 @@
                                  <label for="emergency_contact">Emergency Number <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="emergency_contact" id="emergency_contact" type="text">
+                                 <input class="form-control" name="emergency_contact" id="emergency_contact" type="text"  minlength="11" maxlength="11">
                              </div>
                          </div>
                      </div>
@@ -89,35 +89,46 @@
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
-                                 <label for="employeeId2">Employee ID <span>*</span></label>
+                                 <label for="employeeId">Employee ID <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="employeeId2" id="employeeId2" type="text">
+                                 <input class="form-control" name="employeeId" id="employeeId" type="text">
                              </div>
                          </div>
                      </div>
 
 
 
-                     <div class="col-lg-12">
+                     <div class="col-lg-6">
+                         <div class="from__input-box">
+                             <div class="form__input-title">
+                                 <label>Employee Department <span>*</span></label>
+                             </div>
+                             <div class="form__input">
+                                 <select class="form-control" name="designation_id">
+                                     <?php foreach ($designations as $designation): ?>
+                                         <option value="<?= $designation['id'] ?>">
+                                             <?= $designation['designation_name'] ?>
+                                         </option>
+                                     <?php endforeach ?>
+                                 </select>
+
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
                                  <label>Employee Designation <span>*</span></label>
                              </div>
+
                              <div class="form__input">
-                                 <select class="form-control">
-                                     <option value="ITD">Information Technology Department</option>
-                                     <option value="TD">Technology Department</option>
-                                     <option value="SD">Security Department</option>
-                                     <option value="NPD">Network Operations Department</option>
-                                     <option value="SAD">Systems Administration Department</option>
-                                     <option value="DMD">Database Management Department</option>
-                                     <option value="SDD">Software Development Department</option>
-                                     <option value="WDD">Web Development Department</option>
-                                     <option value="PMO">Project Management Office</option>
-                                     <option value="ITSP">IT Support Department</option>
-                                     <option value="CD">Consulting Department</option>
+                                 <select class="form-control" name="department_id">
+                                     <?php foreach ($departments as $department): ?>
+                                         <option value="<?= $department['id'] ?>"><?= $department['name'] ?></option>
+                                     <?php endforeach ?>
                                  </select>
+
                              </div>
                          </div>
                      </div>
@@ -134,30 +145,30 @@
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
-                                 <label for="accountholadeername">Account Holder Name <span>*</span></label>
+                                 <label for="account_holder_name">Account Holder Name <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="accountholadeername" id="accountholadeername" type="text">
+                                 <input class="form-control" name="account_holder_name" id="account_holder_name" type="text">
                              </div>
                          </div>
                      </div>
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
-                                 <label for="accountnumber">Account Number <span>*</span></label>
+                                 <label for="account_number">Account Number <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="accountnumber" id="accountnumber" type="text">
+                                 <input class="form-control" name="account_number" id="account_number" type="text">
                              </div>
                          </div>
                      </div>
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
-                                 <label for="bankname">Bank Name <span>*</span></label>
+                                 <label for="bank_name">Bank Name <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="bankname" id="bankname" type="text">
+                                 <input class="form-control" name="bank_name" id="bank_name" type="text">
                              </div>
                          </div>
                      </div>
@@ -203,6 +214,18 @@
                              </div>
                          </div>
                      </div>
+
+
+                     <div class="col-lg-12">
+                         <div class="from__input-box">
+                             <div class="form__input-title">
+                                 <label for="photo">Employee Photo (100px*100px)</label>
+                             </div>
+                             <div class="form__input">
+                                 <input class="form-control" id="photo" type="file" name="photo">
+                             </div>
+                         </div>
+                     </div>
                      <div class="col-md-12">
                          <div class="from__input-box">
                              <div class="form__input-title">
@@ -215,16 +238,6 @@
                      </div>
 
 
-                     <div class="col-lg-12">
-                         <div class="from__input-box">
-                             <div class="form__input-title">
-                                 <label for="sellerphoto">Employee Photo (100px*100px)</label>
-                             </div>
-                             <div class="form__input">
-                                 <input class="form-control" id="sellerphoto" type="file">
-                             </div>
-                         </div>
-                     </div>
                  </div>
              </div>
              <div class="submit__btn text-center">

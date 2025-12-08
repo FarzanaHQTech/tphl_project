@@ -12,34 +12,35 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/tphl_logo.png">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/animate.css">
-    <link rel="stylesheet" href="assets/css/plugins/apexcharts.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-jvectormap-2.0.5.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/vendor/icomoon.css">
-    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
-    <link rel="stylesheet" href="assets/css/vendor/rating.css">
-    <link rel="stylesheet" href="assets/css/vendor/dropzone.css">
-    <link rel="stylesheet" href="assets/css/plugins/dropify.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/spacing.css">
-    <link rel="stylesheet" href="assets/css/plugins/datatables.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/buttons.bootstrap5.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/select2.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery.timepicker.css">
-    <link rel="stylesheet" href="assets/css/plugins/tagify.css">
-    <link rel="stylesheet" href="assets/css/plugins/flatpickr.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/plugins/fullcalendar.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/simplebar.css">
-    <link rel="stylesheet" href="assets/css/plugins/waves.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/nano.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
+   <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/animate.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/apexcharts.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-jvectormap-2.0.5.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/swiper-bundle.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/magnific-popup.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/icomoon.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/fontawesome-pro.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/rating.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/dropzone.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/dropify.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/spacing.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/datatables.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/buttons.bootstrap5.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery.dataTables.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/select2.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery.timepicker.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/tagify.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/flatpickr.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-ui.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/fullcalendar.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/ion.rangeSlider.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/simplebar.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/waves.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/nano.min.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/main.css">
+<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
+
 
 </head>
 
