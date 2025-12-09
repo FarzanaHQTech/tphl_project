@@ -8,52 +8,67 @@ class Task extends Model
     {
         return parent::__construct($db);
     }
-public function getPaginated($limit, $offset, $search = '')
-{
-    $sql = "SELECT t.*, 
-                   e.full_name AS employee_name, 
-                   e.photo AS photo, 
-                   e.employee_id AS employee_code
+    public function getPaginated($limit, $offset, $search = '')
+    {
+        // Base SQL
+        $sql = "SELECT 
+                t.*, 
+                e.full_name AS employee_name, 
+                e.photo AS employee_photo, 
+                e.employee_id AS employee_code,
+                u.full_name AS assigned_by_name,
+                u.photo AS user_photo,
+                u.email AS assigned_by_email
             FROM tasks AS t
             JOIN employees AS e ON t.employee_id = e.id
+            JOIN users AS u ON t.assigned_by = u.id
             WHERE 1";
 
-    $params = [];
-    $types = "";
+        $params = [];
+        $types = "";
 
-    if (!empty($search)) {
-        $sql .= " AND t.title LIKE ?";
-        $params[] = "%$search%";
-        $types .= "s";
+        // Search by title
+        if (!empty($search)) {
+            $sql .= " AND t.title LIKE ?";
+            $params[] = "%$search%";
+            $types .= "s";
+        }
+
+        // Add LIMIT & OFFSET
+        $sql .= " ORDER BY t.id DESC LIMIT ? OFFSET ?";
+        $params[] = $limit;
+        $params[] = $offset;
+        $types .= "ii";
+
+        // Prepare statement
+        $stmt = $this->db->prepare($sql);
+        if (!$stmt) {
+            die("Prepare failed: " . $this->db->error);
+        }
+
+        // Bind parameters dynamically
+        $stmt->bind_param($types, ...$params);
+
+        // Execute & fetch
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    $sql .= " ORDER BY t.id DESC LIMIT ? OFFSET ?";
-
-    $params[] = $limit;
-    $params[] = $offset;
-    $types .= "ii";
-
-    $stmt = $this->db->prepare($sql);
-    $stmt->bind_param($types, ...$params);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    return $result->fetch_all(MYSQLI_ASSOC);
-}
 
 
-
-
-public function getAll(){
-    $sql = $this->db->prepare("SELECT e.full_name,e.photo,e.employee_id,  desg.name AS designation_name, 
-                   dept.name AS department_name   FROM employees AS e
+    public function getAll()
+    {
+        $sql = $this->db->prepare("SELECT e.full_name,e.photo,e.employee_id,  desg.name AS designation_name, 
+                   dept.name AS department_name  FROM employees AS e
             JOIN designations AS desg ON e.designation_id = desg.id
             JOIN departments AS dept ON e.department_id = dept.id");
 
-            $sql->execute();
-            $result = $sql->get_result();
-            return $result->fetch_all(MYSQLI_ASSOC);
-}
+        $sql->execute();
+        $result = $sql->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function countAll($search = '')
     {
@@ -77,43 +92,62 @@ public function getAll(){
         return $result['total'];
     }
 
-  
 
- public function create($data)
-{
-    $stmt = $this->db->prepare(
-        "INSERT INTO tasks
-        (title, employee_id, description, start_date, deadline, employee_accept, status, progress, priority)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
-    );
 
-    $stmt->bind_param(
-        "sisssisis",
-        $data['title'],
-        $data['employee_id'],
-        $data['description'],
-        $data['start_date'],
-        $data['deadline'],
-        $data['employee_accept'],
-        $data['status'],
-        $data['progress'],
-        $data['priority']
-    );
+    public function create($data)
+    {
+        $stmt = $this->db->prepare(
+            "INSERT INTO tasks
+        (title, employee_id, description, start_date, deadline, employee_accept, status, progress, priority,assigned_by)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)"
+        );
 
-    if ($stmt->execute()) {
-        return true;
-    } else {
-        echo "ERROR: " . $stmt->error;
-        return false;
+        $stmt->bind_param(
+            "sisssisis",
+            $data['title'],
+            $data['employee_id'],
+            $data['description'],
+            $data['start_date'],
+            $data['deadline'],
+            $data['employee_accept'],
+            $data['status'],
+            $data['progress'],
+            $data['priority'],
+            $data['assigned_by'],
+        );
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            echo "ERROR: " . $stmt->error;
+            return false;
+        }
     }
-}
 
 
 
     //employee id find for edit
-      public function find($id)
+    public function find($id)
     {
-        $stmt = $this->db->prepare("SELECT * FROM employees WHERE id = ?");
+        $stmt = $this->db->prepare("
+    SELECT 
+        t.*, 
+        e.full_name AS employee_name, 
+        e.email AS employee_email, 
+        e.designation_id,
+        e.photo as emp_photo,
+        u.full_name AS assigned_by_name,
+        u.email AS assigned_by_email,
+        u.photo as assigned_photo,
+        u.designation AS assigned_by_designation,
+        desg.name AS employee_designation
+    FROM tasks AS t
+    JOIN employees AS e ON t.employee_id = e.id
+    JOIN users AS u ON t.assigned_by = u.id
+    JOIN designations AS desg ON e.designation_id = desg.id
+    WHERE t.id = ?
+");
+
         $stmt->bind_param("i", $id);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
@@ -122,80 +156,42 @@ public function getAll(){
     /**
      * Update employee
      */
-public function update($id, $data, $photoInputName = null)
-{
-    // 1. পুরানো employee info
-    $oldEmployee = $this->find($id);
-    $oldPhoto = $oldEmployee['photo'];
-
-    // 2. নতুন photo upload
-    $newPhoto = null;
-    if ($photoInputName && !empty($_FILES[$photoInputName]['name'])) {
-        $newPhoto = uploadImage($photoInputName, 'employees');
-    }
-
-    // 3. Decide final photo
-    $finalPhoto = $newPhoto ?? $oldPhoto;
-
-    // 4. পুরানো photo delete (যদি নতুন আসে)
-    if ($newPhoto && !empty($oldPhoto) && file_exists(dirname(__DIR__, 2) . "/public/uploads/employees/" . $oldPhoto)) {
-        unlink(dirname(__DIR__, 2) . "/public/uploads/employees/" . $oldPhoto);
-    }
-
-    // 5. Update query
-    $sql = "UPDATE employees SET
-        full_name = ?, employee_id = ?, username = ?, email = ?, father_name = ?, phone = ?, emergency_contact = ?,
-        qualification = ?, experience = ?, address = ?, pass_num = ?, department_id = ?, designation_id = ?, joining_date = ?,
-        account_holder_name = ?, account_number = ?, bank_name = ?, branch_name = ?, social_media1 = ?, social_media2 = ?, social_media3 = ?, 
-        photo = ?
+    public function update($id, $data)
+    {
+        // 1. old employee info
+        $oldEmployee = $this->find($id);
+       
+        // 5. Update query
+        $sql = "UPDATE tasks SET
+        title = ?, description = ?, start_date = ?, deadline = ?, priority = ?, progress = ?, status = ?,
+        employee_id = ?,
     WHERE id = ?";
 
-    $stmt = $this->db->prepare($sql);
+        $stmt = $this->db->prepare($sql);
 
-    $stmt->bind_param(
-        "sssssssssssiisssssssssi",
-        $data['full_name'],
-        $data['employee_id'],
-        $data['username'],
-        $data['email'],
-        $data['father_name'],
-        $data['phone'],
-        $data['emergency_contact'],
-        $data['qualification'],
-        $data['experience'],
-        $data['address'],
-        $data['pass_num'],
-        $data['department_id'],
-        $data['designation_id'],
-        $data['joining_date'],
-        $data['account_holder_name'],
-        $data['account_number'],
-        $data['bank_name'],
-        $data['branch_name'],
-        $data['social_media1'],
-        $data['social_media2'],
-        $data['social_media3'],
-        $finalPhoto,
-        $id
-    );
+        $stmt->bind_param(
+            "sssssisi",
+            $data['title'],
+            $data['description'],
+            $data['start_date'],
+            $data['deadline'],
+            $data['priority'],
+            $data['progress'],
+            $data['status'],
+            $data['employee_id'],
+            $id
+        );
 
-    return $stmt->execute();
-}
+        return $stmt->execute();
+    }
 
 
 
 
-       public function delete($id)
+    public function delete($id)
     {
         $stmt = $this->db->prepare("DELETE FROM employees WHERE id = ?");
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
-
 }
-
-
-
-
-?>
-

@@ -80,7 +80,7 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                         </div>
 
                         <h2 class="header__title">
-                            Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['name'] : 'Admin' ?>
+                            Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['user_name'] : 'Admin' ?>
                             <span><img src="assets/images/shape/hand.png" alt="image"></span>
                         </h2>
 
@@ -643,7 +643,8 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="?page=admin-login"><svg width="18" height="18" viewBox="0 0 18 18"
+
+                                        <a href="<?= $GLOBALS['base_url']  ?>/logout"><svg width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_643_343)">
                                                     <path

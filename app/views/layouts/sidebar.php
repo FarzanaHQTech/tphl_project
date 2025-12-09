@@ -3,8 +3,8 @@
        <div class="app-sidebar" id="sidebar">
            <div class="main-sidebar-header">
                <a href="?home" class="header-logo">
-                   <img class="main-logo" src="assets/images/logo/tphl_logo.png" alt="logo">
-                   <img class="dark-logo" src="assets/images/logo/logo_white.png" alt="logo">
+                   <img class="main-logo" src="<?= $GLOBALS['base_url'] ?>/assets/images/logo/tphl_logo.png" alt="logo">
+                   <img class="dark-logo" src="<?= $GLOBALS['base_url'] ?>/assets/images/logo/logo_white.png" alt="logo">
                </a>
            </div>
 
@@ -128,31 +128,31 @@
                            </a>
                            <ul class="sidebar-menu child1" style="<?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists','weekend-lists'], $current_route) ? 'display:block;' : '' ?>">
                                <li class="slide <?= isActive('employee-lists', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('employee-lists', $current_route) ?>" href="employee-lists">Employee List</a>
+                                   <a class="sidebar__menu-item <?= isActive('employee-lists', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/employee-lists">Employee List</a>
                                </li>
                                <li class="slide <?= isActive('departments', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('departments', $current_route) ?>" href="departments">Department List</a>
+                                   <a class="sidebar__menu-item <?= isActive('departments', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/departments">Department List</a>
                                </li>
                                <li class="slide <?= isActive('designations', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('designations', $current_route) ?>" href="designations">Designation List</a>
+                                   <a class="sidebar__menu-item <?= isActive('designations', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/designations">Designation List</a>
                                </li>
                                <li class="slide <?= isActive('leaves', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('leaves', $current_route) ?>" href="leaves">Leave List</a>
+                                   <a class="sidebar__menu-item <?= isActive('leaves', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/leaves">Leave List</a>
                                </li>
                                <li class="slide <?= isActive('salary-lists', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('salary-lists', $current_route) ?>" href="salary-list">Salary Lists</a>
+                                   <a class="sidebar__menu-item <?= isActive('salary-lists', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/salary-list">Salary Lists</a>
                                </li>
                                <li class="slide <?= isActive('create-attendance', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('create-attendance', $current_route) ?>" href="create-attendance">Add Attendance </a>
+                                   <a class="sidebar__menu-item <?= isActive('create-attendance', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/create-attendance">Add Attendance </a>
                                </li>
                                <li class="slide <?= isActive('attendance-lists', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('attendance-lists', $current_route) ?>" href="attendance-lists">Attendance Lists</a>
+                                   <a class="sidebar__menu-item <?= isActive('attendance-lists', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/a<?= $GLOBALS['base_url'] ?>/ttendance-lists">Attendance Lists</a>
                                </li>
                                <li class="slide <?= isActive('holiday-lists', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('holiday-lists', $current_route) ?>" href="holiday-lists">Attendance Lists</a>
+                                   <a class="sidebar__menu-item <?= isActive('holiday-lists', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/holiday-lists">Attendance Lists</a>
                                </li>
                                <li class="slide <?= isActive('weekend-lists', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('weekend-lists', $current_route) ?>" href="weekend-lists">Attendance Lists</a>
+                                   <a class="sidebar__menu-item <?= isActive('weekend-lists', $current_route) ?>" href="w<?= $GLOBALS['base_url'] ?>/eekend-lists">Attendance Lists</a>
                                </li>
                            </ul>
                        </li>

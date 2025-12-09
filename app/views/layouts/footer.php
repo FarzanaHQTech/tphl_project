@@ -11,6 +11,44 @@
     document.addEventListener("DOMContentLoaded", function() {
         $('.selectpicker').selectpicker();
     });
+
+      function startCountdown() {
+          document.querySelectorAll("[id^='timer-']").forEach(function(el) {
+
+              const deadline = el.getAttribute("data-deadline");
+              if (!deadline) {
+                  el.innerHTML = "No Deadline";
+                  return;
+              }
+
+              const targetTime = new Date(deadline).getTime();
+
+              const timer = setInterval(function() {
+                  const now = new Date().getTime();
+                  const distance = targetTime - now;
+
+                  if (distance <= 0) {
+                      el.innerHTML = "Expired";
+                      el.classList.remove("bg-danger");
+                      el.classList.add("bg-secondary");
+                      clearInterval(timer);
+                      return;
+                  }
+
+                  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                  el.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+              }, 1000);
+          });
+      }
+
+      startCountdown();
+
+
+
 </script>
     <!-- JS -->
    <!-- Footer Scripts -->

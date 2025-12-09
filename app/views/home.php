@@ -1,4 +1,11 @@
 <?php
+// session_start();
+// echo "<pre>";
+// print_r($_SESSION['user']);
+// echo "</pre>";
+?>
+
+<?php
 $page_title = "Home Dashboard";
 $show_breadcrumb = false;
 ?>

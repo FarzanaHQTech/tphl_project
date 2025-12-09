@@ -22,6 +22,11 @@ $show_breadcrumb = true;
                         <label for="fullName">Full Name <span>*</span></label>
                         <input class="form-control" name="full_name" id="fullName" type="text" required>
                     </div>
+                    <!-- User Name -->
+                    <div class="col-lg-6 mb-3">
+                        <label for="fullName">User Name<span>*</span></label>
+                        <input class="form-control" name="user_name" id="user_name" type="text" required>
+                    </div>
 
                     <!-- Contact Number -->
                     <div class="col-lg-6 mb-3">
@@ -43,7 +48,7 @@ $show_breadcrumb = true;
                     </div>
 
                     <!-- Address -->
-                    <div class="col-lg-12 mb-3">
+                    <div class="col-lg-6 mb-3">
                         <label for="address">Address <span>*</span></label>
                         <textarea class="form-control" name="address" id="address" required></textarea>
                     </div>

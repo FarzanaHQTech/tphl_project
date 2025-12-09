@@ -156,16 +156,21 @@ public function update($id)
 }
 
 
-
-
     // Delete Employee
-    public function delete($id)
-    {
-        if ($this->employeeModel->delete($id)) {
-            header("Location: {$GLOBALS['base_url']}/employee-lists");
-            exit;
-        } else {
-            echo "<h3 style='color:red'>Failed to delete employee</h3>";
-        }
+public function delete($id)
+{
+    if ($this->employeeModel->delete($id)) {
+        header("Location: {$GLOBALS['base_url']}/employee-lists");
+        exit;
+    } else {
+        echo "<h3 style='color:red'>Failed to delete employee</h3>";
     }
+}
+
+public function dashboard(){
+    $this->view("employee-dashboard/emp-dashboard",[
+        "current_route" => "employee-dashboard",
+        "page_title" => "employee dashboard"
+    ]);
+}
 }

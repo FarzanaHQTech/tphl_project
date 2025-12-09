@@ -3,10 +3,8 @@
 
 
 <?php
-require __DIR__ . "../../app/helpers/helper.php";
-
-
-
+session_start();
+require_once ("../app/helpers/helper.php");
 // Enable debug
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -39,9 +37,11 @@ $db = $database->conn;
 // Routes (regex for ID)
 $routes = [
 
-""                 => ["controller" => "HomeController", "method" => "index"],
-"home"                 => ["controller" => "HomeController", "method" => "index"],
+    ""                 => ["controller" => "LoginController", "method" => "index"],
+    "admin-login"           => ["controller" => "LoginController", "method" => "index"],
+    "home"                 => ["controller" => "HomeController", "method" => "index"],
     "product-request"      => ["controller" => "ProductRequestController", "method" => "index"],
+    "logout"             => ["controller" => "LoginController", "method" => "logout"],
 
 
     // users
@@ -68,10 +68,10 @@ $routes = [
     'task-lists' => ["controller" => "TaskController", "method" => "index"],
     'create-task' => ["controller" => "TaskController", "method" => "create"],
     'store-task' => ["controller" => "TaskController", "method" => "store"],
-    'show-task' => ["controller" => "TaskController", "method" => "show"],
-    'edit-task' => ["controller" => "TaskController", "method" => "edit"],
-    'update-task' => ["controller" => "TaskController", "method" => "update"],
-    'delete-task' => ["controller" => "TaskController", "method" => "delete"],
+    'show-task/(\d+)' => ["controller" => "TaskController", "method" => "show"],
+    'edit-task/(\d+)' => ["controller" => "TaskController", "method" => "edit"],
+    'update-task/(\d+)' => ["controller" => "TaskController", "method" => "update"],
+    'delete-task/(\d+)' => ["controller" => "TaskController", "method" => "delete"],
 
     // hrm 
     'departments' => ['controller' => 'DepartmentController', 'method' => "index"],
@@ -84,27 +84,41 @@ $routes = [
     'update-designation' => ['controller' => 'DesignationController', 'method' => "update"],
     'delete-designation' => ['controller' => 'DesignationController', 'method' => "delete"],
 
+    // employees
     "employee-lists" => ["controller" => "EmployeeController", "method" => "index"],
     "create-employee" => ["controller" => "EmployeeController", "method" => "create"],
     "store-employee" => ["controller" => "EmployeeController", "method" => "store"],
     "edit-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "edit"],
     "update-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "update"],
     "delete-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "delete"],
+    "employee-dashboard"=> ["controller"=> "EmployeeController", "method"=> "dashboard"],
+
 ];
 
-
-
-// Detect route
 $route = trim(strtok($_SERVER["REQUEST_URI"], '?'), '/');
-if ($route === '') {
-    $route = 'home'; // default route
+
+// Remove base folder if present
+$base_folder = 'tphl_project/public';
+if (strpos($route, $base_folder) === 0) {
+    $route = substr($route, strlen($base_folder));
 }
+$route = trim($route, '/');
+
+// Skip routes that don't need login
+$skip_routes = ["admin-login", "admin-registration", "logout"];
+
+// কোন routes skip হবে
+if (!in_array($route, $skip_routes)) {
+    checkLogin();
+}
+
 
 // Remove base folder
 $base_folder = 'tphl_project/public';
 if (strpos($route, $base_folder) === 0) {
     $route = substr($route, strlen($base_folder));
 }
+
 $route = trim($route, '/');
 
 $matched = false;

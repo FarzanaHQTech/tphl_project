@@ -40,6 +40,8 @@ public function index()
         "selectedRole"    => $roleFilter
     ]);
 }
+
+
     // Create User Page
     // Create user form
     public function create()
@@ -60,6 +62,7 @@ public function index()
     {
         $data = [
             'full_name'    => $_POST['full_name'] ?? '',
+            'user_name'    => $_POST['user_name'] ?? '',
             'phone'       => $_POST['phone'] ?? '',
             'email'       => $_POST['email'] ?? '',
             'designation' => $_POST['designation'] ?? '',
@@ -96,4 +99,8 @@ public function index()
             "show_breadcrumb" => true,
         ]);
     }
+
+
+
+
 }

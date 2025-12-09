@@ -21,7 +21,7 @@ function uploadImage($input, $module = 'general')
     // Move file to public/uploads/module
     $targetFile = $rootPublic . $fileName;
     if (move_uploaded_file($_FILES[$input]['tmp_name'], $targetFile)) {
-        return $fileName; // DB তে শুধু filename save হবে
+        return $fileName; 
     }
 
     return null;
@@ -86,6 +86,19 @@ function paginateLinksSecondary($route, $currentPage, $totalPages)
 
     return $html;
 }
+
+
+function checkLogin() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION['user'])) {
+        header("Location: /tphl_project/public/admin-login");
+        exit;
+    }
+}
+
 
 
 

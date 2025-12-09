@@ -38,10 +38,9 @@ $show_breadcrumb = false;
             <div class="card__wrapper">
                 <div class="d-flex align-items-center justify-content-between gap-15">
                     <button type="submit" class="btn btn-secondary">Filters</button>
-                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
-                            data-bs-target="#addNewEmployee">
+                    <a href="<?= $GLOBALS['base_url'] ?>/create-user" class="btn btn-primary w-100">
                         Add Users
-                    </button>
+                        </a>
                 </div>
             </div>
         </div>
