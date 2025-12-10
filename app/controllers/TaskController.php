@@ -75,7 +75,32 @@ class TaskController extends Controller
             'assigned_by'      => $_SESSION['user']['id'] ?? null,
         ];
 
+
         if ($this->taskModel->create($data)) {
+            $taskId = $this->db->insert_id; // নতুন task id
+            $message = "New task assigned: " . $data['title'];
+
+            // Notification insert
+            $stmt = $this->db->prepare(
+                "INSERT INTO notifications (employee_id, task_id, assigned_by, message) VALUES (?, ?, ?, ?)"
+            );
+            $stmt->bind_param("iiis", $data['employee_id'], $taskId, $data['assigned_by'], $message);
+            $stmt->execute();
+
+            header("Location: {$GLOBALS['base_url']}/task-lists");
+            exit;
+        }
+
+
+        if ($this->taskModel->create($data)) {
+            $taskId = $this->db->insert_id;
+            $message = "New Task Assigned for You" . $data["title"];
+
+            $stmt = $this->db->prepare(
+                "INSERT INTO notifications(user_id,task_id, assigned_by, message) VALUES(?,?,?,?) "
+            );
+            $stmt->bind_param("");
+            $stmt->execute();
             header("Location: {$GLOBALS['base_url']}/task-lists");
             exit;
         } else {
@@ -97,6 +122,11 @@ class TaskController extends Controller
 
         ]);
     }
+
+
+
+
+
 
 
     public function update($id)

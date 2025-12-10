@@ -91,7 +91,7 @@ $routes = [
     "edit-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "edit"],
     "update-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "update"],
     "delete-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "delete"],
-    "employee-dashboard"=> ["controller"=> "EmployeeController", "method"=> "dashboard"],
+    "employee-dashboard"=> ["controller"=> "EmployeeDashboardController", "method"=> "index"],
 
 ];
 

@@ -42,7 +42,7 @@
                                  <label for="phone">Contact Number <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="phone" id="phone" type="text"  minlength="11" maxlength="11">
+                                 <input class="form-control" name="phone" id="phone" type="text" minlength="11" maxlength="11">
                              </div>
                          </div>
                      </div>
@@ -52,7 +52,7 @@
                                  <label for="emergency_contact">Emergency Number <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" name="emergency_contact" id="emergency_contact" type="text"  minlength="11" maxlength="11">
+                                 <input class="form-control" name="emergency_contact" id="emergency_contact" type="text" minlength="11" maxlength="11">
                              </div>
                          </div>
                      </div>
@@ -216,7 +216,7 @@
                      </div>
 
 
-                     <div class="col-lg-12">
+                     <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
                                  <label for="photo">Employee Photo (100px*100px)</label>
@@ -226,6 +226,26 @@
                              </div>
                          </div>
                      </div>
+
+                     <div class="col-lg-6">
+                         <div class="form__input-box">
+                             <div class="form__input-box">
+                                 <label>
+                                     <input type="checkbox" id="make_user" name="make_user" value="1">
+                                     Create User Account?
+                                 </label>
+
+                                 <div id="password_box" style="display:none;">
+                                     <label>Password</label>
+                                     <input type="password" name="password" class="form-control">
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+
+
+
                      <div class="col-md-12">
                          <div class="from__input-box">
                              <div class="form__input-title">
@@ -246,3 +266,14 @@
          </form>
      </div>
  </div>
+
+
+ <script>
+     document.getElementById("make_user").addEventListener("change", function() {
+         if (this.checked) {
+             document.getElementById("password_box").style.display = "block";
+         } else {
+             document.getElementById("password_box").style.display = "none";
+         }
+     });
+ </script>

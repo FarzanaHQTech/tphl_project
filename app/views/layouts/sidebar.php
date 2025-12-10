@@ -11,6 +11,7 @@
 
 
 
+
            <div class="main-sidebar" id="sidebar-scroll">
                <nav class="main-menu-container nav nav-pills flex-column sub-open">
                    <div class="sidebar-left" id="sidebar-left"></div>
@@ -52,23 +53,23 @@
                                <span class="sidebar__menu-label">Permissions</span>
                            </a>
                        </li> -->
-
-                       <li class="slide has-sub <?= isActive(['create-permission', 'permissions'], $current_route) ?>">
-                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-permission', 'permissions'], $current_route) ?>">
-                               <i class="fa-regular fa-angle-down side-menu__angle"></i>
-                               <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
-                               <span class="sidebar__menu-label">Role & Permissions</span>
-                           </a>
-                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-permission', 'permissions'], $current_route) ? 'display:block;' : 'display:none;' ?>">
-                               <li class="slide <?= isActive('create-permission', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('create-permission', $current_route) ?>" href="<?= $base_url ?>/create-permission">Add permission</a>
-                               </li>
-                               <li class="slide <?= isActive('permissions', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('permissions', $current_route) ?>" href="<?= $base_url ?>/permissions">permission List</a>
-                               </li>
-                           </ul>
-                       </li>
-
+                       <?php if (hasPermission("Add Permission")): ?>
+                           <li class="slide has-sub <?= isActive(['create-permission', 'permissions'], $current_route) ?>">
+                               <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-permission', 'permissions'], $current_route) ?>">
+                                   <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                                   <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                                   <span class="sidebar__menu-label">Role & Permissions</span>
+                               </a>
+                               <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-permission', 'permissions'], $current_route) ? 'display:block;' : 'display:none;' ?>">
+                                   <li class="slide <?= isActive('create-permission', $current_route) ?>">
+                                       <a class="sidebar__menu-item <?= isActive('create-permission', $current_route) ?>" href="<?= $base_url ?>/create-permission">Add permission</a>
+                                   </li>
+                                   <li class="slide <?= isActive('permissions', $current_route) ?>">
+                                       <a class="sidebar__menu-item <?= isActive('permissions', $current_route) ?>" href="<?= $base_url ?>/permissions">permission List</a>
+                                   </li>
+                               </ul>
+                           </li>
+                       <?php endif ?>
 
                        <li class="slide has-sub <?= isActive(['create-task', 'task-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-task', 'task-lists'], $current_route) ?>">
@@ -120,13 +121,13 @@
                            </ul>
                        </li>
 
-                       <li class="slide has-sub <?= isActive(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists','create-attendance','attendance-lists','holiday-lists'], $current_route) ?>">
+                       <li class="slide has-sub <?= isActive(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists', 'create-attendance', 'attendance-lists', 'holiday-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists'], $current_route) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>
                                <div class="side-menu__icon"><i class="fa-solid fa-users-gear"></i></div>
                                <span class="sidebar__menu-label">HR</span>
                            </a>
-                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists','weekend-lists'], $current_route) ? 'display:block;' : '' ?>">
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['employee-lists', 'departments', 'designations', 'leaves', 'salary-lists', 'weekend-lists'], $current_route) ? 'display:block;' : '' ?>">
                                <li class="slide <?= isActive('employee-lists', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('employee-lists', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/employee-lists">Employee List</a>
                                </li>

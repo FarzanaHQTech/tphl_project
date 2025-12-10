@@ -120,20 +120,21 @@ class User extends Model
 
 
 
- public function getByEmail($email)
+public function getByEmail($email)
 {
     $stmt = $this->db->prepare(
-        "SELECT u.*, r.name AS role_name 
+        "SELECT u.*, LOWER(r.name) AS role_name 
          FROM users u 
          JOIN roles r ON u.role_id = r.id
          WHERE u.email = ?"
     );
 
-    $stmt->bind_param("s", $email); // mysqli prepared statement
+    $stmt->bind_param("s", $email);
     $stmt->execute();
-    $result = $stmt->get_result(); // mysqli_result object
-    return $result->fetch_assoc(); // fetch_assoc() with ()
+    $result = $stmt->get_result();
+    return $result->fetch_assoc();
 }
+
 
 public function getPermissionsByRole($role_id)
 {

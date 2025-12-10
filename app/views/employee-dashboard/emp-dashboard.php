@@ -2,6 +2,24 @@
         $page_title = "Employee Dashboard ";
         ?>
 
+<div class="notification-dropdown">
+    <ul>
+        <?php if (!empty($notifications)): ?>
+            <?php foreach($notifications as $note): ?>
+                <li>
+                    <strong><?= htmlspecialchars($note['message'] ?? '') ?></strong>
+                    <br>
+                    <small>Assigned by: <?= htmlspecialchars($note['assigned_by_name']) ?></small>
+                    <small><?= $note['created_at'] ?></small>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>No new notifications</li>
+        <?php endif; ?>
+    </ul>
+</div>
+
+
         <!-- App side area start -->
         <div class="app__slide-wrapper">
             <div class="row">

@@ -19,27 +19,32 @@ class LoginController extends Controller
         }
 
         $message = "";
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $user = $this->userModel->getBYEmail($email);
+            $email = trim($_POST['email'] ?? '');
+            $password = trim($_POST['password'] ?? '');
+
+            // DB থেকে user fetch
+            $user = $this->userModel->getByEmail($email);
 
             if ($user) {
-                if (password_verify($password, $user['password'])) {
+                $hashedPassword = $user['password'] ?? null;
+
+                if ($hashedPassword && password_verify($password, $hashedPassword)) {
+                    // Login successful
                     $_SESSION['user'] = [
                         "id" => $user['id'],
                         "name" => $user["full_name"],
                         "user_name" => $user["user_name"],
                         "email" => $user["email"],
                         "role_id" => $user["role_id"],
-                        "role_name" => $user["role_name"],
+                        "role_name" => strtolower($user['role_name'] ?? ''),
                     ];
 
                     $permissions = $this->userModel->getPermissionsByRole($user['role_id']);
                     $_SESSION['user']['permissions'] = $permissions;
 
-
-                    // Role-wise redirect (case-insensitive)
+                    // Role-based redirect
                     $role = strtolower($user['role_name']);
 
                     if (in_array($role, ['admin', 'super admin'])) {
@@ -61,35 +66,33 @@ class LoginController extends Controller
                 $message = "User Not Found";
             }
         }
+
         $this->view("auth/login", [
             "current_route" => "admin-login",
             "page_title" => "Admin Login",
             "message" => $message,
-        ], false); // false means don't use master layout
-
+        ], false); // false = don't use master layout
     }
 
-public function logout()
-{
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
+
+    public function logout()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION['user']['id'])) {
+            $userId = $_SESSION['user']['id'];
+            $stmt = $this->db->prepare("UPDATE users SET last_logout = NOW() WHERE id = ?");
+            $stmt->bind_param("i", $userId);
+            $stmt->execute();
+        }
+
+        // Destroy session
+        session_unset();
+        session_destroy();
+
+        // Redirect to login page
+        header("Location: {$GLOBALS['base_url']}/admin-login");
+        exit;
     }
-    if (isset($_SESSION['user']['id'])) {
-        $userId = $_SESSION['user']['id'];
-        $stmt = $this->db->prepare("UPDATE users SET last_logout = NOW() WHERE id = ?");
-        $stmt->bind_param("i", $userId);
-        $stmt->execute();
-    }
-
-    // Destroy session
-    session_unset();
-    session_destroy();
-
-    // Redirect to login page
-    header("Location: {$GLOBALS['base_url']}/admin-login");
-    exit;
-}
-
-
-
 }

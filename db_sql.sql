@@ -67,3 +67,15 @@ CREATE TABLE employees (
     FOREIGN KEY (designation_id) REFERENCES designations(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
+CREATE TABLE `notifications` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `employee_id`INT UNSIGNED NOT NULL,   
+    `task_id` INT DEFAULT NULL,    
+    `assigned_by`INT NOT NULL,  
+    `message` VARCHAR(255) NOT NULL,
+    `is_read` TINYINT(1) DEFAULT 0,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`employee_id`) REFERENCES employees(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`task_id`) REFERENCES tasks(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`assigned_by`) REFERENCES users(`id`) ON DELETE CASCADE
+);

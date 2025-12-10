@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-style-mode" content="1">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/tphl_logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $GLOBALS['base_url'] ?>/assets/images/logo/tphl_logo.png">
 
     <!-- CSS here -->
-   <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet"href="<?=$GLOBALS['base_url'] ?>/assets/css/vendor/bootstrap.min.css">
 <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/animate.css">
 <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/apexcharts.css">
 <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-jvectormap-2.0.5.css">
@@ -81,7 +81,7 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
 
                         <h2 class="header__title">
                             Hello <?= isset($_SESSION['user']['name']) ? $_SESSION['user']['user_name'] : 'Admin' ?>
-                            <span><img src="assets/images/shape/hand.png" alt="image"></span>
+                            <span><img src="<?= $GLOBALS['base_url'] ?>/assets/images/shape/hand.png" alt="image"></span>
                         </h2>
 
                     </div>

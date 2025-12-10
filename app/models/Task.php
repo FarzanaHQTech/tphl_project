@@ -92,8 +92,6 @@ class Task extends Model
         return $result['total'];
     }
 
-
-
     public function create($data)
     {
         $stmt = $this->db->prepare(
@@ -101,9 +99,8 @@ class Task extends Model
         (title, employee_id, description, start_date, deadline, employee_accept, status, progress, priority,assigned_by)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)"
         );
-
         $stmt->bind_param(
-            "sisssisis",
+            "sisssiisis", 
             $data['title'],
             $data['employee_id'],
             $data['description'],
@@ -113,9 +110,8 @@ class Task extends Model
             $data['status'],
             $data['progress'],
             $data['priority'],
-            $data['assigned_by'],
+            $data['assigned_by']
         );
-
         if ($stmt->execute()) {
             return true;
         } else {
@@ -123,8 +119,6 @@ class Task extends Model
             return false;
         }
     }
-
-
 
     //employee id find for edit
     public function find($id)
@@ -160,7 +154,7 @@ class Task extends Model
     {
         // 1. old employee info
         $oldEmployee = $this->find($id);
-       
+
         // 5. Update query
         $sql = "UPDATE tasks SET
         title = ?, description = ?, start_date = ?, deadline = ?, priority = ?, progress = ?, status = ?,
@@ -184,9 +178,6 @@ class Task extends Model
 
         return $stmt->execute();
     }
-
-
-
 
     public function delete($id)
     {

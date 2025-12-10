@@ -26,9 +26,6 @@ function uploadImage($input, $module = 'general')
 
     return null;
 }
-
-
-
 function getImage($module, $filename)
 {
     if (!$filename) {
@@ -149,6 +146,63 @@ function searchRecords($db, $table, $fields, $searchTerm, $extraConditions = [])
     $result = $stmt->get_result();
     return $result->fetch_all(MYSQLI_ASSOC);
 }
+
+
+
+
+function db()
+{
+    static $db = null;
+
+    if ($db === null) {
+        // config file theke database info load koro
+        $config = require dirname(__DIR__) . "/config/config.php"; 
+        
+        $db = new Database($config);
+    }
+
+    return $db->conn; // return mysqli connection
+}
+
+
+function hasPermission($permissionName)
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // session check
+    if (!isset($_SESSION['user']['role_id'])) {
+        return false; // role_id missing
+    }
+
+    $roleId = $_SESSION['user']['role_id'];
+
+    // session থেকে permission array
+    if (!isset($_SESSION['user']['permissions']) || !is_array($_SESSION['user']['permissions'])) {
+        return false; // permissions missing
+    }
+
+    $permissions = array_map('strtolower', $_SESSION['user']['permissions']); // lowercase
+    $permissionName = strtolower($permissionName);
+
+    return in_array($permissionName, $permissions);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

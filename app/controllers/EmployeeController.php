@@ -3,6 +3,7 @@ class EmployeeController extends Controller
 {
     protected $db;
     protected $employeeModel;
+    protected $userModel;
     protected $departmentModel;
     protected $designationModel;
 
@@ -12,6 +13,8 @@ class EmployeeController extends Controller
         $this->employeeModel = new Employee($this->db);
         $this->departmentModel = new Department($this->db);
         $this->designationModel = new Designation($this->db); // <-- ঠিক করা
+
+        $this->userModel = new User($this->db);
     }
 
     // Employee List Page
@@ -64,113 +67,164 @@ class EmployeeController extends Controller
     }
 
     // Handle form submission
-    public function store()
-    {
-        $data = [
-            'full_name'       => $_POST['full_name'] ?? '',
-            'employeeId'     => $_POST['employee_id'] ?? '',
-            'username'        => $_POST['username'] ?? '',
-            'email'           => $_POST['email'] ?? '',
-            'father_name'     => $_POST['father_name'] ?? '',
-            'phone'           => $_POST['phone'] ?? '',
-            'emergency_contact' => $_POST['emergency_contact'] ?? '',
-            'qualification'   => $_POST['qualification'] ?? '',
-            'experience'      => $_POST['experience'] ?? '',
-            'address'         => $_POST['address'] ?? '',
-            'pass_num'        => $_POST['pass_num'] ?? '',
-            'department_id'   => $_POST['department_id'] ?? 0,
-            'designation_id'  => $_POST['designation_id'] ?? 0,
-            'joining_date'    => $_POST['joining_date'] ?? null,
-            'account_holder_name' => $_POST['account_holder_name'] ?? '',
-            'account_number'  => $_POST['account_number'] ?? '',
-            'bank_name'       => $_POST['bank_name'] ?? '',
-            'branch_name'     => $_POST['branch_name'] ?? '',
-            'social_media1'   => $_POST['social_media1'] ?? '',
-            'social_media2'   => $_POST['social_media2'] ?? '',
-            'social_media3'   => $_POST['social_media3'] ?? '',
-            'photo'           => $_POST['photo'] ?? '',
+public function store()
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // checkbox value
+    $makeUser = $_POST['make_user'] ?? 0;
+
+    // Collect password ONLY when user account will be created
+    $plainPassword = trim($_POST['password'] ?? '');
+
+    if ($makeUser == 1 && empty($plainPassword)) {
+        die("Password is required when creating user account!");
+    }
+
+    // If make_user = 1 → hash password
+    // If make_user = 0 → password will be empty
+    $hashedPassword = ($makeUser == 1)
+        ? password_hash($plainPassword, PASSWORD_DEFAULT)
+        : '';
+
+    $data = [
+        'full_name'       => $_POST['full_name'] ?? '',
+        'employee_id'     => $_POST['employeeId'] ?? '',
+        'username'        => $_POST['userName'] ?? '',
+        'email'           => $_POST['email'] ?? '',
+        'father_name'     => $_POST['father_name'] ?? '',
+        'phone'           => $_POST['phone'] ?? '',
+        'emergency_contact' => $_POST['emergency_contact'] ?? '',
+        'qualification'   => $_POST['qualification'] ?? '',
+        'experience'      => $_POST['experience'] ?? '',
+        'address'         => $_POST['address'] ?? '',
+        'pass_num'        => $_POST['pass_num'] ?? '',
+        'department_id'   => $_POST['department_id'] ?? 0,
+        'designation_id'  => $_POST['designation_id'] ?? 0,
+        'joining_date'    => $_POST['joining_date'] ?? null,
+        'account_holder_name' => $_POST['account_holder_name'] ?? '',
+        'account_number'  => $_POST['account_number'] ?? '',
+        'bank_name'       => $_POST['bank_name'] ?? '',
+        'branch_name'     => $_POST['branch_name'] ?? '',
+        'social_media1'   => $_POST['social_media1'] ?? '',
+        'social_media2'   => $_POST['social_media2'] ?? '',
+        'social_media3'   => $_POST['social_media3'] ?? '',
+        'photo'           => $_POST['photo'] ?? '',
+        'make_user'       => $makeUser,
+        'password'        => $hashedPassword,
+    ];
+
+    // Create Employee
+    if (!$this->employeeModel->create($data)) {
+        die("Employee creation failed: " . $this->db->error);
+    }
+
+    $employee_id = $this->db->insert_id;
+
+    // If create user also
+    if ($makeUser == 1) {
+
+        $userData = [
+            'full_name'   => $data['full_name'],
+            'user_name'   => $data['username'],
+            'phone'       => $data['phone'],
+            'email'       => $data['email'],
+            'password'    => $hashedPassword,
+            'role_id'     => 2,
+            'address'     => $data['address'],
+            'designation' => '',
+            'nid'         => '',
+            'media_link1' => $data['social_media1'],
+            'media_link2' => $data['social_media2'],
         ];
 
-        // Call model create function
-        if ($this->employeeModel->create($data)) {
+        if (!$this->userModel->create($userData)) {
+            die("User creation failed: " . $this->db->error);
+        }
+
+        $user_id = $this->db->insert_id;
+
+        $stmt = $this->db->prepare("UPDATE employees SET user_id = ? WHERE id = ?");
+        $stmt->bind_param("ii", $user_id, $employee_id);
+        $stmt->execute();
+    }
+
+    header("Location: {$GLOBALS['base_url']}/employee-lists");
+    exit;
+}
+
+
+
+
+
+    // Edit Employee Page
+    public function edit($id)
+    {
+        $employee = $this->employeeModel->find($id);
+        $departments = $this->departmentModel->getAll();
+        $designations = $this->designationModel->getAll();
+
+        $this->view("hrm/employees/edit-employee", [
+            "current_route"   => "edit-employee",
+            "page_title"      => "Edit Employee",
+            "show_breadcrumb" => true,
+            "employee"        => $employee,
+            "departments"     => $departments,
+            "designations"    => $designations
+        ]);
+    }
+
+
+
+
+    public function update($id)
+    {
+        $data = [
+            'full_name'         => $_POST['full_name'] ?? '',
+            'employee_id'       => $_POST['employee_id'] ?? '',
+            'username'          => $_POST['username'] ?? '',
+            'email'             => $_POST['email'] ?? '',
+            'father_name'       => $_POST['father_name'] ?? '',
+            'phone'             => $_POST['phone'] ?? '',
+            'emergency_contact' => $_POST['emergency_contact'] ?? '',
+            'qualification'     => $_POST['qualification'] ?? '',
+            'experience'        => $_POST['experience'] ?? '',
+            'address'           => $_POST['address'] ?? '',
+            'pass_num'          => $_POST['pass_num'] ?? '',
+            'department_id'     => $_POST['department_id'] ?? null,
+            'designation_id'    => $_POST['designation_id'] ?? null,
+            'joining_date'      => $_POST['joining_date'] ?? null,
+            'account_holder_name' => $_POST['account_holder_name'] ?? '',
+            'account_number'    => $_POST['account_number'] ?? '',
+            'bank_name'         => $_POST['bank_name'] ?? '',
+            'branch_name'       => $_POST['branch_name'] ?? '',
+            'social_media1'     => $_POST['social_media1'] ?? '',
+            'social_media2'     => $_POST['social_media2'] ?? '',
+            'social_media3'     => $_POST['social_media3'] ?? '',
+        ];
+
+        // শুধু input name 'photo' পাঠাও
+        $photoInputName = 'photo';
+
+        if ($this->employeeModel->update($id, $data, $photoInputName)) {
             header("Location: {$GLOBALS['base_url']}/employee-lists");
             exit;
         } else {
-            echo "<h3 style='color:red'>Failed to create employee</h3>";
+            echo "<h3 style='color:red'>Failed to update employee</h3>";
         }
     }
 
-    // Edit Employee Page
-public function edit($id)
-{
-    $employee = $this->employeeModel->find($id);
-    $departments = $this->departmentModel->getAll();
-    $designations = $this->designationModel->getAll();
-
-    $this->view("hrm/employees/edit-employee", [
-        "current_route"   => "edit-employee",
-        "page_title"      => "Edit Employee",
-        "show_breadcrumb" => true,
-        "employee"        => $employee,
-        "departments"     => $departments,
-        "designations"    => $designations
-    ]);
-}
-
-
-public function update($id)
-{
-    $data = [
-        'full_name'         => $_POST['full_name'] ?? '',
-        'employee_id'       => $_POST['employee_id'] ?? '',
-        'username'          => $_POST['username'] ?? '',
-        'email'             => $_POST['email'] ?? '',
-        'father_name'       => $_POST['father_name'] ?? '',
-        'phone'             => $_POST['phone'] ?? '',
-        'emergency_contact' => $_POST['emergency_contact'] ?? '',
-        'qualification'     => $_POST['qualification'] ?? '',
-        'experience'        => $_POST['experience'] ?? '',
-        'address'           => $_POST['address'] ?? '',
-        'pass_num'          => $_POST['pass_num'] ?? '',
-        'department_id'     => $_POST['department_id'] ?? null,
-        'designation_id'    => $_POST['designation_id'] ?? null,
-        'joining_date'      => $_POST['joining_date'] ?? null,
-        'account_holder_name' => $_POST['account_holder_name'] ?? '',
-        'account_number'    => $_POST['account_number'] ?? '',
-        'bank_name'         => $_POST['bank_name'] ?? '',
-        'branch_name'       => $_POST['branch_name'] ?? '',
-        'social_media1'     => $_POST['social_media1'] ?? '',
-        'social_media2'     => $_POST['social_media2'] ?? '',
-        'social_media3'     => $_POST['social_media3'] ?? '',
-    ];
-
-    // শুধু input name 'photo' পাঠাও
-    $photoInputName = 'photo';
-
-    if ($this->employeeModel->update($id, $data, $photoInputName)) {
-        header("Location: {$GLOBALS['base_url']}/employee-lists");
-        exit;
-    } else {
-        echo "<h3 style='color:red'>Failed to update employee</h3>";
-    }
-}
-
 
     // Delete Employee
-public function delete($id)
-{
-    if ($this->employeeModel->delete($id)) {
-        header("Location: {$GLOBALS['base_url']}/employee-lists");
-        exit;
-    } else {
-        echo "<h3 style='color:red'>Failed to delete employee</h3>";
+    public function delete($id)
+    {
+        if ($this->employeeModel->delete($id)) {
+            header("Location: {$GLOBALS['base_url']}/employee-lists");
+            exit;
+        } else {
+            echo "<h3 style='color:red'>Failed to delete employee</h3>";
+        }
     }
-}
-
-public function dashboard(){
-    $this->view("employee-dashboard/emp-dashboard",[
-        "current_route" => "employee-dashboard",
-        "page_title" => "employee dashboard"
-    ]);
-}
 }
