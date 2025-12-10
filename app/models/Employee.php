@@ -111,80 +111,65 @@ class Employee extends Model
         return $result['total'];
     }
 
-    public function create($data)
-    {
-        $photo = uploadImage('employeePhoto', 'employees');
-         // Password hash
-        // Step 1: Assign to variables (bind_param needs references)
-        $full_name       = $data['full_name'];
-        $employee_id     = $data['employee_id'];
-        $username        = $data['username'];
-        $email           = $data['email'];
-        $father_name     = $data['father_name'];
-        $phone           = $data['phone'];
-        $emergency_contact = $data['emergency_contact'];
-        $qualification   = $data['qualification'];
-        $experience      = $data['experience'];
-        $address         = $data['address'];
-        $pass_num        = $data['pass_num'] ?? '';
-        $department_id   = $data['department_id'];
-        $designation_id  = $data['designation_id'];
-        $joining_date    = $data['joining_date'] ?? null;
-        $account_holder_name = $data['account_holder_name'];
-        $account_number  = $data['account_number'];
-        $bank_name       = $data['bank_name'];
-        $branch_name     = $data['branch_name'];
-        $social_media1   = $data['social_media1'] ?? '';
-        $social_media2   = $data['social_media2'] ?? '';
-        $social_media3   = $data['social_media3'] ?? '';
-        $make_user       = $data['make_user'] ?? 0;
-        $password        = $data['password'] ?? '';
-
-        // Step 2: Prepare statement
-        $stmt = $this->db->prepare(
-            "INSERT INTO employees
-        (full_name, employee_id, username, email, father_name, phone, emergency_contact, qualification, experience,
-         address, pass_num, department_id, designation_id, joining_date, account_holder_name, account_number,
-         bank_name, branch_name, social_media1, social_media2, social_media3, photo, make_user, password)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        );
-
-        // Step 3: Bind parameters (all variables, not expressions)
-        $stmt->bind_param(
-            "ssssssssssssisssssssssss",
-            $full_name,
-            $employee_id,
-            $username,
-            $email,
-            $father_name,
-            $phone,
-            $emergency_contact,
-            $qualification,
-            $experience,
-            $address,
-            $pass_num,
-            $department_id,
-            $designation_id,
-            $joining_date,
-            $account_holder_name,
-            $account_number,
-            $bank_name,
-            $branch_name,
-            $social_media1,
-            $social_media2,
-            $social_media3,
-            $photo,
-            $make_user,
-            $password
-        );
-
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            echo "ERROR: " . $stmt->error;
-            return false;
-        }
+   // models/Employee.php
+public function create($data)
+{
+    // Upload photo if exists
+    $photo = uploadImage('employeePhoto', 'employees');
+    if (!$photo) {
+        $photo = '';
     }
+
+    // Prepare all variables
+    $full_name       = $data['full_name'];
+    $employee_id     = $data['employee_id'];
+    $username        = $data['username'];
+    $email           = $data['email'];
+    $father_name     = $data['father_name'];
+    $phone           = $data['phone'];
+    $emergency_contact = $data['emergency_contact'];
+    $qualification   = $data['qualification'];
+    $experience      = $data['experience'];
+    $address         = $data['address'];
+    $pass_num        = $data['pass_num'] ?? '';
+    $department_id   = $data['department_id'];
+    $designation_id  = $data['designation_id'];
+    $joining_date    = $data['joining_date'] ?? null;
+    $account_holder_name = $data['account_holder_name'];
+    $account_number  = $data['account_number'];
+    $bank_name       = $data['bank_name'];
+    $branch_name     = $data['branch_name'];
+    $social_media1   = $data['social_media1'] ?? '';
+    $social_media2   = $data['social_media2'] ?? '';
+    $social_media3   = $data['social_media3'] ?? '';
+    $make_user       = $data['make_user'] ?? 0;
+    $password        = $data['password'] ?? '';
+
+    $stmt = $this->db->prepare(
+        "INSERT INTO employees 
+        (full_name, employee_id, username, email, father_name, phone, emergency_contact, 
+         qualification, experience, address, pass_num, department_id, designation_id, 
+         joining_date, account_holder_name, account_number, bank_name, branch_name, 
+         social_media1, social_media2, social_media3, photo, make_user, password) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    );
+
+    $stmt->bind_param(
+        "ssssssssssssisssssssssss",
+        $full_name, $employee_id, $username, $email, $father_name, $phone, 
+        $emergency_contact, $qualification, $experience, $address, $pass_num, 
+        $department_id, $designation_id, $joining_date, $account_holder_name, 
+        $account_number, $bank_name, $branch_name, $social_media1, $social_media2, 
+        $social_media3, $photo, $make_user, $password
+    );
+
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        error_log("Employee creation failed: " . $stmt->error);
+        return false;
+    }
+}
 
 
 
@@ -273,21 +258,27 @@ class Employee extends Model
 
     public function taskNotification()
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+   $loggedUserId = $_SESSION['user']['id'];
 
-        $userId = $_SESSION['user']['id'];
+$stmt = $this->db->prepare("SELECT id FROM employees WHERE user_id = ?");
+$stmt->bind_param("i", $loggedUserId);
+$stmt->execute();
+$emp = $stmt->get_result()->fetch_assoc();
+
+$employeeId = $emp['id'];
 
         // Notifications fetch
-        $stmt = $this->db->prepare(
-            "SELECT n.*, u.full_name AS assigned_by_name
-         FROM notifications n
-         JOIN users u ON n.assigned_by = u.id
-         WHERE n.employee_id = ? AND n.is_read = 0
-         ORDER BY n.created_at DESC"
-        );
-        $stmt->bind_param("i", $userId);
+        $stmt = $this->db->prepare("
+    SELECT n.*, u.full_name AS assigned_by_name
+    FROM notifications n
+    JOIN users u ON n.assigned_by = u.id
+    WHERE n.employee_id = ?
+    AND n.is_read = 0
+    ORDER BY n.created_at DESC
+");
+$stmt->bind_param("i", $employeeId);
+
+        // $stmt->bind_param("i", $userId);
         $stmt->execute();
         $notifications = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 

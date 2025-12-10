@@ -3,6 +3,9 @@
         ?>
 
 <div class="notification-dropdown">
+    <pre>
+        <!-- < print_r($notifications) ?> -->
+    </pre>
     <ul>
         <?php if (!empty($notifications)): ?>
             <?php foreach($notifications as $note): ?>

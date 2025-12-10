@@ -13,17 +13,15 @@ class EmployeeDashboardController extends Controller
     public function index()
     {
         $notifications = $this->employeeModel->taskNotification();
-          $this->view("employee-dashboard/emp-dashboard",[
-        "current_route" => "employee-dashboard",
-        "page_title" => "employee dashboard",
-           "notifications" => $notifications,
-    ]);
+        $this->view("employee-dashboard/emp-dashboard", [
+            "current_route" => "employee-dashboard",
+            "page_title" => "employee dashboard",
+            "notifications" => $notifications,
+        ]);
 
 
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-
-        
     }
 }

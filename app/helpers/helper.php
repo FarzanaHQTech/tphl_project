@@ -189,6 +189,45 @@ function hasPermission($permissionName)
     return in_array($permissionName, $permissions);
 }
 
+function isAlreadyHashed($password) {
+    if (strlen($password) === 60 && preg_match('/^\$2[ayb]\$.{56}$/', $password)) {
+        return true; // Already hashed
+    }
+    return false; // Not hashed
+}
+
+/**
+ * Ensure password is hashed
+ * Will hash only if not already hashed
+ */
+function ensureHashedPassword($password) {
+    if (isAlreadyHashed($password)) {
+        return $password; // Return as is if already hashed
+    }
+    return password_hash($password, PASSWORD_DEFAULT);
+}
+
+/**
+ * Validate and prepare user data
+ */
+function prepareUserData($postData, $isFromEmployee = false) {
+    $data = [
+        'full_name'    => trim($postData['full_name'] ?? ''),
+        'user_name'    => trim($postData['user_name'] ?? ($postData['username'] ?? '')),
+        'phone'        => trim($postData['phone'] ?? ''),
+        'email'        => trim($postData['email'] ?? ''),
+        'designation'  => trim($postData['designation'] ?? ''),
+        'address'      => trim($postData['address'] ?? ''),
+        'nid'          => trim($postData['nid'] ?? ''),
+        'role_id'      => intval($postData['role_id'] ?? ($isFromEmployee ? 2 : 0)),
+        'password'     => trim($postData['password'] ?? ''),
+        'media_link1'  => trim($postData['media_link1'] ?? ($postData['social_media1'] ?? '')),
+        'media_link2'  => trim($postData['media_link2'] ?? ($postData['social_media2'] ?? '')),
+    ];
+    
+    return $data;
+}
+
 
 
 
