@@ -73,7 +73,7 @@ $routes = [
     'update-task/(\d+)' => ["controller" => "TaskController", "method" => "update"],
     'delete-task/(\d+)' => ["controller" => "TaskController", "method" => "delete"],
 
-    // hrm 
+    // department 
     'departments' => ['controller' => 'DepartmentController', 'method' => "index"],
     'store-department' => ['controller' => 'DepartmentController', 'method' => "store"],
     'update-department' => ['controller' => 'DepartmentController', 'method' => "update"],
@@ -93,6 +93,21 @@ $routes = [
     "delete-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "delete"],
     "employee-dashboard"=> ["controller"=> "EmployeeDashboardController", "method"=> "index"],
 
+    // leads
+    "lead-lists" => ["controller" => "LeadController", "method" => "index"],
+    "create-lead" => ["controller" => "LeadController", "method" => "create"],
+    "store-lead" => ["controller" => "LeadController", "method" => "store"],
+    "edit-lead/(\d+)" => ["controller" => "LeadController", "method" => "edit"],
+    "update-lead/(\d+)" => ["controller" => "LeadController", "method" => "update"],
+    "delete-lead/(\d+)" => ["controller" => "LeadController", "method" => "delete"],
+    // leads
+    "leadSource-lists" => ["controller" => "LeadSourceController", "method" => "index"],
+    // "create-leadSource" => ["controller" => "LeadSourceController", "method" => "create"],
+    "store-leadSource" => ["controller" => "LeadSourceController", "method" => "store"],
+    "edit-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "edit"],
+    "update-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "update"],
+    "delete-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "delete"],
+  
 ];
 
 $route = trim(strtok($_SERVER["REQUEST_URI"], '?'), '/');

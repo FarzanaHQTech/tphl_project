@@ -537,7 +537,7 @@ input {
 	color: var(--clr-text-body);
 	background-color: transparent;
 	background-size: 20px 20px;
-	border: 1px solid var(--clr-border-1);
+	border: 1px solid black;
 	border-radius: 6px;
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
 }
@@ -591,10 +591,10 @@ input {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
-	color: var(--clr-text-body);
+	color: blocak;
 	background-color: transparent;
 	background-clip: padding-box;
-	border: 1px solid var(--clr-border-1);
+	border: 1px solid black;
 	border-radius: 6px;
 	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 	@include rtl {

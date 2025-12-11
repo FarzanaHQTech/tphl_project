@@ -140,7 +140,7 @@ public function store()
     // If create user also
     if ($makeUser == 1) {
         // Prepare user data using helper
-        $userData = prepareUserData($_POST, true);
+        $userData = prepareUserData($_POST, isFromEmployee: true);
         
         // Override with employee data
         $userData['full_name'] = $employeeData['full_name'];

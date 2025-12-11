@@ -229,6 +229,82 @@ function prepareUserData($postData, $isFromEmployee = false) {
 }
 
 
+function setError($msg){
+    if(session_status() === PHP_SESSION_NONE) session_start();
+    $_SESSION['error_message'] = $msg;
+}
+
+function getError(){
+    if(session_status() === PHP_SESSION_NONE) session_start();
+    if(isset($_SESSION['error_message'])){
+        $msg = $_SESSION['error_message'];
+        unset($_SESSION['error_message']);
+        return $msg;
+    }
+    return null;
+}
+
+function setSuccess($msg){
+    if(session_status() === PHP_SESSION_NONE) session_start();
+    $_SESSION['success_message'] = $msg;
+}
+
+function getSuccess(){
+    if(session_status() === PHP_SESSION_NONE) session_start();
+    if(isset($_SESSION['success_message'])){
+        $msg = $_SESSION['success_message'];
+        unset($_SESSION['success_message']);
+        return $msg;
+    }
+    return null;
+}
+
+
+/**
+ * Generate a URL-friendly slug from a name.
+ * Automatically ensures uniqueness in the given table & column.
+ *
+ * @param mysqli $db
+ * @param string $name
+ * @param string $table
+ * @param string $column
+ * @return string
+ */
+function generateUniqueSlug($db, $name, $table = 'lead_sources', $column = 'slug')
+{
+    // lowercase, trim, replace spaces/non-alphanum with dash
+    $slug = preg_replace('/[^a-z0-9]+/', '-', strtolower(trim($name)));
+    $originalSlug = $slug;
+    $i = 1;
+
+    // loop until unique
+    while (slugExists($db, $slug, $table, $column)) {
+        $slug = $originalSlug . '-' . $i;
+        $i++;
+    }
+
+    return $slug;
+}
+
+/**
+ * Check if slug exists in table.
+ *
+ * @param mysqli $db
+ * @param string $slug
+ * @param string $table
+ * @param string $column
+ * @return bool
+ */
+function slugExists($db, $slug, $table = 'lead_sources', $column = 'slug')
+{
+    $stmt = $db->prepare("SELECT id FROM $table WHERE $column = ?");
+    $stmt->bind_param("s", $slug);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result && $result->num_rows > 0;
+}
+
+
 
 
 

@@ -45,48 +45,24 @@ class User extends Model
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // Create a new role
+public function getAll()
+    {
+        $sql = $this->db->prepare("
+        SELECT
+            u.id, 
+           u.full_name  From users AS u
+    ");
 
-    // public function create($data)
-    // {
-    //     // Module name দিয়ে photo upload
-    //     $photo = uploadImage('userphoto', 'users');
+        if (!$sql->execute()) {
+            return []; // Error handle koro
+        }
 
-    //     // Password hash
-    //     $password = password_hash($data['password'], PASSWORD_DEFAULT);
-
-    //     $stmt = $this->db->prepare(
-    //         "INSERT INTO users
-    //     (full_name, phone, email, designation, address, nid, role_id, user_name ,password, photo,media_link1,media_link2)
-    //     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)"
-    //     );
-
-     
-
-    //     $stmt->bind_param(
-    //         "ssssssisssss",
-    //         $data['full_name'],
-    //         $data['phone'],
-    //         $data['email'],
-    //         $data['designation'],
-    //         $data['address'],
-    //         $data['nid'],
-    //         $data['role_id'],
-    //         $data['user_name'],
-    //         $password,
-    //         $photo,
-    //         $data['media_link1'],
-    //         $data['media_link2']
-    //     );
+        $result = $sql->get_result();
+        return $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
+    }
 
 
-    //     if ($stmt->execute()) {
-    //         return true;
-    //     } else {
-    //         echo "ERROR: " . $stmt->error;
-    //         return false;
-    //     }
-    // }
+  
 // models/User.php
 public function create($data)
 {
@@ -158,22 +134,6 @@ public function create($data)
         return $result['total'];
     }
 
-
-
-// public function getByEmail($email)
-// {
-//     $stmt = $this->db->prepare(
-//         "SELECT u.*, LOWER(r.name) AS role_name 
-//          FROM users u 
-//          JOIN roles r ON u.role_id = r.id
-//          WHERE u.email = ?"
-//     );
-
-//     $stmt->bind_param("s", $email);
-//     $stmt->execute();
-//     $result = $stmt->get_result();
-//     return $result->fetch_assoc();
-// }
 
 
 public function getPermissionsByRole($role_id)

@@ -89,6 +89,32 @@
                        </li>
 
 
+                       
+                       <li class="slide  <?= isActive('leadSource-lists', $current_route) ?>">
+                           <a href="<?= $base_url ?>/leadSource-lists" class="sidebar__menu-item  <?= isActive('leadSource-lists', $current_route) ?>">
+                               <div class="side-menu__icon"><i class="fa-solid fa-users"></i></div>
+                               <span class="sidebar__menu-label">Leads Source Manage </span>
+                           </a>
+                       </li>
+
+                       <li class="slide has-sub <?= isActive(['create-lead', 'lead-lists'], $current_route) ?>">
+                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-lead', 'lead-lists'], $current_route) ?>">
+                               <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                               <div class="side-menu__icon"><i class="fas fa-clipboard-list"></i>
+                               </div>
+                               <span class="sidebar__menu-label">Lead Manage</span>
+                           </a>
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-lead', 'lead-lists'], $current_route) ? 'display:block;' : 'display:none;' ?>">
+                               <li class="slide <?= isActive('create-lead', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('create-lead', $current_route) ?>" href="<?= $base_url ?>/create-lead">Add Lead</a>
+                               </li>
+                               <li class="slide <?= isActive('lead-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('lead-lists', $current_route) ?>" href="<?= $base_url ?>/lead-lists">Lead List</a>
+                               </li>
+                           </ul>
+                       </li>
+
+
                        <li class="slide has-sub d-none<?= isActive(['create-customer', 'customer-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-customer', 'customer-lists'], $current_route) ?>">
                                <i class="fa-regular fa-angle-down side-menu__angle"></i>

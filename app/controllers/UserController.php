@@ -10,36 +10,36 @@ class UserController extends Controller
         $this->userModel = new User($this->db);
         $this->roleModel = new Role($this->db);
     }
-public function index()
-{
-    $searchTerm = $_GET['q'] ?? '';
-    $roleFilter = $_GET['role'] ?? '';
+    public function index()
+    {
+        $searchTerm = $_GET['q'] ?? '';
+        $roleFilter = $_GET['role'] ?? '';
 
-    $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
-    $perPage = 10;
-    $offset = ($currentPage - 1) * $perPage;
+        $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;
+        $perPage = 10;
+        $offset = ($currentPage - 1) * $perPage;
 
-    // Total user count with filters
-    $totalUsers = $this->userModel->countAll($searchTerm, $roleFilter);
-    $totalPages = ceil($totalUsers / $perPage);
+        // Total user count with filters
+        $totalUsers = $this->userModel->countAll($searchTerm, $roleFilter);
+        $totalPages = ceil($totalUsers / $perPage);
 
-    // Get paginated users with search & role filter
-    $users = $this->userModel->getPaginated($perPage, $offset, $searchTerm, $roleFilter);
+        // Get paginated users with search & role filter
+        $users = $this->userModel->getPaginated($perPage, $offset, $searchTerm, $roleFilter);
 
-    // Roles for filter dropdown
-    $roles = $this->roleModel->getAll();
+        // Roles for filter dropdown
+        $roles = $this->roleModel->getAll();
 
-    $this->view("users/user-lists", [
-        "current_route"   => "user-lists",
-        "page_title"      => "User List",
-        "currentPage"     => $currentPage,
-        "totalPages"      => $totalPages,
-        "users"           => $users,
-        "roles"           => $roles,
-        "searchTerm"      => $searchTerm,
-        "selectedRole"    => $roleFilter
-    ]);
-}
+        $this->view("users/user-lists", [
+            "current_route"   => "user-lists",
+            "page_title"      => "User List",
+            "currentPage"     => $currentPage,
+            "totalPages"      => $totalPages,
+            "users"           => $users,
+            "roles"           => $roles,
+            "searchTerm"      => $searchTerm,
+            "selectedRole"    => $roleFilter
+        ]);
+    }
 
 
     // Create User Page
@@ -80,7 +80,7 @@ public function index()
             // print_r($_POST);
             // echo "</pre>";
             header("Location: {$GLOBALS['base_url']}/user-lists");
-         
+
 
             exit;
         } else {
@@ -99,8 +99,4 @@ public function index()
             "show_breadcrumb" => true,
         ]);
     }
-
-
-
-
 }
