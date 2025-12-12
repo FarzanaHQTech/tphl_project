@@ -5,12 +5,14 @@ class LeadController extends Controller
 
     protected $userModel;
     protected $leadModel;
+    protected $leadSource;
 
     public function __construct($db)
     {
         $this->db = $db;
         $this->userModel = new User($this->db);
         $this->leadModel = new Lead($this->db);
+        $this->leadSource = new LeadSource($this->db);
     }
 
 
@@ -37,6 +39,7 @@ class LeadController extends Controller
     {
 
         $ownerUsers = $this->userModel->getAll();
+        $sources = $this->leadSource->getAll();
 
         $this->view("leads/create-lead", [
             "current_route"   => "create-lead",
@@ -44,6 +47,7 @@ class LeadController extends Controller
             "page_title"      => "Add lead",
             "show_breadcrumb" => true,
             "ownerUsers" => $ownerUsers,
+            "sources" => $sources,
 
         ]);
     }
@@ -61,8 +65,8 @@ class LeadController extends Controller
             'phone' => $_POST['phone'] ?? null,
             'alt_phone_number' => $_POST['alt_phone_number'] ?? null,
             'email' => $_POST['email'] ?? null,
-            'source_type' => $_POST['source_type'] ?? null,
-            'owner_id' => $_POST['owner_id'] ?? null,
+            'source_type_id' => $_POST['source_type_id'] ?? null,
+            // 'owner_id' => $_POST['owner_id'] ?? null,
             'address' => $_POST['address'] ?? null,
             'pref_location' => $_POST['pref_location'] ?? null,
             'designation' => $_POST['designation'] ?? null,

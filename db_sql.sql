@@ -66,6 +66,7 @@ CREATE TABLE
         FOREIGN KEY (designation_id) REFERENCES designations (id) ON DELETE SET NULL
     ) ENGINE = InnoDB;
 
+
 CREATE TABLE
     `notifications` (
         `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -93,33 +94,41 @@ CREATE TABLE IF NOT EXISTS `lead_sources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE
-    `leads` (
-        `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        `lead_name` VARCHAR(255) NOT NULL,
-        `lead_type` ENUM ('Hot', 'Warm', 'Cold') NOT NULL,
-        `company` VARCHAR(255) NULL, 
-        `value_amount` DECIMAL(15, 2) NULL,
-        `currency` ENUM ('USD', 'EURO', 'RUBLE', 'POUND', 'BDT') DEFAULT 'BDT',
-        `phone` VARCHAR(30) NOT NULL,
-        `alt_phone_number` VARCHAR(30) NULL,
-        `email` VARCHAR(150) NOT NULL,
-        `source_type_id` INT UNSIGNED NOT NULL,,
-        `owner_id` INT  NOT NULL, -- FK to users
-        `address` VARCHAR(255) NULL,
-        `pref_location` VARCHAR(255) NULL,
-        `designation` VARCHAR(255) NULL,
-        `project_type` ENUM ('ATI Society', 'ASHU Society') NOT NULL,
-        `interest_on` VARCHAR(250) NOT NULL,
-        `pref_flat_size` VARCHAR(250) NOT NULL,
-        `communication_type` ENUM ('WA Messaging', 'WA Conversion') NULL,
-        `tags` TEXT NULL,
-        `description` TEXT NULL,
-        `visibility` ENUM ('public', 'private', 'selected') DEFAULT 'public',
-        `status` ENUM ('active', 'inactive') DEFAULT 'active',
-        `lead_quality` ENUM ('Not Interested', 'Prospect', 'Pending') DEFAULT 'Pending',
-        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-        CONSTRAINT fk_leads_owner FOREIGN KEY (`owner_id`) REFERENCES users (id)
-    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+CREATE TABLE `leads` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `lead_name` VARCHAR(255) NOT NULL,
+    `lead_type` ENUM('Hot', 'Warm', 'Cold') NOT NULL,
+    `company` VARCHAR(255) NULL, 
+    `value_amount` DECIMAL(15, 2) NULL,
+    `currency` ENUM('USD', 'EURO', 'RUBLE', 'POUND', 'BDT') DEFAULT 'BDT',
+    `phone` VARCHAR(30) NOT NULL,
+    `alt_phone_number` VARCHAR(30) NULL,
+    `email` VARCHAR(150) NOT NULL,
 
+    `source_type_id` INT UNSIGNED NOT NULL,  
+    `owner_id` INT UNSIGNED NOT NULL,        
+
+    `address` VARCHAR(255) NULL,
+    `pref_location` VARCHAR(255) NULL,
+    `designation` VARCHAR(255) NULL,
+    `project_type` ENUM('ATI Society', 'ASHU Society') NOT NULL,
+    `interest_on` VARCHAR(250) NOT NULL,
+    `pref_flat_size` VARCHAR(250) NOT NULL,
+    `communication_type` ENUM('WA Messaging', 'WA Conversion') NULL,
+    `tags` TEXT NULL,
+    `description` TEXT NULL,
+    `visibility` ENUM('public', 'private', 'selected') DEFAULT 'public',
+    `status` ENUM('active', 'inactive') DEFAULT 'active',
+    `lead_quality` ENUM('Not Interested', 'Prospect', 'Pending') DEFAULT 'Pending',
+
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_leads_owner 
+        FOREIGN KEY (`owner_id`) REFERENCES users(`id`)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_leads_source_type 
+        FOREIGN KEY (`source_type_id`) REFERENCES lead_sources(`id`)
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

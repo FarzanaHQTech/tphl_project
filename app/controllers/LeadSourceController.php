@@ -20,6 +20,7 @@ public function index()
         "current_route" => "leadSource-lists",
         "page_title" => " Lead"
     ]);
+   
 }
 
   // store new sourcelead-sources
@@ -27,7 +28,7 @@ public function store()
 {
     if (session_status() === PHP_SESSION_NONE) session_start();
 
-    // Form থেকে data নাও
+    // Form data 
     $name = $_POST['name'] ?? null;
     $is_active = isset($_POST['is_active']) ? 1 : 0;
 
@@ -37,7 +38,7 @@ public function store()
         exit;
     }
 
-    // Helper থেকে unique slug generate করো
+    // Helper unique slug generate 
     $slug = generateUniqueSlug($this->db, $name);
 
     $data = [

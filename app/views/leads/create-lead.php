@@ -17,12 +17,20 @@ $page = "create List"
     <div class="row gy-10">
 
         <!-- Lead Name -->
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <div class="from__input-box">
                 <label class="form__input-title" for="leadName">Lead Name*</label>
                 <input class="form-control" name="lead_name" id="leadName" type="text">
             </div>
         </div>
+        <!-- designation  -->
+        <div class="col-md-6">
+            <div class="from__input-box">
+                <label>Designation</label>
+                <input type="text" class="form-control" name="designation">
+            </div>
+        </div>
+
 
         <!-- Lead Type -->
         <div class="col-lg-6">
@@ -94,13 +102,19 @@ $page = "create List"
         <!-- Source Type -->
         <div class="col-md-6">
             <div class="from__input-box">
-                <label class="form__input-title" for="sourceType">Source Type</label>
-                <input class="form-control" name="source_type" id="sourceType" type="text">
+                <label class="form__input-title" for="source_type_id">Source Type</label>
+                <select name="source_type_id" id="source_type_id" class="form-select">
+
+                    <?php foreach ($sources as $source) : ?>
+                        <option value="<?= $source['id'] ?>"><?= $source['name'] ?></option>
+
+                    <?php endforeach ?>
+                </select>
             </div>
         </div>
 
         <!-- Owner ID -->
-        <div class="col-md-6">
+        <div class="col-md-6 d-none">
             <div class="from__input-box">
                 <label class="form__input-title" for="ownerName">Lead Owner*</label>
                 <select name="owner_id" id="ownerName" class="form-select">
@@ -128,12 +142,11 @@ $page = "create List"
                 <input type="text" class="form-control" name="pref_location">
             </div>
         </div>
-
-        <!-- Designation -->
+        <!-- Tags -->
         <div class="col-md-6">
-            <div class="from__input-box">
-                <label>Designation</label>
-                <input type="text" class="form-control" name="designation">
+            <div class="tagify__wrapper">
+                <label>Extra notes</label>
+                <input id="TagifyBasic" class="form-control" name="tags">
             </div>
         </div>
 
@@ -175,13 +188,6 @@ $page = "create List"
             </div>
         </div>
 
-        <!-- Tags -->
-        <div class="col-md-6">
-            <div class="tagify__wrapper">
-                <label>Tags</label>
-                <input id="TagifyBasic" class="form-control" name="tags">
-            </div>
-        </div>
 
 
         <!-- Lead Quality -->

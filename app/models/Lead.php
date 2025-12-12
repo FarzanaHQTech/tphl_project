@@ -31,48 +31,47 @@ class Lead extends Model
 
 
 
-    // models/Employee.php
     public function create($data)
     {
         $stmt = $this->db->prepare("
-                INSERT INTO leads (
-                    lead_name, lead_type, company, value_amount, currency,
-                    phone, alt_phone_number, email, source_type, owner_id,
-                    address, pref_location, designation, project_type, interest_on,
-                    pref_flat_size, communication_type, tags, description,
-                    visibility, status, lead_quality
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ");
+        INSERT INTO leads (
+            lead_name, lead_type, company, value_amount, currency,
+            phone, alt_phone_number, email, source_type_id,
+            address, pref_location, designation, project_type, interest_on,
+            pref_flat_size, communication_type, tags, description,
+            visibility, status, lead_quality
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
 
         if (!$stmt) {
             setError("Prepare failed: " . $this->db->error);
             return false;
         }
 
+        // 21 PARAMETERS → so provide EXACT 21 TYPE LETTERS
         $stmt->bind_param(
-            "sssdssssisssssssssssss",
-            $data['lead_name'],
-            $data['lead_type'],
-            $data['company'],
-            $data['value_amount'],
-            $data['currency'],
-            $data['phone'],
-            $data['alt_phone_number'],
-            $data['email'],
-            $data['source_type'],
-            $data['owner_id'],
-            $data['address'],
-            $data['pref_location'],
-            $data['designation'],
-            $data['project_type'],
-            $data['interest_on'],
-            $data['pref_flat_size'],
-            $data['communication_type'],
-            $data['tags'],
-            $data['description'],
-            $data['visibility'],
-            $data['status'],
-            $data['lead_quality']
+            "sssdsssissssssssssssi",
+            $data['lead_name'],          // 1
+            $data['lead_type'],          // 2
+            $data['company'],            // 3
+            $data['value_amount'],       // 4
+            $data['currency'],           // 5
+            $data['phone'],              // 6
+            $data['alt_phone_number'],   // 7
+            $data['email'],              // 8
+            $data['source_type_id'],     // 9
+            $data['address'],            // 10
+            $data['pref_location'],      // 11
+            $data['designation'],        // 12
+            $data['project_type'],       // 13
+            $data['interest_on'],        // 14
+            $data['pref_flat_size'],     // 15
+            $data['communication_type'], // 16
+            $data['tags'],               // 17
+            $data['description'],        // 18
+            $data['visibility'],         // 19
+            $data['status'],             // 20
+            $data['lead_quality']        // 21
         );
 
         if ($stmt->execute()) {
@@ -83,6 +82,8 @@ class Lead extends Model
             return false;
         }
     }
+
+
 
 
 
@@ -105,7 +106,7 @@ class Lead extends Model
         // Update query
         $sql = "UPDATE leads SET
         lead_name = ?, lead_type = ?, company = ?, value_amount = ?, currency = ?, phone = ?, alt_phone_number = ?,
-        email = ?, source_type = ?, address = ?, owner_id = ?, pref_location = ?, designation = ?, project_type = ?,
+        email = ?, source_type_id = ?, address = ?, source_type_id = ?, pref_location = ?, designation = ?, project_type = ?,
         interest_on = ?, pref_flat_size = ?, communication_type = ?, tags = ?, description = ?, visibility = ?, status = ?, lead_quality = ?
         WHERE id = ?";
 
@@ -117,7 +118,7 @@ class Lead extends Model
         }
 
         $stmt->bind_param(
-           "sssdsssssissssssssssssi",
+            "sssdsssssissssssssssssi",
             $data['lead_name'],
             $data['lead_type'],
             $data['company'],
@@ -126,7 +127,7 @@ class Lead extends Model
             $data['phone'],
             $data['alt_phone_number'],
             $data['email'],
-            $data['source_type'],
+            $data['source_type_id'],
             $data['address'],
             $data['owner_id'],
             $data['pref_location'],

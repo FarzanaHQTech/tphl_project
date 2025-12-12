@@ -27,22 +27,26 @@ $show_breadcrumb = true;
                         </tr>
                     </thead>
                     <tbody class="table__body">
-                        <tr>
-                            <td>Michael Johnson</td>
-                            <td><span class="bd-badge bg-danger">Inactive</span></td>
+                        <?php foreach ($sources as $source): ?>
+                            <tr>
+                                <td><?= $source['name'] ?? '' ?></td>
+                                <td>
+                                    <span class="bd-badge <?php echo $source['is_active'] == 1 ? 'bg-success' : 'bg-danger'; ?>">
+                                        <?php echo $source['is_active'] == 1 ? 'Active' : 'Inactive'; ?>
+                                    </span>
 
-                            <td>
-                                <div class="d-flex align-items-center justify-content-start gap-10">
-                                    <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#leadDetails"><i
-                                            class="fa-regular fa-eye"></i></button>
-                                    <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#leadEdit"><i
-                                            class="fa-sharp fa-light fa-pen"></i></button>
-                                    <button class="removeBtn table__icon delete"><i
-                                            class="fa-regular fa-trash"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-
+                                <td>
+                                    <div class="d-flex align-items-center justify-content-start gap-10">
+                                        <button type="button" class="table__icon download" data-bs-toggle="modal" data-bs-target="#leadDetails"><i
+                                                class="fa-regular fa-eye"></i></button>
+                                        <button type="button" class="table__icon edit" data-bs-toggle="modal" data-bs-target="#leadEdit"><i
+                                                class="fa-sharp fa-light fa-pen"></i></button>
+                                        <button class="removeBtn table__icon delete"><i
+                                                class="fa-regular fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
 
 
                     </tbody>
