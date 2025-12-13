@@ -736,11 +736,25 @@ function bd_settings_append($x) {
 	});
 
 	// flatpickr activation
-	$("#joiningDate").flatpickr({
-		altInput: true,
-		altFormat: "F j, Y",
-		dateFormat: "Y-m-d",
-	});
+	// $("#joiningDate").flatpickr({
+	// 	altInput: true,
+	// 	altFormat: "F j, Y",
+	// 	dateFormat: "Y-m-d",
+	// });
+
+$(document).ready(function() {
+    $("#joiningDate").flatpickr({
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+    });
+
+    $("#dateofBirth").flatpickr({
+        altInput: true,
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
+    });
+});
 
 	$("#clockInTime").flatpickr({
 		enableTime: true,
@@ -755,6 +769,8 @@ function bd_settings_append($x) {
 		dateFormat: "H:i",
 		defaultDate: "01:45"
 	});
+
+
 
 	function basicInput(containerId) {
 		$(`#${containerId}`).flatpickr({

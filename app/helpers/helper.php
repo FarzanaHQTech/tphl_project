@@ -1,5 +1,32 @@
 <?php
-function uploadImage($input, $module = 'general')
+// function uploadImage($input, $module = 'general')
+// {
+//     // Project root থেকে public folder path
+//     $rootPublic = dirname(__DIR__, 2) . "/public/uploads/" . $module . "/";
+
+//     // Create module folder if not exists
+//     if (!is_dir($rootPublic)) {
+//         mkdir($rootPublic, 0777, true); // recursive folder creation
+//     }
+
+//     // If file not selected
+//     if (!isset($_FILES[$input]) || $_FILES[$input]['error'] !== 0) {
+//         return null;
+//     }
+
+//     // File extension & unique name
+//     $ext = pathinfo($_FILES[$input]['name'], PATHINFO_EXTENSION);
+//     $fileName = uniqid() . "_" . time() . "." . $ext;
+
+//     // Move file to public/uploads/module
+//     $targetFile = $rootPublic . $fileName;
+//     if (move_uploaded_file($_FILES[$input]['tmp_name'], $targetFile)) {
+//         return $fileName; 
+//     }
+//      return null;
+// }
+
+function uploadImage($input, $module = 'general', $mode = 'original', $width = 300, $height = 300)
 {
     // Project root থেকে public folder path
     $rootPublic = dirname(__DIR__, 2) . "/public/uploads/" . $module . "/";
@@ -10,22 +37,86 @@ function uploadImage($input, $module = 'general')
     }
 
     // If file not selected
-    if (!isset($_FILES[$input]) || $_FILES[$input]['error'] !== 0) {
+    if (!isset($_FILES[$input]) || $_FILES[$input]['error'] !== UPLOAD_ERR_OK) {
         return null;
     }
 
-    // File extension & unique name
+    $tmpPath = $_FILES[$input]['tmp_name'];
     $ext = pathinfo($_FILES[$input]['name'], PATHINFO_EXTENSION);
     $fileName = uniqid() . "_" . time() . "." . $ext;
-
-    // Move file to public/uploads/module
     $targetFile = $rootPublic . $fileName;
-    if (move_uploaded_file($_FILES[$input]['tmp_name'], $targetFile)) {
-        return $fileName; 
+
+    // ---------- MODE 1: Original size ----------
+    if ($mode === 'original') {
+        if (move_uploaded_file($tmpPath, $targetFile)) {
+            return $fileName;
+        }
+        return null;
+    }
+
+    // ---------- MODE 2: Fixed size ----------
+    if ($mode === 'fixed') {
+        // Load original image
+        switch (strtolower($ext)) {
+            case 'jpg':
+            case 'jpeg':
+                $src = imagecreatefromjpeg($tmpPath);
+                break;
+            case 'png':
+                $src = imagecreatefrompng($tmpPath);
+                break;
+            case 'gif':
+                $src = imagecreatefromgif($tmpPath);
+                break;
+            case 'avif':
+                if (function_exists('imagecreatefromavif')) {
+                    $src = imagecreatefromavif($tmpPath);
+                } else {
+                    return null; // AVIF not supported
+                }
+                break;
+            default:
+                return null; // unsupported format
+        }
+
+        // Create destination image
+        $dst = imagecreatetruecolor($width, $height);
+
+        // Preserve transparency
+        if (in_array(strtolower($ext), ['png', 'gif'])) {
+            imagecolortransparent($dst, imagecolorallocatealpha($dst, 0, 0, 0, 127));
+            imagealphablending($dst, false);
+            imagesavealpha($dst, true);
+        }
+
+        // Resize
+        list($origWidth, $origHeight) = getimagesize($tmpPath);
+        imagecopyresampled($dst, $src, 0, 0, 0, 0, $width, $height, $origWidth, $origHeight);
+
+        // Save resized image
+        switch (strtolower($ext)) {
+            case 'jpg':
+            case 'jpeg':
+                imagejpeg($dst, $targetFile, 90);
+                break;
+            case 'png':
+                imagepng($dst, $targetFile);
+                break;
+            case 'gif':
+                imagegif($dst, $targetFile);
+                break;
+        }
+
+        // Free memory
+        imagedestroy($src);
+        imagedestroy($dst);
+
+        return $fileName;
     }
 
     return null;
 }
+
 function getImage($module, $filename)
 {
     if (!$filename) {
@@ -85,7 +176,8 @@ function paginateLinksSecondary($route, $currentPage, $totalPages)
 }
 
 
-function checkLogin() {
+function checkLogin()
+{
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -109,10 +201,12 @@ function checkLogin() {
  * @param array $extraConditions Optional: ['column' => 'value']
  * @return array
  */
+
+
 function searchRecords($db, $table, $fields, $searchTerm, $extraConditions = [])
 {
     $searchTerm = "%{$searchTerm}%";
-    
+
     $whereParts = [];
     $params = [];
     $types = "";
@@ -147,17 +241,14 @@ function searchRecords($db, $table, $fields, $searchTerm, $extraConditions = [])
     return $result->fetch_all(MYSQLI_ASSOC);
 }
 
-
-
-
 function db()
 {
     static $db = null;
 
     if ($db === null) {
         // config file theke database info load koro
-        $config = require dirname(__DIR__) . "/config/config.php"; 
-        
+        $config = require dirname(__DIR__) . "/config/config.php";
+
         $db = new Database($config);
     }
 
@@ -189,7 +280,8 @@ function hasPermission($permissionName)
     return in_array($permissionName, $permissions);
 }
 
-function isAlreadyHashed($password) {
+function isAlreadyHashed($password)
+{
     if (strlen($password) === 60 && preg_match('/^\$2[ayb]\$.{56}$/', $password)) {
         return true; // Already hashed
     }
@@ -200,7 +292,8 @@ function isAlreadyHashed($password) {
  * Ensure password is hashed
  * Will hash only if not already hashed
  */
-function ensureHashedPassword($password) {
+function ensureHashedPassword($password)
+{
     if (isAlreadyHashed($password)) {
         return $password; // Return as is if already hashed
     }
@@ -210,7 +303,8 @@ function ensureHashedPassword($password) {
 /**
  * Validate and prepare user data
  */
-function prepareUserData($postData, $isFromEmployee = false) {
+function prepareUserData($postData, $isFromEmployee = false)
+{
     $data = [
         'full_name'    => trim($postData['full_name'] ?? ''),
         'user_name'    => trim($postData['user_name'] ?? ($postData['username'] ?? '')),
@@ -224,40 +318,27 @@ function prepareUserData($postData, $isFromEmployee = false) {
         'media_link1'  => trim($postData['media_link1'] ?? ($postData['social_media1'] ?? '')),
         'media_link2'  => trim($postData['media_link2'] ?? ($postData['social_media2'] ?? '')),
     ];
-    
+
     return $data;
 }
 
+// sweet alert 
 
-function setError($msg){
-    if(session_status() === PHP_SESSION_NONE) session_start();
-    $_SESSION['error_message'] = $msg;
+function setSuccess($message)
+{
+    $_SESSION['flash_success'] = $message;
 }
 
-function getError(){
-    if(session_status() === PHP_SESSION_NONE) session_start();
-    if(isset($_SESSION['error_message'])){
-        $msg = $_SESSION['error_message'];
-        unset($_SESSION['error_message']);
-        return $msg;
-    }
-    return null;
+function setError($message)
+{
+    $_SESSION['flash_error'] = $message;
 }
 
-function setSuccess($msg){
-    if(session_status() === PHP_SESSION_NONE) session_start();
-    $_SESSION['success_message'] = $msg;
+function setErrors(array $errors)
+{
+    $_SESSION['flash_errors'] = $errors;
 }
 
-function getSuccess(){
-    if(session_status() === PHP_SESSION_NONE) session_start();
-    if(isset($_SESSION['success_message'])){
-        $msg = $_SESSION['success_message'];
-        unset($_SESSION['success_message']);
-        return $msg;
-    }
-    return null;
-}
 
 
 /**
@@ -286,6 +367,7 @@ function generateUniqueSlug($db, $name, $table = 'lead_sources', $column = 'slug
     return $slug;
 }
 
+
 /**
  * Check if slug exists in table.
  *
@@ -305,20 +387,10 @@ function slugExists($db, $slug, $table = 'lead_sources', $column = 'slug')
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function formatUrl($url) {
+    if (!$url) return '#';
+    if (!preg_match('~^https?://~i', $url)) {
+        return 'https://' . $url;
+    }
+    return $url;
+}

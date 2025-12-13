@@ -98,18 +98,20 @@ class LeadController extends Controller
     {
         $ownerUsers = $this->userModel->getAll();
         $leadData = $this->leadModel->find($id);
-
+    $sources = $this->leadSource->getAll();
         $this->view("leads/edit-lead", [
             "current_route"   => "edit-lead",
             "page_title"      => "Edit Lead",
             "leadData"        => $leadData,
             "ownerUsers"        => $ownerUsers,
+            "sources"        => $sources,
             "show_breadcrumb" => true,
         ]);
     }
 
     public function update($id)
     {
+        
         if (session_status() === PHP_SESSION_NONE) session_start();
 
         // Collect form data
@@ -122,7 +124,7 @@ class LeadController extends Controller
             'phone' => $_POST['phone'] ?? null,
             'alt_phone_number' => $_POST['alt_phone_number'] ?? null,
             'email' => $_POST['email'] ?? null,
-            'source_type' => $_POST['source_type'] ?? null,
+            'source_type_id' => $_POST['source_type_id'] ?? null,
             'owner_id' => $_POST['owner_id'] ?? null,
             'address' => $_POST['address'] ?? null,
             'pref_location' => $_POST['pref_location'] ?? null,
@@ -137,16 +139,19 @@ class LeadController extends Controller
             'status' => $_POST['status'] ?? 'active',
             'lead_quality' => $_POST['lead_quality'] ?? 'Pending',
         ];
+        
         // Update lead
-        if ($this->leadModel->update($id, $leadData)) {
-            setSuccess("Lead updated successfully!");
-            header("Location: {$GLOBALS['base_url']}/lead-lists");
-            exit;
-        } else {
-            setError(getError() ?: "Lead update failed!");
-            header("Location: {$GLOBALS['base_url']}/edit-lead/{$id}");
-            exit;
-        }
+         try {
+        $this->leadModel->update($id, $leadData);
+        setSuccess("Lead updated successfully!");
+        header("Location: {$GLOBALS['base_url']}/lead-lists");
+        exit;
+    } catch (Exception $e) {
+        setError($e->getMessage());
+        $_SESSION['old'] = $_POST;
+        header("Location: {$GLOBALS['base_url']}/edit-lead/{$id}");
+        exit;
+    }
     }
 
 

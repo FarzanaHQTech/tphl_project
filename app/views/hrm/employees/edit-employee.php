@@ -99,12 +99,29 @@
                          <?php endforeach ?>
                      </select>
                  </div>
+                 <?php
+                    $joiningDate = $employee['joining_date'];
+                    $joiningDateFormatted = ($joiningDate && $joiningDate !== '0000-00-00')
+                        ? date('d-m-Y', strtotime($joiningDate))
+                        : '';
+
+                    $dob = $employee['dob'];
+                    $dobFormatted = ($dob && $dob !== '0000-00-00')
+                        ? date('d-m-Y', strtotime($dob))
+                        : '';
+                    ?>
 
                  <!-- Joining Date -->
                  <div class="col-lg-6">
+                     <label> Date Of Birth<span>*</span></label>
+                     <input class="form-control" id="dateofBirth" type="text" readonly name="dob"
+                         value="<?= htmlspecialchars($dobFormatted) ?>">
+                 </div>
+                 <!-- Joining Date -->
+                 <div class="col-lg-6">
                      <label>Joining Date <span>*</span></label>
-                     <input class="form-control" name="joining_date" id="joiningDate" type="text" readonly
-                         value="<?= htmlspecialchars($employee['joining_date']) ?>">
+                     <input class="form-control" id="joiningDate" type="text" readonly name="joining_date"
+                         value="<?= htmlspecialchars($joiningDateFormatted) ?>">
                  </div>
 
                  <!-- Account Holder Name -->
@@ -134,9 +151,9 @@
                      <input class="form-control" name="branch_name" id="branch_name" type="text"
                          value="<?= htmlspecialchars($employee['branch_name']) ?>">
                  </div>
-                  <!-- Photo -->
+                 <!-- Photo -->
                  <div class="col-lg-6">
-                     <label for="photo">Employee Photo (100px*100px)</label>
+                     <label for="photo">Employee Photo (300px*300px)</label>
                      <input class="form-control" type="file" name="photo" id="photo">
                      <?php if (!empty($employee['photo'])): ?>
                          <img src="<?= $GLOBALS['base_url'] ?>/uploads/employees/<?= $employee['photo'] ?>" width="100" class="mt-2">
@@ -145,10 +162,13 @@
 
 
                  <!-- Address -->
-                 <div class="col-lg-12">
+                 <div class="col-lg-6">
                      <label for="address">Address <span>*</span></label>
                      <textarea class="form-control" name="address" id="address"><?= htmlspecialchars($employee['address']) ?></textarea>
                  </div>
+
+                   
+
 
                  <!-- Social Media -->
                  <div class="col-lg-6">
@@ -161,8 +181,24 @@
                      <input class="form-control" name="social_media2" id="social_media2" type="text"
                          value="<?= htmlspecialchars($employee['social_media2']) ?>">
                  </div>
+                    <div class="col-lg-12">
+                         <div class="form__input-box">
+                             <div class="form__input-box">
+                                 <label>
+                                     <input type="checkbox" id="make_user" name="make_user" value="1">
+                                     Create User Account?
+                                 </label>
 
-                
+                                 <div id="password_box" style="display:none;">
+                                     <label>Password</label>
+                                     <input type="password" name="password" class="form-control">
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+
+
                  <!-- Experience -->
                  <div class="col-lg-12">
                      <label>Experience <span>*</span></label>
@@ -178,3 +214,13 @@
 
      </div>
  </div>
+
+  <script>
+     document.getElementById("make_user").addEventListener("change", function() {
+         if (this.checked) {
+             document.getElementById("password_box").style.display = "block";
+         } else {
+             document.getElementById("password_box").style.display = "none";
+         }
+     });
+ </script>

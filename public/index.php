@@ -3,7 +3,9 @@
 
 
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once ("../app/helpers/helper.php");
 // Enable debug
 error_reporting(E_ALL);
@@ -90,6 +92,7 @@ $routes = [
     "store-employee" => ["controller" => "EmployeeController", "method" => "store"],
     "edit-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "edit"],
     "update-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "update"],
+    "employee-profile/(\d+)" => ["controller" => "EmployeeController", "method" => "show"],
     "delete-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "delete"],
     "employee-dashboard"=> ["controller"=> "EmployeeDashboardController", "method"=> "index"],
 

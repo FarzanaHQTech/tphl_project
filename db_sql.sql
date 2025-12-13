@@ -132,3 +132,8 @@ CREATE TABLE `leads` (
         FOREIGN KEY (`source_type_id`) REFERENCES lead_sources(`id`)
         ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `banners` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+)

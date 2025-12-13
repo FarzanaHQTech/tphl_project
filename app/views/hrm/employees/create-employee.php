@@ -116,6 +116,7 @@
                              </div>
                          </div>
                      </div>
+
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
@@ -138,10 +139,23 @@
                                  <label class="form-check-label">Joining Date <span>*</span></label>
                              </div>
                              <div class="form__input">
-                                 <input class="form-control" id="joiningDate" type="text" readonly="readonly">
+                                 <input name="joining_date" class="form-control" id="joiningDate" type="text" readonly="readonly">
                              </div>
                          </div>
                      </div>
+
+                     <div class="col-lg-6">
+                         <div class="from__input-box">
+                             <div class="form__input-title">
+                                 <label class="form-check-label">Date Of Birth <span>*</span></label>
+                             </div>
+                             <div class="form__input">
+                                 <input name="dob" class="form-control" id="dateofBirth" type="text" readonly="readonly">
+                             </div>
+                         </div>
+                     </div>
+
+
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
@@ -219,7 +233,7 @@
                      <div class="col-lg-6">
                          <div class="from__input-box">
                              <div class="form__input-title">
-                                 <label for="photo">Employee Photo (100px*100px)</label>
+                                 <label for="photo">Employee Photo (300px*300px)</label>
                              </div>
                              <div class="form__input">
                                  <input class="form-control" id="photo" type="file" name="photo">

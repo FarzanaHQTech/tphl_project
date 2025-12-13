@@ -59,7 +59,7 @@ $show_breadcrumb = false;
                 <div class="employee__wrapper text-center">
                     <div class="employee__thumb mb-15">
                       
-                         <img src=  "<?= getImage('users',$user['photo'])?>" alt="img not found">
+                         <img src=  "<?= getImage('users',filename: $user['photo'])?>" alt="img not found">
                     </div>
                     <div class="employee__content">
                         <div class="employee__meta mb-15">

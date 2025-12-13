@@ -1,15 +1,10 @@
 <?php
-$page = "Edit List"
+$page = "Edit List";
 
-
+$selectedSourceId = $_SESSION['old']['source_type_id']
+    ?? $leadData['source_type_id']
+    ?? null;
 ?>
-<?php if ($msg = getError()): ?>
-    <div class="alert alert-danger"><?= $msg ?></div>
-<?php endif; ?>
-
-<?php if ($msg = getSuccess()): ?>
-    <div class="alert alert-success"><?= $msg ?></div>
-<?php endif; ?>
 
 
 <!-- new lead modal start -->
@@ -67,6 +62,7 @@ $page = "Edit List"
                         echo "<option value='$cur' $selected>$cur</option>";
                     }
                     ?>
+
                 </select>
             </div>
         </div>
@@ -99,7 +95,17 @@ $page = "Edit List"
         <div class="col-md-6">
             <div class="from__input-box">
                 <label class="form__input-title" for="sourceType">Source Type</label>
-                <input class="form-control" name="source_type" id="sourceType" type="text" value="<?= $leadData['source_type'] ?? '' ?>">
+                <select  id="source_type_id" class="form-select" name="source_type_id">
+                    <option value="">Select Source</option>
+
+                    <?php foreach ($sources as $source): ?>
+                        <option value="<?= $source['id']; ?>"
+                            <?= ($selectedSourceId == $source['id']) ? 'selected' : ''; ?>>
+                            <?= htmlspecialchars($source['name']); ?>
+                        </option>
+                    <?php endforeach; ?>
+
+                </select>
             </div>
         </div>
 

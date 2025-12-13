@@ -45,7 +45,7 @@ class User extends Model
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-public function getAll()
+    public function getAll()
     {
         $sql = $this->db->prepare("
         SELECT
@@ -62,48 +62,48 @@ public function getAll()
     }
 
 
-  
-// models/User.php
-public function create($data)
-{
-    // Require the helper
-    // require_once __DIR__ . '/../helpers/password_helper.php';
-    
-    // Module name দিয়ে photo upload
-    $photo = uploadImage('userphoto', 'users');
 
-    // Ensure password is hashed using helper
-    $password = ensureHashedPassword($data['password']);
+    // models/User.php
+    public function create($data)
+    {
+        // Require the helper
+        // require_once __DIR__ . '/../helpers/password_helper.php';
 
-    $stmt = $this->db->prepare(
-        "INSERT INTO users
+        // Module name দিয়ে photo upload
+        $photo = uploadImage('userphoto', 'users');
+
+        // Ensure password is hashed using helper
+        $password = ensureHashedPassword($data['password']);
+
+        $stmt = $this->db->prepare(
+            "INSERT INTO users
         (full_name, phone, email, designation, address, nid, role_id, user_name, password, photo, media_link1, media_link2)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-    );
+        );
 
-    $stmt->bind_param(
-        "ssssssisssss",
-        $data['full_name'],
-        $data['phone'],
-        $data['email'],
-        $data['designation'],
-        $data['address'],
-        $data['nid'],
-        $data['role_id'],
-        $data['user_name'],
-        $password,
-        $photo,
-        $data['media_link1'],
-        $data['media_link2']
-    );
+        $stmt->bind_param(
+            "ssssssisssss",
+            $data['full_name'],
+            $data['phone'],
+            $data['email'],
+            $data['designation'],
+            $data['address'],
+            $data['nid'],
+            $data['role_id'],
+            $data['user_name'],
+            $password,
+            $photo,
+            $data['media_link1'],
+            $data['media_link2']
+        );
 
-    if ($stmt->execute()) {
-        return $this->db->insert_id; // Return inserted ID
-    } else {
-        error_log("User creation failed: " . $stmt->error);
-        return false;
+        if ($stmt->execute()) {
+            return $this->db->insert_id; // Return inserted ID
+        } else {
+            error_log("User creation failed: " . $stmt->error);
+            return false;
+        }
     }
-}
 
     public function countAll($search = '', $role = '')
     {
@@ -134,96 +134,163 @@ public function create($data)
         return $result['total'];
     }
 
+    public function find($id): mixed
+    {
+        $stmt = $this->db->prepare("SELECT *
+           users
+        WHERE users.id = ?
+");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
 
 
-public function getPermissionsByRole($role_id)
-{
-    $stmt = $this->db->prepare(
-        "SELECT p.name
+    public function update($data, $id, $photoInputName=null){
+
+         // 1. old employee info
+        $oldEmployee = $this->find($id);
+        $oldPhoto = $oldEmployee['photo'];
+
+        // 2. নতুন photo upload
+        $newPhoto = null;
+        if ($photoInputName && !empty($_FILES[$photoInputName]['name'])) {
+            $newPhoto = uploadImage($photoInputName, 'employees', 'fixed', 300, 300);
+        }
+
+        // 3. Decide final photo          
+        $finalPhoto = $newPhoto ?? $oldPhoto;
+
+        // 4. old photo delete (if new add )
+        if ($newPhoto && !empty($oldPhoto) && file_exists(dirname(__DIR__, 2) . "/public/uploads/employees/" . $oldPhoto)) {
+            unlink(dirname(__DIR__, 2) . "/public/uploads/employees/" . $oldPhoto);
+        }
+
+        // 5. Update query
+        $sql = "UPDATE employees SET
+        full_name = ?, employee_id = ?, username = ?, email = ?, father_name = ?, phone = ?, emergency_contact = ?,
+        qualification = ?, experience = ?, address = ?, pass_num = ?, department_id = ?, designation_id = ?,dob=?, joining_date = ?,
+        account_holder_name = ?, account_number = ?, bank_name = ?, branch_name = ?, social_media1 = ?, social_media2 = ?, social_media3 = ?, 
+        photo = ?
+    WHERE id = ?";
+
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->bind_param(
+            "sssssssssssiissssssssssi",
+            $data['full_name'],
+            $data['employee_id'],
+            $data['username'],
+            $data['email'],
+            $data['father_name'],
+            $data['phone'],
+            $data['emergency_contact'],
+            $data['qualification'],
+            $data['experience'],
+            $data['address'],
+            $data['pass_num'],
+            $data['department_id'],
+            $data['designation_id'],
+            $data['dob'],
+            $data['joining_date'],
+            $data['account_holder_name'],
+            $data['account_number'],
+            $data['bank_name'],
+            $data['branch_name'],
+            $data['social_media1'],
+            $data['social_media2'],
+            $data['social_media3'],
+            $finalPhoto,
+            $id
+        );
+
+    }
+
+    public function getPermissionsByRole($role_id)
+    {
+        $stmt = $this->db->prepare(
+            "SELECT p.name
          FROM permissions p
          JOIN role_permissions rp ON p.id = rp.permission_id
          WHERE rp.role_id = ?"
-    );
+        );
 
-    $stmt->bind_param("i", $role_id); 
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $permissions = [];
-    while ($row = $result->fetch_assoc()) {
-        $permissions[] = $row['name'];
+        $stmt->bind_param("i", $role_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $permissions = [];
+        while ($row = $result->fetch_assoc()) {
+            $permissions[] = $row['name'];
+        }
+        return $permissions;
     }
-    return $permissions;
-}
 
 
-public function updateLogoutTime($userId) {
-    $stmt = $this->db->prepare("UPDATE users SET last_logout = NOW() WHERE id = ?");
-    return $stmt->execute([$userId]);
-}
+    public function updateLogoutTime($userId)
+    {
+        $stmt = $this->db->prepare("UPDATE users SET last_logout = NOW() WHERE id = ?");
+        return $stmt->execute([$userId]);
+    }
 
 
-// UserModel.php-এ এই method যোগ করুন
-public function getByEmailCaseInsensitive($email)
-{
-    $email = trim($email);
-    
-    // First try exact match
-    $stmt = $this->db->prepare(
-        "SELECT u.*, LOWER(r.name) AS role_name 
+    // UserModel.php-এ এই method যোগ করুন
+    public function getByEmailCaseInsensitive($email)
+    {
+        $email = trim($email);
+
+        // First try exact match
+        $stmt = $this->db->prepare(
+            "SELECT u.*, LOWER(r.name) AS role_name 
          FROM users u 
          LEFT JOIN roles r ON u.role_id = r.id
          WHERE u.email = ?"
-    );
+        );
 
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows > 0) {
-        return $result->fetch_assoc();
-    }
-    
-    // If not found, try case-insensitive
-    $stmt2 = $this->db->prepare(
-        "SELECT u.*, LOWER(r.name) AS role_name 
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
+        }
+
+        // If not found, try case-insensitive
+        $stmt2 = $this->db->prepare(
+            "SELECT u.*, LOWER(r.name) AS role_name 
          FROM users u 
          LEFT JOIN roles r ON u.role_id = r.id
          WHERE LOWER(u.email) = LOWER(?)"
-    );
+        );
 
-    $stmt2->bind_param("s", $email);
-    $stmt2->execute();
-    $result2 = $stmt2->get_result();
-    
-    if ($result2->num_rows > 0) {
-        return $result2->fetch_assoc();
+        $stmt2->bind_param("s", $email);
+        $stmt2->execute();
+        $result2 = $stmt2->get_result();
+
+        if ($result2->num_rows > 0) {
+            return $result2->fetch_assoc();
+        }
+
+        return null;
     }
-    
-    return null;
-}
 
-// Existing getByEmail method (keep it as is)
-public function getByEmail($email)
-{
-    $stmt = $this->db->prepare(
-        "SELECT u.*, LOWER(r.name) AS role_name 
+    // Existing getByEmail method (keep it as is)
+    public function getByEmail($email)
+    {
+        $stmt = $this->db->prepare(
+            "SELECT u.*, LOWER(r.name) AS role_name 
          FROM users u 
          JOIN roles r ON u.role_id = r.id
          WHERE u.email = ?"
-    );
+        );
 
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows === 0) {
-        return null;
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+
+        return $result->fetch_assoc();
     }
-    
-    return $result->fetch_assoc();
-}
-
-
-
-
 }

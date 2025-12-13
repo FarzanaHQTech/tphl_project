@@ -3,13 +3,6 @@ $page = "create List"
 
 
 ?>
-<?php if ($msg = getError()): ?>
-    <div class="alert alert-danger"><?= $msg ?></div>
-<?php endif; ?>
-
-<?php if ($msg = getSuccess()): ?>
-    <div class="alert alert-success"><?= $msg ?></div>
-<?php endif; ?>
 
 
 <!-- new lead modal start -->
