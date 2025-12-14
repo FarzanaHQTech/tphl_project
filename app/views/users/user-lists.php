@@ -59,12 +59,14 @@ $show_breadcrumb = false;
                 <div class="employee__wrapper text-center">
                     <div class="employee__thumb mb-15">
                       
-                         <img src=  "<?= getImage('users',filename: $user['photo'])?>" alt="img not found">
+                         <!-- <img src=  "<=getImage('users',filename: $user['photo'])?>" alt="img not found"> -->
+                          <img src="<?= getUserProfileImage($user) ?>" alt="img not found">
+
                     </div>
                     <div class="employee__content">
                         <div class="employee__meta mb-15">
                             <h4 class="mb-8"><?= htmlspecialchars($user['full_name'] ?: "No Name") ?></h4>
-                            <p><?= htmlspecialchars($user['designation'] ?: "No Designation") ?></p>
+                            <p><?= htmlspecialchars($user['designation_name'] ?: "No Designation") ?></p>
                         </div>
                         <div class="common-social mb-20">
                             <a href="<?= $user['media_link1'] ?>"><i class="fa-brands fa-facebook-f"></i></a>
@@ -74,9 +76,9 @@ $show_breadcrumb = false;
                             <div class="d-flex align-items-center justify-content-center gap-15">
                                 <a class="btn btn-outline-theme-border" href="tel:<?= htmlspecialchars($user['phone']) ?>">Call</a>
                                 <a class="btn btn-outline-theme-border"
-                                   href="<?= $base_url ?>/user-profile?id=<?= $user['id'] ?>">View</a>
+                                   href="<?= $base_url ?>/user-profile/<?= $user['id'] ?>">View</a>
                                 <a class="btn btn-outline-theme-border"
-                                   href="<?= $base_url ?>/edit-user?id=<?= $user['id'] ?>">Edit</a>
+                                   href="<?= $base_url ?>/edit-user/<?= $user['id'] ?>">Edit</a>
                             </div>
                         </div>
                     </div>

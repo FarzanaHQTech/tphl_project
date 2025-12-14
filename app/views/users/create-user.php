@@ -44,7 +44,12 @@ $show_breadcrumb = true;
                     <!-- Designation -->
                     <div class="col-lg-6 mb-3">
                         <label for="designation">Designation <span>*</span></label>
-                        <input class="form-control" name="designation" id="designation" type="text" required>
+                        <select class="form-control" name="designation_id" id="designation_id" required>
+                            <option value="">Select Designation</option>
+                            <?php foreach ($designations as $designation): ?>
+                                <option value="<?= $designation['id'] ?>"><?= $designation['designation_name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
 
                     <!-- Address -->
@@ -69,12 +74,12 @@ $show_breadcrumb = true;
                         </select>
                     </div>
 
-                     <!-- Designation -->
+                    <!-- Designation -->
                     <div class="col-lg-6 mb-3">
                         <label for="designation">First Media Link<span>*</span></label>
                         <input class="form-control" name="media_link1" id="media_link1" type="text" required>
                     </div>
-                     <!-- media_link2 -->
+                    <!-- media_link2 -->
                     <div class="col-lg-6 mb-3">
                         <label for="media_link1">Second Media Link <span>*</span></label>
                         <input class="form-control" name="media_link2" id="media_link2" type="text" required>

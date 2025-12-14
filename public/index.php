@@ -50,8 +50,9 @@ $routes = [
     "user-lists"           => ["controller" => "UserController", "method" => "index"],
     "create-user"          => ["controller" => "UserController", "method" => "create"],
     "store-user"          => ["controller" => "UserController", "method" => "store"],
-    "edit-user"          => ["controller" => "UserController", "method" => "edit"],
-    "update-user"          => ["controller" => "UserController", "method" => "update"],
+    "edit-user/(\d+)"          => ["controller" => "UserController", "method" => "edit"],
+    "user-profile/(\d+)"          => ["controller" => "UserController", "method" => "show"],
+    "update-user/(\d+)"          => ["controller" => "UserController", "method" => "update"],
 
 
     "customer-lists"       => ["controller" => "CustomerController", "method" => "index"],
@@ -161,3 +162,4 @@ $controller = new $controllerName($db);
 
 // Call method with ID param if exists
 call_user_func_array([$controller, $methodName], $params);
+

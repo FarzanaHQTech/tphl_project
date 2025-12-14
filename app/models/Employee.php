@@ -71,14 +71,12 @@ class Employee extends Model
     ");
 
         if (!$sql->execute()) {
-            return []; // Error handle koro
+            return [];
         }
 
         $result = $sql->get_result();
         return $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
     }
-
-
     public function countAll($search = '', $department_id = 'employeePhoto')
     {
         $sql = "SELECT COUNT(*) as total FROM employees WHERE 1";
@@ -110,7 +108,6 @@ class Employee extends Model
         $result = $stmt->get_result()->fetch_assoc();
         return $result['total'];
     }
-
     // models/Employee.php
     public function create($data, $photoInputName = '')
     {
@@ -121,7 +118,6 @@ class Employee extends Model
 
             $photo = uploadImage($photoInputName, 'employees', 'fixed', 300, 300);
         }
-
         if (!$photo) {
             $photo = '';
         }
@@ -139,6 +135,7 @@ class Employee extends Model
         $experience      = $data['experience'];
         $address         = $data['address'];
         $pass_num        = $data['pass_num'] ?? '';
+        $nid        = $data['nid'] ?? '';
         $department_id   = $data['department_id'];
         $designation_id  = $data['designation_id'];
         $dob             = $data['dob'];
@@ -156,39 +153,40 @@ class Employee extends Model
         $stmt = $this->db->prepare(
             "INSERT INTO employees 
     (full_name, employee_id, username, email, father_name, phone, emergency_contact, 
-     qualification, experience, address, pass_num, department_id, designation_id, dob, 
+     qualification, experience, address, pass_num, nid, department_id, designation_id, dob, 
      joining_date, account_holder_name, account_number, bank_name, branch_name, 
      social_media1, social_media2, social_media3, photo, make_user, password) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    VALUES (?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
         $stmt->bind_param(
-            "sssssssssssiissssssssssis",
-            $full_name,       
-            $employee_id,        
-            $username,           
-            $email,              
-            $father_name,        
-            $phone,              
-            $emergency_contact,  
-            $qualification,      
-            $experience,         
-            $address,            
-            $pass_num,           
-            $department_id,      
-            $designation_id,     
-            $dob,                
-            $joining_date,       
-            $account_holder_name, 
-            $account_number,     
-            $bank_name,          
-            $branch_name,        
-            $social_media1,      
-            $social_media2,      
-            $social_media3,      
-            $photo,              
-            $make_user,          
-            $password             
+            "ssssssssssssiissssssssssis",
+            $full_name,
+            $employee_id,
+            $username,
+            $email,
+            $father_name,
+            $phone,
+            $emergency_contact,
+            $qualification,
+            $experience,
+            $address,
+            $pass_num,
+            $nid,
+            $department_id,
+            $designation_id,
+            $dob,
+            $joining_date,
+            $account_holder_name,
+            $account_number,
+            $bank_name,
+            $branch_name,
+            $social_media1,
+            $social_media2,
+            $social_media3,
+            $photo,
+            $make_user,
+            $password
         );
 
         if ($stmt->execute()) {
@@ -215,7 +213,6 @@ class Employee extends Model
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
     }
-
     /**
      * Update employee
      */
@@ -281,6 +278,8 @@ class Employee extends Model
         return $stmt->execute();
     }
 
+
+
     public function delete($id)
     {
         $stmt = $this->db->prepare("DELETE FROM employees WHERE id = ?");
@@ -314,6 +313,6 @@ class Employee extends Model
         $stmt->execute();
         $notifications = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
-        return $notifications; // ⚠️ return করতে হবে
+        return $notifications; // 
     }
 }

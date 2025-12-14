@@ -47,7 +47,6 @@ class Designation extends Model{
     {
         // Module name দিয়ে photo upload
     
-
         $stmt = $this->db->prepare(
             "INSERT INTO designations
             (name,  department_id)
@@ -68,8 +67,7 @@ class Designation extends Model{
         }
     }
 
-
-   public function countAll() {
+    public function countAll() {
         $stmt = $this->db->prepare("SELECT COUNT(*) as total FROM designations");
         $stmt->execute();
         $result = $stmt->get_result()->fetch_assoc();

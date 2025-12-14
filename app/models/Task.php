@@ -107,6 +107,7 @@ class Task extends Model
             $data['start_date'],
             $data['deadline'],
             $data['employee_accept'],
+            
             $data['status'],
             $data['progress'],
             $data['priority'],
@@ -124,22 +125,23 @@ class Task extends Model
     public function find($id)
     {
         $stmt = $this->db->prepare("
-    SELECT 
-        t.*, 
-        e.full_name AS employee_name, 
-        e.email AS employee_email, 
-        e.designation_id,
-        e.photo as emp_photo,
-        u.full_name AS assigned_by_name,
-        u.email AS assigned_by_email,
-        u.photo as assigned_photo,
-        u.designation AS assigned_by_designation,
-        desg.name AS employee_designation
-    FROM tasks AS t
-    JOIN employees AS e ON t.employee_id = e.id
-    JOIN users AS u ON t.assigned_by = u.id
-    JOIN designations AS desg ON e.designation_id = desg.id
-    WHERE t.id = ?
+        SELECT 
+            t.*, 
+            e.full_name AS employee_name, 
+            e.email AS employee_email, 
+            e.designation_id,
+            e.photo as emp_photo,
+            u.full_name AS assigned_by_name,
+            u.email AS assigned_by_email,
+            u.photo as assigned_photo,
+            des.name AS assigned_by_designation,
+            desg.name AS employee_designation
+        FROM tasks AS t
+        JOIN employees AS e ON t.employee_id = e.id
+        JOIN users AS u ON t.assigned_by = u.id
+        JOIN designations AS des ON u.designation_id = des.id
+        JOIN designations AS desg ON e.designation_id = desg.id
+        WHERE t.id = ?
 ");
 
         $stmt->bind_param("i", $id);

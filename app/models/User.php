@@ -15,12 +15,22 @@ class User extends Model
     // Get all users with paginate
     public function getPaginated($limit, $offset, $search = '', $role = '')
     {
-        $sql = "SELECT * FROM users WHERE 1";
+        $sql = "SELECT
+                u.*,
+                e.id AS employee_id,
+                e.photo AS employee_photo,
+                e.make_user,
+                d.name AS designation_name
+            FROM users u
+            LEFT JOIN employees e ON e.user_id = u.id
+            JOIN designations AS d ON d.id = u.designation_id
+            WHERE 1=1";
+
         $params = [];
         $types = "";
 
         if ($search) {
-            $sql .= " AND (full_name LIKE ? OR phone LIKE ? OR email LIKE ?)";
+            $sql .= " AND (u.full_name LIKE ? OR u.phone LIKE ? OR u.email LIKE ?)";
             $params[] = "%$search%";
             $params[] = "%$search%";
             $params[] = "%$search%";
@@ -28,12 +38,12 @@ class User extends Model
         }
 
         if ($role) {
-            $sql .= " AND role_id = ?";
+            $sql .= " AND u.role_id = ?";
             $params[] = $role;
             $types .= "i";
         }
 
-        $sql .= " ORDER BY id DESC LIMIT ? OFFSET ?";
+        $sql .= " ORDER BY u.id DESC LIMIT ? OFFSET ?";
         $params[] = $limit;
         $params[] = $offset;
         $types .= "ii";
@@ -41,18 +51,30 @@ class User extends Model
         $stmt = $this->db->prepare($sql);
         $stmt->bind_param($types, ...$params);
         $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC);
+
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+
+
 
     public function getAll()
     {
+
+        // SELECT 
+        //     u.*,
+        //     e.id AS employee_id,
+        //     e.photo AS employee_photo,
+        //     e.make_user
+        // FROM users u
+        // LEFT JOIN employees e ON e.user_id = u.id
+
+
         $sql = $this->db->prepare("
         SELECT
             u.id, 
            u.full_name  From users AS u
     ");
-
         if (!$sql->execute()) {
             return []; // Error handle koro
         }
@@ -70,23 +92,23 @@ class User extends Model
         // require_once __DIR__ . '/../helpers/password_helper.php';
 
         // Module name দিয়ে photo upload
-        $photo = uploadImage('userphoto', 'users');
+        $photo = uploadImage('userphoto', 'users', 'fixed', 300, 300);
 
         // Ensure password is hashed using helper
         $password = ensureHashedPassword($data['password']);
 
         $stmt = $this->db->prepare(
             "INSERT INTO users
-        (full_name, phone, email, designation, address, nid, role_id, user_name, password, photo, media_link1, media_link2)
+        (full_name, phone, email, designation_id, address, nid, role_id, user_name, password, photo, media_link1, media_link2)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
         $stmt->bind_param(
-            "ssssssisssss",
+            "sssississsss",
             $data['full_name'],
             $data['phone'],
             $data['email'],
-            $data['designation'],
+            $data['designation_id'],
             $data['address'],
             $data['nid'],
             $data['role_id'],
@@ -136,75 +158,89 @@ class User extends Model
 
     public function find($id): mixed
     {
-        $stmt = $this->db->prepare("SELECT *
-           users
-        WHERE users.id = ?
-");
+        $stmt = $this->db->prepare("
+        SELECT 
+            u.*,
+            e.id AS employee_id,
+            e.photo AS employee_photo,
+            d.name AS designation_name
+        FROM users u
+        LEFT JOIN employees e ON e.user_id = u.id
+        LEFT JOIN designations d ON d.id = u.designation_id
+        WHERE u.id = ?
+        LIMIT 1
+    ");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
     }
 
 
-    public function update($data, $id, $photoInputName=null){
 
-         // 1. old employee info
-        $oldEmployee = $this->find($id);
-        $oldPhoto = $oldEmployee['photo'];
+    public function update($data, $id, $photoInputName = null)
+    {
+        $oldUser  = $this->find($id);
+        $oldPhoto = $oldUser['photo'] ?? '';
 
-        // 2. নতুন photo upload
+        /* ---------- PHOTO ---------- */
         $newPhoto = null;
         if ($photoInputName && !empty($_FILES[$photoInputName]['name'])) {
-            $newPhoto = uploadImage($photoInputName, 'employees', 'fixed', 300, 300);
+            $newPhoto = uploadImage($photoInputName, 'users', 'fixed', 300, 300);
         }
 
-        // 3. Decide final photo          
         $finalPhoto = $newPhoto ?? $oldPhoto;
 
-        // 4. old photo delete (if new add )
-        if ($newPhoto && !empty($oldPhoto) && file_exists(dirname(__DIR__, 2) . "/public/uploads/employees/" . $oldPhoto)) {
-            unlink(dirname(__DIR__, 2) . "/public/uploads/employees/" . $oldPhoto);
+        if ($newPhoto && !empty($oldPhoto)) {
+            $oldPath = dirname(__DIR__, 2) . "/public/uploads/users/" . $oldPhoto;
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
         }
 
-        // 5. Update query
-        $sql = "UPDATE employees SET
-        full_name = ?, employee_id = ?, username = ?, email = ?, father_name = ?, phone = ?, emergency_contact = ?,
-        qualification = ?, experience = ?, address = ?, pass_num = ?, department_id = ?, designation_id = ?,dob=?, joining_date = ?,
-        account_holder_name = ?, account_number = ?, bank_name = ?, branch_name = ?, social_media1 = ?, social_media2 = ?, social_media3 = ?, 
-        photo = ?
+        /* ---------- PASSWORD ---------- */
+        $finalPassword = !empty($data['password'])
+            ? password_hash($data['password'], PASSWORD_DEFAULT)
+            : $oldUser['password'];
+
+        /* ---------- UPDATE QUERY ---------- */
+        $sql = "UPDATE users SET 
+        full_name = ?, 
+        user_name = ?, 
+        phone = ?, 
+        email = ?, 
+        designation_id = ?, 
+        address = ?, 
+        nid = ?, 
+        role_id = ?, 
+        media_link1 = ?, 
+        media_link2 = ?, 
+        photo = ?, 
+        password = ?
     WHERE id = ?";
 
         $stmt = $this->db->prepare($sql);
 
         $stmt->bind_param(
-            "sssssssssssiissssssssssi",
+            "ssssississssi",
             $data['full_name'],
-            $data['employee_id'],
-            $data['username'],
-            $data['email'],
-            $data['father_name'],
+            $data['user_name'],
             $data['phone'],
-            $data['emergency_contact'],
-            $data['qualification'],
-            $data['experience'],
-            $data['address'],
-            $data['pass_num'],
-            $data['department_id'],
+            $data['email'],
             $data['designation_id'],
-            $data['dob'],
-            $data['joining_date'],
-            $data['account_holder_name'],
-            $data['account_number'],
-            $data['bank_name'],
-            $data['branch_name'],
-            $data['social_media1'],
-            $data['social_media2'],
-            $data['social_media3'],
+            $data['address'],
+            $data['nid'],
+            $data['role_id'],
+            $data['media_link1'],
+            $data['media_link2'],
             $finalPhoto,
+            $finalPassword,
             $id
         );
 
+        return $stmt->execute();
     }
+
+
 
     public function getPermissionsByRole($role_id)
     {
@@ -232,7 +268,13 @@ class User extends Model
         return $stmt->execute([$userId]);
     }
 
-
+    public function getEmployeeByUserId($userId)
+    {
+        $stmt = $this->db->prepare("SELECT photo FROM employees WHERE user_id = ? LIMIT 1");
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
     // UserModel.php-এ এই method যোগ করুন
     public function getByEmailCaseInsensitive($email)
     {

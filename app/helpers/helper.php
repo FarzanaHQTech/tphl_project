@@ -318,9 +318,66 @@ function prepareUserData($postData, $isFromEmployee = false)
         'media_link1'  => trim($postData['media_link1'] ?? ($postData['social_media1'] ?? '')),
         'media_link2'  => trim($postData['media_link2'] ?? ($postData['social_media2'] ?? '')),
     ];
-
     return $data;
 }
+
+function getUserProfileImage($user)
+{
+    // User created from employee
+    if (!empty($user['employee_id']) && !empty($user['employee_photo'])) {
+        return getImage('employees', $user['employee_photo']);
+    }
+
+    // Normal user
+    if (!empty($user['photo'])) {
+        return getImage('users', $user['photo']);
+    }
+
+    // Default avatar
+    return getImage('users', 'default.png');
+}
+
+
+function getLoggedInUserImage()
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $userId = $_SESSION['user']['id'] ?? null;
+    if (!$userId) {
+        return getImage('users', 'default.png');
+    }
+
+    $db = $GLOBALS['db'];
+
+    // Fetch user + employee photo
+    $stmt = $db->prepare("
+        SELECT 
+            u.photo AS user_photo,
+            e.photo AS employee_photo,
+            e.id AS employee_id
+        FROM users u
+        LEFT JOIN employees e ON e.user_id = u.id
+        WHERE u.id = ?
+        LIMIT 1
+    ");
+    $stmt->bind_param("i", $userId);
+    $stmt->execute();
+    $row = $stmt->get_result()->fetch_assoc();
+
+    // Priority: employee photo first, then user photo, then default
+    if (!empty($row['employee_photo'])) {
+        return getImage('employees', $row['employee_photo']);
+    } elseif (!empty($row['user_photo'])) {
+        return getImage('users', $row['user_photo']);
+    }
+
+    return getImage('users', 'default.png');
+}
+
+
+
 
 // sweet alert 
 

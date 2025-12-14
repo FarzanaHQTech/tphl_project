@@ -12,35 +12,35 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?= $GLOBALS['base_url'] ?>/assets/images/logo/tphl_logo.png">
 
     <!-- CSS here -->
-<link rel="stylesheet"href="<?=$GLOBALS['base_url'] ?>/assets/css/vendor/bootstrap.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/animate.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/apexcharts.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-jvectormap-2.0.5.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/swiper-bundle.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/magnific-popup.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/icomoon.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/fontawesome-pro.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/rating.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/dropzone.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/dropify.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/spacing.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/datatables.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/buttons.bootstrap5.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery.dataTables.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/select2.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery.timepicker.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/tagify.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/flatpickr.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-ui.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/fullcalendar.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/ion.rangeSlider.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/simplebar.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/waves.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/nano.min.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/main.css">
-<link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/animate.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/apexcharts.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-jvectormap-2.0.5.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/icomoon.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/fontawesome-pro.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/rating.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/dropzone.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/dropify.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/vendor/spacing.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/datatables.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/buttons.bootstrap5.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/select2.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery.timepicker.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/tagify.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/flatpickr.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/jquery-ui.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/fullcalendar.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/simplebar.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/waves.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/plugins/nano.min.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/main.css">
+    <link rel="stylesheet" href="<?= $GLOBALS['base_url'] ?>/assets/css/style.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta3/css/bootstrap-select.min.css">
 
 
 </head>
@@ -63,7 +63,7 @@
 
         <?php
 
-$base_url = '/tphl_project/public'; //'/tphl_project/public'
+        $base_url = '/tphl_project/public'; //'/tphl_project/public'
         require __DIR__ . '/sidebar.php'; ?>
         <!-- App header area start -->
         <div class="page__body-wrapper">
@@ -86,6 +86,7 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                         </h2>
 
                     </div>
+
                     <div class="app__header-right">
                         <div class="app__herader-input p-relative">
                             <input type="search" id="search-field" name="search-field" placeholder="Search Here . . .">
@@ -578,7 +579,9 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                             <a id="userportfolio" href="#">
                                 <div class="user__portfolio">
                                     <div class="user__portfolio-thumb">
-                                        <img src="assets/images/avatar/avatar.png" alt="img not found">
+
+
+                                        <img src="<?= getLoggedInUserImage() ?>" alt="img not found">
                                     </div>
 
                                     <div class="user__content">
@@ -590,7 +593,7 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                             <div class="user__dropdown">
                                 <ul>
                                     <li>
-                                        <a href="employee-employee-profile.html"><svg width="16" height="16"
+                                        <a href="<?= $GLOBALS['base_url'] ?>/user-profile/<?= $_SESSION['user']['id'] ?>"><svg width="16" height="16"
                                                 viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0_643_344)">
                                                     <path
@@ -605,33 +608,9 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                                             </svg>
                                             Profile</a>
                                     </li>
+                                 
                                     <li>
-                                        <a href="app-chat.html"><svg width="18" height="17" viewBox="0 0 18 17"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M4.2 16.8C4.1118 16.8 4.023 16.7802 3.9396 16.7406C3.7326 16.6404 3.6 16.431 3.6 16.2V13.2H1.8C0.8076 13.2 0 12.3924 0 11.4V1.8C0 0.8076 0.8076 0 1.8 0H16.2C17.1924 0 18 0.8076 18 1.8V11.4C18 12.3924 17.1924 13.2 16.2 13.2H8.9106L4.575 16.6686C4.4664 16.7556 4.3338 16.8 4.2 16.8ZM1.8 1.2C1.4688 1.2 1.2 1.4694 1.2 1.8V11.4C1.2 11.7306 1.4688 12 1.8 12H4.2C4.5318 12 4.8 12.2682 4.8 12.6V14.952L8.325 12.1314C8.4318 12.0462 8.5632 12 8.7 12H16.2C16.5312 12 16.8 11.7306 16.8 11.4V1.8C16.8 1.4694 16.5312 1.2 16.2 1.2H1.8Z"
-                                                    fill="#7A7A7A" />
-                                                <path
-                                                    d="M13.8001 6.00005H4.2001C3.8683 6.00005 3.6001 5.73125 3.6001 5.40005C3.6001 5.06885 3.8683 4.80005 4.2001 4.80005H13.8001C14.1319 4.80005 14.4001 5.06885 14.4001 5.40005C14.4001 5.73125 14.1319 6.00005 13.8001 6.00005Z"
-                                                    fill="#7A7A7A" />
-                                                <path
-                                                    d="M9.0001 8.39995H4.2001C3.8683 8.39995 3.6001 8.13115 3.6001 7.79995C3.6001 7.46875 3.8683 7.19995 4.2001 7.19995H9.0001C9.3319 7.19995 9.6001 7.46875 9.6001 7.79995C9.6001 8.13115 9.3319 8.39995 9.0001 8.39995Z"
-                                                    fill="#7A7A7A" />
-                                            </svg>
-                                            chat</a>
-                                    </li>
-                                    <li>
-                                        <a href="email-inbox.html"><svg width="18" height="13" viewBox="0 0 18 13"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M16.418 0H1.58203C0.711492 0 0 0.708363 0 1.58203V11.0742C0 11.9482 0.711949 12.6562 1.58203 12.6562H16.418C17.2885 12.6562 18 11.9479 18 11.0742V1.58203C18 0.708152 17.2882 0 16.418 0ZM16.175 1.05469C15.6636 1.56786 9.65549 7.59551 9.40866 7.84315C9.2025 8.04994 8.79761 8.05008 8.59134 7.84315L1.82496 1.05469H16.175ZM1.05469 10.8803V1.77592L5.59213 6.32812L1.05469 10.8803ZM1.82496 11.6016L6.3367 7.07512L7.84438 8.58772C8.46221 9.20756 9.53803 9.20732 10.1557 8.58772L11.6633 7.07516L16.175 11.6016H1.82496ZM16.9453 10.8803L12.4079 6.32812L16.9453 1.77592V10.8803Z"
-                                                    fill="#7A7A7A" />
-                                            </svg>
-                                            inbox
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="?page=admin-registration"><svg width="18" height="18" viewBox="0 0 18 18"
+                                        <a href="<?= $GLOBALS['base_url'] ?>/create-user"><svg width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M12.9224 9.03197C12.5765 8.86754 12.2235 8.7259 11.8644 8.60724C13.0275 7.73424 13.7812 6.34413 13.7812 4.78125C13.7812 2.14488 11.6364 0 8.99999 0C6.36359 0 4.21874 2.14488 4.21874 4.78125C4.21874 6.34585 4.97418 7.73734 6.13943 8.61016C5.07181 8.96165 4.07003 9.50858 3.19323 10.2298C1.58546 11.5522 0.4676 13.3969 0.0456193 15.4239C-0.0866386 16.059 0.0718107 16.7114 0.480256 17.2136C0.886698 17.7134 1.48938 18 2.13373 18H10.793C11.1813 18 11.4961 17.6852 11.4961 17.2969C11.4961 16.9086 11.1813 16.5938 10.793 16.5938H2.13373C1.83356 16.5938 1.65247 16.4262 1.57126 16.3264C1.43102 16.1539 1.37674 15.9295 1.42234 15.7105C2.15201 12.2056 5.24351 9.64527 8.8136 9.55892C8.87544 9.56131 8.93756 9.56251 8.99999 9.56251C9.06303 9.56251 9.12578 9.56128 9.18822 9.55885C10.2823 9.58452 11.3345 9.8342 12.3187 10.3021C12.6694 10.4687 13.0888 10.3196 13.2556 9.96885C13.4223 9.61813 13.2731 9.19868 12.9224 9.03197ZM9.17149 8.15193C9.11443 8.15091 9.05726 8.15039 8.99999 8.15039C8.94325 8.15039 8.88651 8.15095 8.82984 8.152C7.04759 8.06309 5.62499 6.58519 5.62499 4.78125C5.62499 2.92026 7.139 1.40625 8.99999 1.40625C10.861 1.40625 12.375 2.92026 12.375 4.78125C12.375 6.58474 10.9531 8.06236 9.17149 8.15193Z"
@@ -678,6 +657,9 @@ $base_url = '/tphl_project/public'; //'/tphl_project/public'
                     </div>
                 </div>
             </div>
+            <!-- <pre>
+                <php print_r($_SESSION) ?>
+            </pre> -->
 
-        <div class="body__overlay"></div>
+            <div class="body__overlay"></div>
             <!-- App header area end -->

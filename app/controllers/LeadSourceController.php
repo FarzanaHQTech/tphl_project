@@ -51,7 +51,7 @@ public function store()
     if ($this->leadSourceModel->create($data)) {
         setSuccess("Lead source created successfully!");
     } else {
-        setError(getError() ?: "Failed to create lead source.");
+        setError( "Failed to create lead source.");
     }
 
     header("Location: {$GLOBALS['base_url']}/leadSource-lists");

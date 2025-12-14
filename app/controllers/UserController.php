@@ -3,10 +3,12 @@ class UserController extends Controller
 {
     protected $db;
     protected $userModel;
+    protected $designationModel;
     protected $roleModel;
     public function __construct($db)
     {
         $this->db = $db;
+        $this->designationModel = new Designation($this->db);
         $this->userModel = new User($this->db);
         $this->roleModel = new Role($this->db);
     }
@@ -46,6 +48,7 @@ class UserController extends Controller
     // Create user form
     public function create()
     {
+        $designations = $this->designationModel->getAll();
         $roles = $this->roleModel->getAll();
 
         $this->view("users/create-user", [
@@ -54,6 +57,7 @@ class UserController extends Controller
             "page_title"      => "Add User",
             "show_breadcrumb" => true,
             "roles"           => $roles,
+            "designations"           => $designations,
         ]);
     }
 
@@ -65,7 +69,7 @@ class UserController extends Controller
             'user_name'    => $_POST['user_name'] ?? '',
             'phone'       => $_POST['phone'] ?? '',
             'email'       => $_POST['email'] ?? '',
-            'designation' => $_POST['designation'] ?? '',
+            'designation_id' => $_POST['designation_id'] ?? '',
             'address'     => $_POST['address'] ?? '',
             'nid'         => $_POST['nid'] ?? '',
             'role_id'     => $_POST['role_id'] ?? 0,
@@ -89,14 +93,81 @@ class UserController extends Controller
     }
 
 
-
-    public function edit()
+    public function edit($id)
     {
+        $user = $this->userModel->find($id);
+        $designations = $this->designationModel->getAll();
+        $roles = $this->roleModel->getAll();
+        if (!$user) {
+            setError("User not found");
+            header("Location: {$GLOBALS['base_url']}/user-lists");
+            exit;
+        }
+
+        // Pass user to view
         $this->view("users/edit-user", [
             "current_route" => "edit-user",
             "active" => "edit-user",
-            "psge_title" => "Edit User",
+            "page_title" => "Edit User",
             "show_breadcrumb" => true,
+            "user" => $user,
+            "designations" => $designations,
+            "roles" => $roles,
         ]);
+    }
+
+    public function show($id){
+        $user = $this->userModel->find($id);
+        $designations = $this->designationModel->getAll();
+        $roles = $this->roleModel->getAll();
+        if (!$user) {
+            setError("User Not Found");
+        }
+        $this->view("users/show-user",[
+            "current_route" => 'user-profile',
+            "active" => 'user-profile',
+            "page_title" => 'User Profile',
+            "user" => $user,
+        ]);
+    }
+
+
+    public function update($id)
+    {
+        $data = [
+            'full_name'      => $_POST['full_name'] ?? '',
+            'user_name'      => $_POST['user_name'] ?? '',
+            'phone'          => $_POST['phone'] ?? '',
+            'email'          => $_POST['email'] ?? '',
+            'designation_id' => $_POST['designation_id'] ?? 0,
+            'address'        => $_POST['address'] ?? '',
+            'nid'        => $_POST['nid'] ?? '',
+            'role_id'        => $_POST['role_id'] ?? 0,
+            'password'       => $_POST['password'] ?? '',
+            'media_link1'    => $_POST['media_link1'] ?? '',
+            'media_link2'    => $_POST['media_link2'] ?? '',
+        ];
+
+        
+
+        $photoInputName = 'photo';
+
+        
+
+
+        try {
+            if ($this->userModel->update($data, $id, $photoInputName)) {
+                setSuccess("User updated successfully");
+            } else {
+                setError("User update failed");
+            }
+        } catch (\Throwable $th) {
+
+            // setError("User update failed: ".$th->getMessage());
+            setError($th->getMessage());
+        }
+
+        header("Location: {$GLOBALS['base_url']}/user-lists");
+        exit;
     }
 }
