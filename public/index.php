@@ -1,12 +1,11 @@
 
 
 
-
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once ("../app/helpers/helper.php");
+require_once("../app/helpers/helper.php");
 // Enable debug
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -15,12 +14,30 @@ $root = dirname(__DIR__);
 $GLOBALS['base_url'] = '/tphl_project/public';
 
 // Autoload classes
+// spl_autoload_register(function ($class) use ($root) {
+//     $paths = [
+//         $root . "/app/core/$class.php",
+//         $root . "/app/models/$class.php",
+//         $root . "/app/controllers/$class.php"
+//     ];
+//     foreach ($paths as $file) {
+//         if (file_exists($file)) {
+//             require $file;
+//             return;
+//         }
+//     }
+// });
+
+// folder er moddhe o chaile folder kore controller nite parbo abr folder chara o controller
 spl_autoload_register(function ($class) use ($root) {
+    $class = str_replace('\\', '/', $class);
+
     $paths = [
         $root . "/app/core/$class.php",
         $root . "/app/models/$class.php",
-        $root . "/app/controllers/$class.php"
+        $root . "/app/controllers/$class.php",
     ];
+
     foreach ($paths as $file) {
         if (file_exists($file)) {
             require $file;
@@ -28,6 +45,9 @@ spl_autoload_register(function ($class) use ($root) {
         }
     }
 });
+
+
+
 
 // Load config
 $config = require $root . "/app/config/config.php";
@@ -95,13 +115,14 @@ $routes = [
     "update-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "update"],
     "employee-profile/(\d+)" => ["controller" => "EmployeeController", "method" => "show"],
     "delete-employee/(\d+)" => ["controller" => "EmployeeController", "method" => "delete"],
-    "employee-dashboard"=> ["controller"=> "EmployeeDashboardController", "method"=> "index"],
+    "employee-dashboard" => ["controller" => "EmployeeDashboardController", "method" => "index"],
 
     // leads
     "lead-lists" => ["controller" => "LeadController", "method" => "index"],
     "create-lead" => ["controller" => "LeadController", "method" => "create"],
     "store-lead" => ["controller" => "LeadController", "method" => "store"],
     "edit-lead/(\d+)" => ["controller" => "LeadController", "method" => "edit"],
+    "leads-import-csv" => ["controller" => "LeadController", "method" => "importCsv"],
     "update-lead/(\d+)" => ["controller" => "LeadController", "method" => "update"],
     "delete-lead/(\d+)" => ["controller" => "LeadController", "method" => "delete"],
     // leads
@@ -111,7 +132,23 @@ $routes = [
     "edit-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "edit"],
     "update-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "update"],
     "delete-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "delete"],
-  
+
+
+    // Leave controller 
+    "leave-types" => ["controller" => "Leaves\\LeaveTypeController","method" => "index" ],
+    "store-leave-type" => ["controller" => "Leaves\\LeaveTypeController","method" => "store" ],
+    // Site controller 
+    "slider-manage" => ["controller" => "SiteManage\\SliderController","method" => "index" ],
+    "store-slider" => ["controller" => "SiteManage\\SliderController","method" => "store" ],
+    // "store-leave-type" => ["controller" => "Leaves\\LeaveTypeController","method" => "store" ],
+
+    // site-Setting 
+   "site-settings" => ["controller" => "SiteManage\\SiteSettingController", "method" => "index"],
+"store-site-setting" => ["controller" => "SiteManage\\SiteSettingController", "method" => "storeOrUpdate"],
+
+    
+
+
 ];
 
 $route = trim(strtok($_SERVER["REQUEST_URI"], '?'), '/');
@@ -162,4 +199,3 @@ $controller = new $controllerName($db);
 
 // Call method with ID param if exists
 call_user_func_array([$controller, $methodName], $params);
-

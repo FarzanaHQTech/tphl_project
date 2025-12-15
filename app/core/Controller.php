@@ -21,12 +21,8 @@ class Controller
         } else {
             // Just render view standalone
             echo $content;
+
         }
     }
 }
-
-
-
-
-
 

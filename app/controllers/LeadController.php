@@ -155,6 +155,46 @@ class LeadController extends Controller
     }
 
 
+    public function importCsv()
+{
+    if (!isset($_FILES['csv_file']) || $_FILES['csv_file']['error'] !== 0) {
+        setError("CSV upload failed");
+        return;
+    }
+
+    $fileTmp = $_FILES['csv_file']['tmp_name'];
+    $ext = strtolower(pathinfo($_FILES['csv_file']['name'], PATHINFO_EXTENSION));
+
+    if ($ext !== 'csv') {
+        setError("Only CSV files allowed");
+        return;
+    }
+
+    if (($handle = fopen($fileTmp, "r")) !== false) {
+
+        $header = fgetcsv($handle); // first row → header
+
+        while (($row = fgetcsv($handle, 1000, ",")) !== false) {
+
+            // 🔑 CSV → DB column mapping
+            $data = array_combine($header, $row);
+
+            // defaults & safety
+            $data['value_amount'] = (float)($data['value_amount'] ?? 0);
+            $data['source_type_id'] = (int)($data['source_type_id'] ?? 0);
+            $data['status'] = (int)($data['status'] ?? 0);
+            $data['visibility'] = $data['visibility'] ?? 'public';
+
+            $this->leadModel->create($data);
+        }
+
+        fclose($handle);
+        setSuccess("CSV imported successfully");
+    }
+}
+
+
+
 
     // Delete Employee
     public function delete($id) {}

@@ -64,7 +64,7 @@
                     showConfirmButton: false,
                     timer: 10000,
                     timerProgressBar: true,
-                    width: '320px' // 🔥 width ছোট
+                    width: '320px' // width
                 });
             </script>
         <?php unset($_SESSION['flash_success']);

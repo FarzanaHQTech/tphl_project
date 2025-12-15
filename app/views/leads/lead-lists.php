@@ -4,12 +4,10 @@ $page = 'Leads';
 $addPage = 'Add Leads';
 $addPage = true;
 $show_breadcrumb = true;
-
 ?>
 
-
-
 <div class="row">
+
     <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
         <div class="card__wrapper">
             <div class="d-flex align-items-center gap-sm">
@@ -57,11 +55,19 @@ $show_breadcrumb = true;
     </div>
     <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6">
         <div class="card__wrapper">
+            <button
+                class="btn btn-success my-2 w-full"
+                data-bs-toggle="modal"
+                data-bs-target="#importCsvModal">
+                Import CSV
+            </button>
 
-            <a href="<?= $GLOBALS['base_url'] ?>/create-lead" class="btn btn-primary my-2 w-full">Add Lead</a>
-
+            <a href="<?= $GLOBALS['base_url'] ?>/create-lead" class="btn btn-primary my-2 w-full">
+                Add Lead
+            </a>
         </div>
     </div>
+
 
 
     <div class="col-xxl-12">
@@ -121,12 +127,12 @@ $show_breadcrumb = true;
                                 <td><?= $lead['lead_quality'] ?? '' ?></td>
                                 <td>
                                     <div class="d-flex align-items-center justify-content-start gap-10">
-                                        <a  class="table__icon download" href="<?= $GLOBALS['base_url'] ?>/view-lead">
+                                        <a class="table__icon download" href="<?= $GLOBALS['base_url'] ?>/view-lead">
                                             <i class="fa-regular fa-eye"></i>
-                        </a>
-                                        <a  class="table__icon edit" href="<?= $GLOBALS['base_url'] ?>/edit-lead/<?= $lead['id'] ?>">
+                                        </a>
+                                        <a class="table__icon edit" href="<?= $GLOBALS['base_url'] ?>/edit-lead/<?= $lead['id'] ?>">
                                             <i class="fa-sharp fa-light fa-pen"></i>
-                        </a>
+                                        </a>
                                         <button class="removeBtn table__icon delete">
                                             <i class="fa-regular fa-trash"></i>
                                         </button>
@@ -140,6 +146,47 @@ $show_breadcrumb = true;
         </div>
     </div>
 
+</div>
 
 
+<!-- CSV Import Modal -->
+<div class="modal fade" id="importCsvModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Import Leads from CSV</h5>
+                <button type="button" class="bd-btn-close" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark-large"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form action="<?= $GLOBALS['base_url'] ?>/leads-import-csv"
+                    method="post"
+                    enctype="multipart/form-data">
+
+                    <div class="from__input-box mb-20">
+                        <div class="form__input-title">
+                            <label>Upload CSV File <span>*</span></label>
+                        </div>
+                        <div class="form__input">
+                            <input type="file"
+                                name="csv_file"
+                                class="form-control"
+                                accept=".csv"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="submit__btn text-center">
+                        <button class="btn btn-primary">Import</button>
+                    </div>
+                </form>
+
+                <p class="mt-15 text-muted small">
+                    CSV header must match lead table columns.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

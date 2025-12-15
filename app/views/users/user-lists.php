@@ -1,6 +1,6 @@
 <?php
-$page_title = "User List";  
-$page= 'user-lists';
+$page_title = "User List";
+$page = 'user-lists';
 $show_breadcrumb = false;
 ?>
 
@@ -11,8 +11,8 @@ $show_breadcrumb = false;
         <div class="col-xxl-4 col-xl-5 col-lg-4 col-md-4">
             <div class="card__wrapper">
                 <div class="search-box">
-                    <input type="text" class="form-control" name="q" placeholder="User Name / Phone / Email" 
-                           value="<?= htmlspecialchars($searchTerm ?? '') ?>">
+                    <input type="text" class="form-control" name="q" placeholder="User Name / Phone / Email"
+                        value="<?= htmlspecialchars($searchTerm ?? '') ?>">
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ $show_breadcrumb = false;
                     <button type="submit" class="btn btn-secondary">Filters</button>
                     <a href="<?= $GLOBALS['base_url'] ?>/create-user" class="btn btn-primary w-100">
                         Add Users
-                        </a>
+                    </a>
                 </div>
             </div>
         </div>
@@ -51,44 +51,48 @@ $show_breadcrumb = false;
 
 
 <div class="row">
-   <?php if (!empty($users)): ?>
-    <?php foreach ($users as $user): ?>
-     
-        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
-            <div class="card__wrapper">
-                <div class="employee__wrapper text-center">
-                    <div class="employee__thumb mb-15">
-                      
-                         <!-- <img src=  "<=getImage('users',filename: $user['photo'])?>" alt="img not found"> -->
-                          <img src="<?= getUserProfileImage($user) ?>" alt="img not found">
+    <?php if (!empty($users)): ?>
+        <?php foreach ($users as $user): ?>
 
-                    </div>
-                    <div class="employee__content">
-                        <div class="employee__meta mb-15">
-                            <h4 class="mb-8"><?= htmlspecialchars($user['full_name'] ?: "No Name") ?></h4>
-                            <p><?= htmlspecialchars($user['designation_name'] ?: "No Designation") ?></p>
+            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6">
+                <div class="card__wrapper">
+                    <div class="employee__wrapper text-center">
+                        <div class="employee__thumb mb-15">
+
+                            <!-- <img src=  "<=getImage('users',filename: $user['photo'])?>" alt="img not found"> -->
+                            <img src="<?= getUserProfileImage($user) ?>" alt="img not found">
+
                         </div>
-                        <div class="common-social mb-20">
-                            <a href="<?= $user['media_link1'] ?>"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="<?= $user['media_link1'] ?>"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </div>
-                        <div class="employee__btn">
-                            <div class="d-flex align-items-center justify-content-center gap-15">
-                                <a class="btn btn-outline-theme-border" href="tel:<?= htmlspecialchars($user['phone']) ?>">Call</a>
-                                <a class="btn btn-outline-theme-border"
-                                   href="<?= $base_url ?>/user-profile/<?= $user['id'] ?>">View</a>
-                                <a class="btn btn-outline-theme-border"
-                                   href="<?= $base_url ?>/edit-user/<?= $user['id'] ?>">Edit</a>
+                        <div class="employee__content">
+                            <div class="employee__meta mb-15">
+                                <h4 class="mb-8"><?= htmlspecialchars($user['full_name'] ?: "No Name") ?></h4>
+                                <p><?= htmlspecialchars($user['designation_name'] ?: "No Designation") ?></p>
+                            </div>
+                            <div class="common-social mb-20">
+                                <a href="<?= $user['media_link1'] ?>"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="<?= $user['media_link1'] ?>"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="tel:<?= htmlspecialchars($employee['phone']) ?>" title="Call">
+                                    <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                            <div class="employee__btn">
+                                <div class="d-flex align-items-center justify-content-center gap-15">
+
+                                    <a class="btn btn-outline-theme-border"
+                                        href="<?= $base_url ?>/user-profile/<?= $user['id'] ?>">View</a>
+                                    <a class="btn btn-outline-theme-border"
+                                        href="<?= $base_url ?>/edit-user/<?= $user['id'] ?>">Edit</a>
+                                    <a class="btn btn-outline-theme-border" href="tel:<?= htmlspecialchars($user['phone']) ?>">Delete</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    <?php endforeach; ?>
-<?php else: ?>
-    <p class="text-center text-danger">No Users Found</p>
-<?php endif; ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p class="text-center text-danger">No Users Found</p>
+    <?php endif; ?>
 
 </div>
 
@@ -96,9 +100,8 @@ $show_breadcrumb = false;
 <!-- Pagination -->
 <div class="row mt-4">
     <div class="col-12 d-flex justify-content-center">
-      <?= paginateLinksSecondary($base_url . "/user-lists", $currentPage, $totalPages); ?>
+        <?= paginateLinksSecondary($base_url . "/user-lists", $currentPage, $totalPages); ?>
 
 
     </div>
 </div>
-

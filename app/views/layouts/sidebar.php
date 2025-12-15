@@ -164,7 +164,7 @@
                                    <a class="sidebar__menu-item <?= isActive('designations', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/designations">Designation List</a>
                                </li>
                                <li class="slide <?= isActive('leaves', $current_route) ?>">
-                                   <a class="sidebar__menu-item <?= isActive('leaves', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/leaves">Leave List</a>
+                                   <a class="sidebar__menu-item <?= isActive('leaves', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/leave-types">Leave List</a>
                                </li>
                                <li class="slide <?= isActive('salary-lists', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('salary-lists', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/salary-list">Salary Lists</a>
@@ -181,6 +181,27 @@
                                <li class="slide <?= isActive('weekend-lists', $current_route) ?>">
                                    <a class="sidebar__menu-item <?= isActive('weekend-lists', $current_route) ?>" href="w<?= $GLOBALS['base_url'] ?>/eekend-lists">Attendance Lists</a>
                                </li>
+                           </ul>
+                       </li>
+
+
+                       <li class="slide has-sub <?= isActive(['slider-manage', 'site-settings', 'home-footer-setting'], $current_route) ?>">
+                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['slider-manage', 'site-settings', 'home-footer-setting'], $current_route) ?>">
+                               <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                               <div class="side-menu__icon"><i class="fa-solid fa-gear"></i></div>
+                               <span class="sidebar__menu-label">Site Manage</span>
+                           </a>
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['slider-manage', 'site-settings', 'home-footer-setting'], $current_route) ? 'display:block;' : '' ?>">
+                               <li class="slide <?= isActive('slider-manage', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('slider-manage', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/slider-manage">Silder Manage </a>
+                               </li>
+                               <li class="slide <?= isActive('site-settings', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('settings', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/site-settings">Setting Manage</a>
+                               </li>
+                               <li class="slide <?= isActive('home-footer-setting', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('home-footer-setting', $current_route) ?>" href="<?= $GLOBALS['base_url'] ?>/home-footer-setting">Home Footer</a>
+                               </li>
+                            
                            </ul>
                        </li>
 

@@ -75,6 +75,13 @@ function uploadImage($input, $module = 'general', $mode = 'original', $width = 3
                     return null; // AVIF not supported
                 }
                 break;
+            case 'webp':
+                if (function_exists('imagecreatefromwebp')) {
+                    $src = imagecreatefromwebp($tmpPath);
+                } else {
+                    return null; // WebP not supported
+                }
+                break;
             default:
                 return null; // unsupported format
         }
@@ -83,7 +90,7 @@ function uploadImage($input, $module = 'general', $mode = 'original', $width = 3
         $dst = imagecreatetruecolor($width, $height);
 
         // Preserve transparency
-        if (in_array(strtolower($ext), ['png', 'gif'])) {
+        if (in_array(strtolower($ext), ['png', 'gif', 'webp'])) {
             imagecolortransparent($dst, imagecolorallocatealpha($dst, 0, 0, 0, 127));
             imagealphablending($dst, false);
             imagesavealpha($dst, true);
@@ -104,6 +111,9 @@ function uploadImage($input, $module = 'general', $mode = 'original', $width = 3
                 break;
             case 'gif':
                 imagegif($dst, $targetFile);
+                break;
+            case 'webp':
+                imagewebp($dst, $targetFile, 90);
                 break;
         }
 
@@ -444,10 +454,34 @@ function slugExists($db, $slug, $table = 'lead_sources', $column = 'slug')
 }
 
 
-function formatUrl($url) {
+function formatUrl($url)
+{
     if (!$url) return '#';
     if (!preg_match('~^https?://~i', $url)) {
         return 'https://' . $url;
     }
     return $url;
 }
+
+
+
+function getSetting($key, $default = null)
+{
+    static $settings = null;
+
+    // First time load all settings
+    if ($settings === null) {
+        $db = $GLOBALS['db']; // assuming db globally available
+
+        $stmt = $db->prepare("SELECT * FROM site_settings WHERE id = 1 LIMIT 1");
+        if ($stmt && $stmt->execute()) {
+            $result = $stmt->get_result();
+            $settings = $result ? $result->fetch_assoc() : [];
+        } else {
+            $settings = [];
+        }
+    }
+
+    return $settings[$key] ?? $default;
+}
+
