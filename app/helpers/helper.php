@@ -485,3 +485,22 @@ function getSetting($key, $default = null)
     return $settings[$key] ?? $default;
 }
 
+
+function calculateReadTime($content, $wpm = 180)
+{
+    if (empty($content)) {
+        return '1 min read';
+    }
+
+    $text = trim(strip_tags((string) $content));
+    $wordCount = preg_match_all('/\p{Bengali}+/u', $text);
+    $minutes = max(1, ceil($wordCount / $wpm));
+
+    return $minutes . ' min read';
+}
+
+
+
+
+// $readTime = calculateReadTime($_POST['content']);
+

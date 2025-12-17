@@ -190,5 +190,29 @@ CREATE TABLE site_settings (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+CREATE TABLE blogs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title TEXT NOT NULL,
+    excerpt LONGTEXT,
+    content LONGTEXT,
+    image VARCHAR(255),
+    author VARCHAR(100),
+    published_date DATE,
+    comments INT DEFAULT 0,
+    read_time VARCHAR(50),
+    status TINYINT DEFAULT 1 COMMENT '1=Published, 0=Draft',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Field	Use
+-- title	Blog heading
+-- excerpt	Short summary
+-- content	Full blog
+-- image	Thumbnail
+-- slug	URL
+
+
+
 
 

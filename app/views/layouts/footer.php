@@ -10,6 +10,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 $('.selectpicker').selectpicker();
+
             });
 
             function startCountdown() {

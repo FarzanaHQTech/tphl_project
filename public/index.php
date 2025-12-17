@@ -133,6 +133,15 @@ $routes = [
     "update-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "update"],
     "delete-leadSource/(\d+)" => ["controller" => "LeadSourceController", "method" => "delete"],
 
+    //blogs
+    "blog-lists" => ["controller" => "BlogController", "method" => "index"],
+    "create-blog" => ["controller" => "BlogController", "method" => "create"],
+    "store-blog" => ["controller" => "BlogController", "method" => "store"],
+    "blog-details/(\d+)" => ["controller" => "BlogController", "method" => "show"],
+    "edit-blog/(\d+)" => ["controller" => "BlogController", "method" => "edit"],
+    "update-blog/(\d+)" => ["controller" => "BlogController", "method" => "update"],
+    "delete-blog/(\d+)" => ["controller" => "BlogController", "method" => "delete"],
+
 
     // Leave controller 
     "leave-types" => ["controller" => "Leaves\\LeaveTypeController","method" => "index" ],
@@ -144,7 +153,8 @@ $routes = [
 
     // site-Setting 
    "site-settings" => ["controller" => "SiteManage\\SiteSettingController", "method" => "index"],
-"store-site-setting" => ["controller" => "SiteManage\\SiteSettingController", "method" => "storeOrUpdate"],
+    "store-site-setting" => ["controller" => "SiteManage\\SiteSettingController", "method" => "storeOrUpdate"],
+
 
     
 

@@ -114,6 +114,23 @@
                            </ul>
                        </li>
 
+                       <li class="slide has-sub <?= isActive(['create-blog', 'blog-lists'], $current_route) ?>">
+                           <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-blog', 'blog-lists'], $current_route) ?>">
+                               <i class="fa-regular fa-angle-down side-menu__angle"></i>
+                               <div class="side-menu__icon"><i class="fas fa-clipboard-list"></i>
+                               </div>
+                               <span class="sidebar__menu-label">Blog Manage</span>
+                           </a>
+                           <ul class="sidebar-menu child1" style="<?= isMenuOpen(['create-blog', 'blog-lists'], $current_route) ? 'display:block;' : 'display:none;' ?>">
+                               <li class="slide <?= isActive('create-blog', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('create-blog', $current_route) ?>" href="<?= $base_url ?>/create-blog">Add Blog</a>
+                               </li>
+                               <li class="slide <?= isActive('blog-lists', $current_route) ?>">
+                                   <a class="sidebar__menu-item <?= isActive('blog-lists', $current_route) ?>" href="<?= $base_url ?>/blog-lists">Blog List</a>
+                               </li>
+                           </ul>
+                       </li>
+
 
                        <li class="slide has-sub d-none<?= isActive(['create-customer', 'customer-lists'], $current_route) ?>">
                            <a href="javascript:void(0);" class="sidebar__menu-item <?= isMenuOpen(['create-customer', 'customer-lists'], $current_route) ?>">

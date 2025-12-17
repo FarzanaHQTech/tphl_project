@@ -513,15 +513,29 @@ function bd_settings_append($x) {
 		font_family_formats: 'Manrope=manrope,Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats',
 		toolbar_mode: 'wrap',
 	});
+	// tinymce.init({
+	// 	selector: '#tinymce_simple_textarea',
+	// 	toolbar: 'undo redo blockquote blocks bold italic alignleft aligncenter alignright outdent indent code anchor link restoredraft charmap codesample ltr rtl emoticons fullscreen help image insertdatetime lists media nonbreaking pagebreak preview save searchreplace template visualblocks visualchars wordcount accordion print',
+	// 	toolbar_mode: 'wrap',
+	// 	plugins: ['code', 'table', 'lists', 'anchor', 'autolink', "autosave", "charmap", "codesample", "directionality", "emoticons", "fullscreen", "help", "image", "importcss", "insertdatetime", "visualblocks", "visualchars", "wordcount", "accordion"],
+	// 	link_default_target: '_blank',
+	// 	quickbars_insert_toolbar: false,
+	// 	height: "300"
+	// });
 	tinymce.init({
-		selector: '#tinymce_simple_textarea',
-		toolbar: 'undo redo blockquote blocks bold italic alignleft aligncenter alignright outdent indent code anchor link restoredraft charmap codesample ltr rtl emoticons fullscreen help image insertdatetime lists media nonbreaking pagebreak preview save searchreplace template visualblocks visualchars wordcount accordion print',
-		toolbar_mode: 'wrap',
-		plugins: ['code', 'table', 'lists', 'anchor', 'autolink', "autosave", "charmap", "codesample", "directionality", "emoticons", "fullscreen", "help", "image", "importcss", "insertdatetime", "visualblocks", "visualchars", "wordcount", "accordion"],
-		link_default_target: '_blank',
-		quickbars_insert_toolbar: false,
-		height: "300"
-	});
+    selector: '#tinymce_simple_textarea',
+    toolbar: 'undo redo blockquote blocks bold italic alignleft aligncenter alignright outdent indent code anchor link restoredraft charmap codesample ltr rtl emoticons fullscreen help image insertdatetime lists media nonbreaking pagebreak preview save searchreplace template visualblocks visualchars wordcount accordion print',
+    toolbar_mode: 'wrap',
+    plugins: ['code', 'table', 'lists', 'anchor', 'autolink', "autosave", "charmap", "codesample", "directionality", "emoticons", "fullscreen", "help", "image", "importcss", "insertdatetime", "visualblocks", "visualchars", "wordcount", "accordion"],
+    link_default_target: '_blank',
+    quickbars_insert_toolbar: false,
+    height: "300",
+    
+    // ✅ Prevent TinyMCE from converting quotes into entities
+    entity_encoding: 'raw',
+    forced_root_block: '', // Optional: <p> wrap control
+});
+
 
 	/* Dropzone Activation */
 	Dropzone.options.myDropzone = {
@@ -742,19 +756,11 @@ function bd_settings_append($x) {
 	// 	dateFormat: "Y-m-d",
 	// });
 
-$(document).ready(function() {
     $("#joiningDate").flatpickr({
         altInput: true,
         altFormat: "F j, Y",
         dateFormat: "Y-m-d",
     });
-
-    $("#dateofBirth").flatpickr({
-        altInput: true,
-        altFormat: "F j, Y",
-        dateFormat: "Y-m-d",
-    });
-});
 
 	$("#clockInTime").flatpickr({
 		enableTime: true,
